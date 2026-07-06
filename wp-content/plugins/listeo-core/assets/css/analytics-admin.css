@@ -1,0 +1,1031 @@
+/**
+ * Listeo Analytics - Admin Dashboard Styles
+ *
+ * Clean WordPress native design - NO gradients, NO purple AI colors
+ *
+ * @package Listeo_Core
+ * @since 1.0.0
+ */
+
+/* ============================================
+   MAIN WRAPPER
+   ============================================ */
+
+.listeo-analytics-wrap {
+    padding: 30px;
+    margin: 0;
+    background: #f6f6f6;
+    margin-left: -20px;
+}
+
+.listeo-analytics-wrap .select2-selection__clear { top: 4px; position: relative;}
+.listeo-analytics-wrap.analytics-admin {
+    font-family: Outfit, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.listeo-analytics-wrap h1 { padding: 0; margin: 0; }
+.listeo-analytics-wrap select { min-width: 50px; }
+
+.listeo-analytics-wrap.analytics-user {
+    padding: 0;
+    background: transparent;
+    margin: 0;
+}
+.listeo-analytics-wrap.analytics-user .listeo-chart-box h3 {
+    border: none !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.listeo-analytics-wrap.analytics-user .listeo-analytics-filters form{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 992px) {
+    body:not(#dark-mode) .listeo-analytics-wrap.analytics-user .listeo-analytics-filters {
+        background: #fff;
+        border: 2px solid #e6e6e6;
+    }
+    .listeo-analytics-wrap.analytics-user .listeo-analytics-filters form{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .listeo-analytics-wrap .listeo-tab-content { padding: 0; }
+}
+
+
+/* ============================================
+   PAGE HEADER
+   ============================================ */
+
+.listeo-analytics-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.listeo-analytics-title {
+    font-size: 23px;
+    font-weight: 400;
+    margin: 0;
+    padding: 9px 0 4px;
+    line-height: 1.3;
+    color: #181818;
+}
+
+.listeo-analytics-toggle-form {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ============================================
+   SECTION HEADLINES
+   ============================================ */
+
+.listeo-section-headline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #181818;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.listeo-section-headline i {
+    font-size: 18px;
+}
+
+/* ============================================
+   TIME RANGE FILTER
+   ============================================ */
+
+.listeo-analytics-filters {
+    background: #fff;
+    padding: 15px 20px;
+    margin: 20px 0; margin-bottom: 30px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.listeo-analytics-filters label {
+    font-weight: 600;
+    margin: 0;
+    margin-right: 10px;
+    color: #181818;
+}
+
+.listeo-analytics-filters select {
+    min-width: 200px;
+}
+
+/* ============================================
+   TAB NAVIGATION
+   ============================================ */
+
+.listeo-tab-wrapper {
+    margin: 20px 0 0 0;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.listeo-tab-content {
+    /* background: #fff;
+    border: 1px solid #c3c4c7;
+    border-top: none;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04); */
+}
+
+.listeo-tab-panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.listeo-tab-panel.active {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   HERO STATS CARDS
+   ============================================ */
+
+.listeo-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.listeo-stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.listeo-stat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.listeo-stat-icon {
+    height: 32px;
+    width: 32px;
+    min-width: 32px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Automatic color rotation using :nth-child */
+.listeo-stat-card:nth-child(1) .listeo-stat-icon {
+    background: #e8f4fd;
+    color: #2271b1;
+}
+
+.listeo-stat-card:nth-child(2) .listeo-stat-icon {
+    background: #f0e8fd;
+    color: #7c3aed;
+}
+
+.listeo-stat-card:nth-child(3) .listeo-stat-icon {
+    background: #fef3e8;
+    color: #f59e0b;
+}
+
+.listeo-stat-card:nth-child(4) .listeo-stat-icon {
+    background: #fde8e8;
+    color: #dc2626;
+}
+
+.listeo-stat-card:nth-child(5) .listeo-stat-icon {
+    background: #e8fdf5;
+    color: #10b981;
+}
+
+.listeo-stat-card:nth-child(6) .listeo-stat-icon {
+    background: #fde8f5;
+    color: #ec4899;
+}
+
+.listeo-stat-card:nth-child(7) .listeo-stat-icon {
+    background: #e8f5fd;
+    color: #0ea5e9;
+}
+
+.listeo-stat-card:nth-child(8) .listeo-stat-icon {
+    background: #fdf5e8;
+    color: #d97706;
+}
+
+.listeo-stat-label {
+    font-size: 15px;
+    color: #666;
+    font-weight: 600;
+}
+
+.listeo-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #181818;
+    margin-bottom: 8px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.listeo-stat-change {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.listeo-stat-change.positive {
+    color: #46b450;
+}
+
+.listeo-stat-change.negative {
+    color: #dc3232;
+}
+
+.listeo-stat-change .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ============================================
+   CHARTS
+   ============================================ */
+
+.listeo-charts-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.listeo-chart-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.listeo-chart-box h3 {
+    margin: 0 0 15px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f1;
+    font-size: 16px;
+    color: #181818;
+}
+
+.listeo-chart-box canvas {
+    max-height: 400px;
+    max-width: calc(100vw - 90px);
+}
+
+/* ============================================
+   LISTINGS TABLE
+   ============================================ */
+
+.listeo-listings-table th.num,
+.listeo-listings-table td.num {
+    text-align: right;
+}
+
+.listeo-listings-table th.sortable {
+    cursor: pointer;
+}
+
+.listeo-conversion-rate {
+    color: #46b450;
+    font-weight: 600;
+}
+
+.listeo-no-data {
+    color: #c3c4c7;
+}
+
+.listeo-no-data-message {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+    background: #f6f7f7;
+    border: 1px solid #c3c4c7;
+}
+
+/* ============================================
+   SETTINGS PANEL
+   ============================================ */
+
+.listeo-settings-panel {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.listeo-settings-panel h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f1;
+    font-size: 18px;
+}
+
+/* ============================================
+   TOGGLE SWITCH
+   ============================================ */
+
+.listeo-toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.listeo-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.listeo-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c3c4c7;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.listeo-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .listeo-toggle-slider {
+    background-color: #2271b1;
+}
+
+input:checked + .listeo-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+input:focus + .listeo-toggle-slider {
+    box-shadow: 0 0 1px #2271b1;
+}
+
+/* ============================================
+   STATUS INDICATORS
+   ============================================ */
+
+.listeo-analytics-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    vertical-align: middle;
+    border-radius: 50px;
+    padding: 9px 13px;
+}
+
+
+.listeo-analytics-status.enabled {
+    color: #36a540;
+    background: #36a54020;
+    display: none;
+}
+
+.listeo-analytics-status.disabled {
+    color: #dc3232;
+    background: #dc323220;
+}
+
+.listeo-status-enabled {
+    color: #46b450;
+    font-weight: 600;
+}
+
+.listeo-status-enabled .dashicons {
+    vertical-align: middle;
+}
+
+.listeo-status-disabled {
+    color: #dc3232;
+    font-weight: 600;
+}
+
+.listeo-status-disabled .dashicons {
+    vertical-align: middle;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media screen and (max-width: 782px) {
+    .listeo-hero-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .listeo-charts-row {
+        grid-template-columns: 1fr;
+    }
+
+    .listeo-stat-value {
+        font-size: 28px;
+    }
+
+    .listeo-listings-table th.num,
+    .listeo-listings-table td.num {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .listeo-analytics-wrap {
+        margin: 10px 10px 0 0;
+    }
+
+    .listeo-tab-content {
+        padding: 15px;
+    }
+
+    .listeo-chart-box {
+        padding: 15px;
+    }
+}
+
+/* ============================================
+   CHART BOX UTILITIES
+   ============================================ */
+
+.listeo-chart-box.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ============================================
+   SELECT2 CUSTOM STYLES
+   ============================================ */
+
+.listeo-analytics-wrap .select2-container--default .select2-selection--single {
+    height: 36px;
+}
+
+.listeo-analytics-wrap .select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 36px;
+    padding-left: 10px; padding-right: 10px;
+}
+
+.listeo-analytics-wrap .select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px;
+}
+
+.listeo-analytics-wrap select {height: 36px; margin: 0;}
+
+.listeo-analytics-wrap.analytics-user .listeo-analytics-filters {
+    background: #f8f8f8;
+    box-shadow: none;
+}
+
+.listeo-analytics-wrap.analytics-user .listeo-stat-card, 
+.listeo-analytics-wrap.analytics-user .listeo-chart-box {
+    box-shadow: none;
+    border: 2px solid #e6e6e6;
+}
+
+.listeo-chart-filter select{
+    height: 36px; margin: 0;
+}
+
+/* ============================================
+   Tab Navigation
+   ============================================ */
+
+.listeo-analytics-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    /* background: #f0f0f1; */
+    /* padding: 4px; */
+    border-radius: 6px;
+}
+
+.listeo-analytics-tab {
+    flex: 1;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #111;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    position: relative;
+    outline: none !important;
+    border: none !important;
+    background: #ededed;
+}
+
+.listeo-analytics-tab:focus {
+    box-shadow: none;
+}
+
+.listeo-analytics-tab:hover {
+    color: #111;
+    background: #e5e5e5;
+    text-decoration: none;
+}
+
+.listeo-analytics-tab.active {
+    background: #fff;
+    color: #2271b1;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.listeo-analytics-tab.active:hover {
+    color: #2271b1;
+}
+
+.listeo-analytics-tab i {
+    font-size: 16px;
+    transition: transform 0.2s ease;
+}
+
+
+
+/* Responsive tabs */
+@media screen and (max-width: 782px) {
+    .listeo-analytics-tabs {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .listeo-analytics-tab {
+        justify-content: flex-start;
+        padding: 10px 16px;
+    }
+}
+
+/* ============================================
+   Messages Tab Styling
+   ============================================ */
+
+.listeo-conversations-list {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.listeo-conversations-list h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1d2327;
+    font-size: 18px;
+}
+
+.listeo-conversations-list .tablenav {
+    display: none; /* Hide search and pagination controls */
+}
+
+.listeo-conversations-list .message-count-badge {
+    display: inline-block;
+    padding: 0;
+    height: 30px;
+    width: 30px;
+    background: #2271b1;
+    color: #fff;
+    border-radius: 112px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 30px;
+}
+
+.listeo-conversations-list .tablenav .actions input[type="search"] {
+    width: 250px;
+    padding: 6px 12px;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+}
+.listeo-conversations-list a.button.listeo-view-conversation,
+.listeo-conversations-list input#search-submit {
+    border: none !important;
+    outline: none !important;
+    height: 42px;
+    color: #fff;
+    background: #2271b1;
+}
+
+.listeo-conversations-list a.button.listeo-view-conversation {
+    height: auto;
+    font-size: 15px;
+    margin: 5px;
+}
+
+/* ============================================
+   Conversation Detail View
+   ============================================ */
+
+.listeo-conversation-detail {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.listeo-conversation-detail .conversation-header h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #1d2327;
+}
+
+.listeo-conversation-detail .conversation-meta {
+    background: #f6f7f7;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #2271b1;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.listeo-conversation-detail .conversation-meta a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.listeo-conversation-detail .conversation-meta a:hover {
+    text-decoration: underline;
+}
+
+.listeo-conversation-detail .conversation-messages {
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.listeo-conversation-detail .message-bubble {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.listeo-conversation-detail .message-bubble.user-2 {
+    flex-direction: row-reverse;
+}
+
+.listeo-conversation-detail .message-avatar {
+    flex-shrink: 0;
+}
+
+.listeo-conversation-detail .message-avatar img {
+    border-radius: 50%;
+    display: block;
+}
+
+.listeo-conversation-detail .message-content {
+    flex: 1;
+    max-width: 70%;
+}
+
+.listeo-conversation-detail .message-text {
+    background: #f6f7f7;
+    padding: 12px 16px;
+    border-radius: 12px;
+    line-height: 1.6;
+    color: #1d2327;
+}
+
+
+.listeo-conversation-detail .message-bubble.user-2 .message-text {
+    background: #2271b1;
+    color: #fff;
+}
+
+.listeo-conversation-detail .message-text p {
+    margin: 0 0 8px 0;
+}
+
+.listeo-conversation-detail .message-text p:last-child {
+    margin-bottom: 0;
+}
+
+.listeo-conversation-detail .message-attachment {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.listeo-conversation-detail .message-attachment i {
+    margin-right: 6px;
+    color: #2271b1;
+}
+
+.listeo-conversation-detail .message-attachment a {
+    color: #2271b1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.listeo-conversation-detail .message-attachment a:hover {
+    text-decoration: underline;
+}
+
+.listeo-conversation-detail .attachment-size {
+    color: #646970;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.listeo-conversation-detail .message-time {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #8c8f94;
+}
+
+.listeo-conversation-detail .no-messages {
+    text-align: center;
+    color: #646970;
+    padding: 40px 20px;
+    background: #f6f7f7;
+    border-radius: 8px;
+}
+
+/* ============================================
+   Conversation Modal
+   ============================================ */
+
+.listeo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100000;
+}
+
+.listeo-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+}
+
+.listeo-modal-content {
+    position: relative;
+    max-width: 900px;
+    max-height: 90vh;
+    margin: 5vh auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.listeo-modal-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid #dcdcde;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.listeo-modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #1d2327;
+}
+
+.listeo-modal-close {
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    color: #646970;
+    cursor: pointer;
+    padding: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.listeo-modal-close:hover {
+    background: #f0f0f1;
+    color: #1d2327;
+}
+
+.listeo-modal-body {
+    padding: 30px;
+    overflow-y: auto;
+    flex: 1;
+    max-height: 600px;
+}
+
+.listeo-modal-loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #646970;
+    font-size: 16px;
+}
+
+.listeo-modal-loading i {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+    color: #2271b1;
+}
+
+.listeo-modal .conversation-meta-info {
+    background: #f6f7f7;
+    padding: 15px 20px;
+    border-radius: 6px;
+    border-left: 4px solid #2271b1;
+    margin-bottom: 25px;
+}
+
+.listeo-modal .conversation-meta-info p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.listeo-modal .conversation-meta-info a {
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.listeo-modal .conversation-meta-info a:hover {
+    text-decoration: underline;
+}
+
+.listeo-modal .conversation-messages-list {
+    max-width: 100%;
+}
+
+.listeo-modal .message-bubble {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.listeo-modal .message-bubble.user-2 {
+    flex-direction: row-reverse;
+}
+
+.listeo-modal .message-avatar {
+    flex-shrink: 0;
+}
+
+.listeo-modal .message-avatar img {
+    border-radius: 50%;
+    display: block;
+}
+
+.listeo-modal .message-content {
+    flex: 1;
+    max-width: 70%;
+}
+
+.listeo-modal .message-text {
+    background: #f6f7f7;
+    padding: 12px 16px;
+    border-radius: 12px;
+    line-height: 1.6;
+    color: #1d2327;
+}
+
+.listeo-modal .message-bubble.user-2 .message-text {
+    background: #2271b1;
+    color: #fff;
+}
+
+.listeo-modal .message-text p {
+    margin: 0 0 8px 0;
+}
+
+.listeo-modal .message-text p:last-child {
+    margin-bottom: 0;
+}
+
+.listeo-modal .message-attachment {
+    margin-top: 10px;
+    padding: 10px 12px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.listeo-modal .message-attachment i {
+    margin-right: 6px;
+    color: #2271b1;
+}
+
+.listeo-modal .message-attachment a {
+    color: #2271b1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.listeo-modal .message-attachment a:hover {
+    text-decoration: underline;
+}
+
+.listeo-modal .attachment-size {
+    color: #646970;
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.listeo-modal .message-time {
+    margin-top: 6px;
+    font-size: 12px;
+    color: #8c8f94;
+}
+
+.listeo-modal .no-messages {
+    text-align: center;
+    color: #646970;
+    padding: 40px 20px;
+    background: #f6f7f7;
+    border-radius: 8px;
+}
+
+/* ============================================
+   Dar Mode
+   ============================================ */
+
+body#dark-mode .listeo-analytics-filters {
+    background-color: #262626;
+}
+
+body#dark-mode .listeo-analytics-filters label { color: #fff;}
+
+body#dark-mode .listeo-stat-card, 
+body#dark-mode .listeo-chart-box {
+    background-color: #262626;
+    color: #fff; 
+    border-color: #333;
+}
+
+body#dark-mode .listeo-analytics-wrap.analytics-user .listeo-chart-box h3,
+body#dark-mode .listeo-section-headline,
+body#dark-mode .listeo-stat-label,
+body#dark-mode .listeo-stat-value {
+    color: #fff;
+}

@@ -1,0 +1,652 @@
+/**
+ * AI Chat Dark Mode Styles
+ * Neutral Dark Theme
+ *
+ * @package AI Chat by Purethemes
+ */
+
+/* Dark mode CSS variables - neutral dark colors */
+.listeo-ai-chat-wrapper.dark-mode {
+    --chat-bg: #111;
+    --chat-bg-secondary: #222;
+    --chat-bg-tertiary: #222;
+    --chat-border: #333;
+    --chat-border-light: #444;
+    --chat-text: #e5e5e5;
+    --chat-text-secondary: #ccc;
+    --chat-text-muted: #999;
+    --chat-shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ===== CONTAINER ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-container {
+    background: var(--chat-bg) !important;
+    border-color: var(--chat-border) !important;
+    box-shadow: 0 5px 20px var(--chat-shadow);
+}
+
+/* ===== HEADER ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-header {
+    background-color: var(--chat-bg-secondary) !important;
+    border-bottom-color: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-title {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-status-dot {
+    border-color: var(--chat-bg-secondary) !important;
+}
+
+/* Menu */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-darkmode-toggle,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-trigger {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-darkmode-toggle:hover,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-trigger:hover,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-trigger[aria-expanded="true"] {
+    background: rgba(0,0,0,0.2) !important;
+    color: var(--chat-text) !important;
+}
+
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode.expanded .listeo-ai-chat-quick-buttons {
+        padding-bottom: 20px;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-header,
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode.expanded .listeo-ai-chat-messages { border-radius: 12px 12px 0 0; }
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-dropdown {
+    background: var(--chat-bg-secondary) !important;
+    border-color: var(--chat-border) !important;
+    box-shadow: 0 4px 16px var(--chat-shadow);
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-item {
+    color: var(--chat-text-secondary) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-item:hover {
+    background: var(--chat-bg-tertiary) !important;
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-item svg {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-menu-item:hover svg {
+    color: var(--chat-text) !important;
+}
+
+/* Clear button (shortcode) */
+.listeo-ai-chat-wrapper.dark-mode button.listeo-ai-chat-clear-btn {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode button.listeo-ai-chat-clear-btn:hover {
+    color: var(--chat-text) !important;
+}
+
+/* ===== MESSAGES AREA ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-messages {
+    background: var(--chat-bg) !important;
+}
+
+/* User Message */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-user {
+    background: var(--ai-chat-primary-color, #0073ee) !important;
+    color: #fff !important;
+}
+
+/* Assistant/System Message */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-assistant,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message.listeo-ai-chat-message-system {
+    background: #222 !important;
+    color: var(--chat-text) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-assistant.chat-message-results {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-system {
+    color: var(--chat-text-muted) !important;
+}
+
+/* Message Content */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-content {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-content strong {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-content a,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-content a strong {
+    color: var(--ai-chat-primary-color, #5fa8ff) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-content p,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-content {
+    color:  var(--chat-text-muted);
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-content a:hover {
+    color: #fff !important;
+}
+
+/* Loading Message */
+.listeo-ai-chat-wrapper.dark-mode div.listeo-ai-chat-message.listeo-ai-chat-message-assistant[id^="loading"] {
+    background: transparent !important;
+    box-shadow: none !important;
+    color: var(--chat-text-muted) !important;
+}
+
+/* ===== LOADING INDICATORS ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-typing-dots span {
+    background: var(--chat-text-muted) !important;
+}
+
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-loading::before {
+    background: var(--chat-bg) !important
+}
+
+/* ===== INPUT AREA ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-input-wrapper {
+    background: var(--chat-bg-secondary) !important;
+    border-top-color: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-container {
+    background: var(--chat-bg-secondary) !important;
+}
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-input-wrapper {
+    border-radius: 0 0 12px 12px;
+}
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-input-wrapper {
+    border-radius: 12px;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-input,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-input:not(.elementor-chat-style .listeo-ai-chat-input) {
+    background: #303030 !important;
+    color: var(--chat-text) !important;
+    border-color: var(--chat-border) !important;
+    box-shadow: none !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-input::placeholder {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-input:focus {
+    border-color: var(--ai-chat-primary-color, #0073ee) !important;
+    box-shadow: none;
+}
+
+/* Send Button */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-send-btn {
+    background: var(--ai-chat-primary-color, #0073ee) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-send-btn:disabled {
+    background: var(--chat-border-light) !important;
+}
+
+/* Image Input Button */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-image-btn {
+    background: #242424 !important;
+    color: #ccc !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-mic-btn:not(.recording):hover,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-image-btn:hover {
+    background: var(--ai-chat-primary-color, #0073ee) !important;
+    color: #fff !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-image-btn:hover svg {
+    stroke: #fff !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-image-btn.has-image {
+    background: var(--ai-chat-primary-color-light, rgba(0, 115, 238, 0.2)) !important;
+    color: var(--ai-chat-primary-color, #5fa8ff) !important;
+}
+
+/* ===== QUICK ACTION BUTTONS ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-quick-buttons {
+    background: var(--chat-bg) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-quick-btn {
+    background: var(--chat-bg-tertiary) !important;
+    color: var(--chat-text-secondary) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-quick-btn.has-custom-color {
+    background: var(--quick-btn-color) !important;
+    color: #fff !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-quick-btn.has-custom-color .listeo-ai-btn-icon {
+    stroke: #fff !important;
+    opacity: 1;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-quick-btn:hover {
+    background: var(--quick-btn-color, var(--ai-chat-primary-color, #0073ee)) !important;
+    color: #fff !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-quick-btn:hover .listeo-ai-btn-icon {
+    stroke: #fff !important;
+}
+
+/* ===== LISTING CARDS ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-item {
+    background: var(--chat-bg-secondary) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-title {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode p.listeo-ai-listing-excerpt {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-meta {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-meta i {
+    color: var(--chat-border-light) !important;
+}
+
+/* Product Price */
+.listeo-ai-chat-wrapper.dark-mode .product-price {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .product-price .regular-price {
+    color: var(--chat-text-muted) !important;
+}
+
+/* Show More Button */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-show-more-btn {
+    background: var(--ai-chat-primary-color, #0073ee) !important;
+    color: #fff !important;
+}
+
+/* Best Match Badge */
+.listeo-ai-chat-wrapper.dark-mode .match-badge.best {
+    background: rgba(39, 174, 96, 0.2) !important;
+    color: #5cd690 !important;
+}
+
+/* ===== CONTEXT BUTTONS ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-context-title,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-product-context-title {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-load-listing-btn,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-load-product-btn {
+    background: var(--chat-bg-tertiary) !important;
+    color: var(--chat-text) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-load-listing-btn:hover,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-load-product-btn:hover {
+    background: var(--chat-border) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .context-loaded-icon {
+    color: var(--chat-text) !important;
+}
+
+/* ===== POPULAR SEARCHES ===== */
+.listeo-ai-chat-wrapper.dark-mode .popular-searches-header {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .popular-search-tag {
+    background: var(--chat-bg-tertiary) !important;
+    color: var(--chat-text-secondary) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .popular-search-tag:hover {
+    background: var(--ai-chat-primary-color, #0073ee) !important;
+    color: #fff !important;
+}
+
+/* ===== DISABLED STATE ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-disabled {
+    background: rgba(255, 193, 7, 0.15) !important;
+    color: #ffc107 !important;
+}
+
+/* ===== POWERED BY ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-powered-by {
+    color: var(--chat-text-muted) !important;
+    margin-top: -8px !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-powered-by a {
+    color: #fff !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-powered-by a:hover {
+    color: #fff !important;
+}
+
+/* ===== TERMS NOTICE ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-terms-notice {
+    color: var(--chat-text-muted) !important;
+    background: var(--chat-bg-secondary) !important;
+    padding-top: 2px;
+    border-radius: 0 0 12px 12px;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-terms-notice a {
+    color: #eee !important;
+}
+
+/* ===== CONTACT FORM OVERLAY ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form {
+    background: var(--chat-bg-secondary) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-header h3 {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-close {
+    background: color-mix(in srgb, var(--chat-border) 70%, transparent) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-close svg {
+    stroke: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-close:hover {
+    background: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-close:hover svg {
+    stroke: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-field label {
+    color: var(--chat-text-secondary) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-field input,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-field textarea {
+    background: #303030 !important;
+    border-color: var(--chat-border) !important;
+    color: var(--chat-text) !important;
+    box-shadow: none !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-field input:focus, 
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-field textarea:focus {
+    outline: none !important;
+    border-color: var(--ai-chat-primary-color, #0073ee) !important;
+    box-shadow: none !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-field input::placeholder,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-field textarea::placeholder {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-message.success {
+    background: rgba(39, 174, 96, 0.2) !important;
+    color: #5cd690 !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-contact-form-message.error {
+    background: rgba(239, 68, 68, 0.2) !important;
+    color: #f87171 !important;
+}
+
+/* ===== PRE-CHAT FORM (dark mode) ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-pre-chat-form {
+    background: var(--chat-bg-secondary) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-pre-chat-headline {
+    color: var(--chat-text) !important;
+}
+
+/* ===== SCROLLBAR ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-messages {
+    scrollbar-color: var(--chat-border) var(--chat-bg);
+    scrollbar-width: thin;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-messages::-webkit-scrollbar-track {
+    background: var(--chat-bg) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-messages::-webkit-scrollbar-thumb {
+    background: var(--chat-border) !important;
+    border-radius: 3px;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: var(--chat-border-light) !important;
+}
+
+/* ===== ELEMENTOR STYLE OVERRIDES ===== */
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message-assistant,
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-message.listeo-ai-chat-message-system {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode .listeo-ai-quick-btn {
+    background: var(--chat-bg-tertiary) !important;
+}
+
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-item {
+    border: 1px solid var(--chat-border) !important;
+}
+
+.elementor-chat-style .listeo-ai-chat-wrapper.dark-mode .listeo-ai-listing-item:hover {
+    border-color: var(--chat-border-light) !important;
+}
+
+/* ===== FLOATING CHAT DARK MODE ===== */
+
+/* Welcome Bubble Dark Mode */
+.listeo-floating-chat-widget.dark-mode .listeo-floating-welcome-bubble {
+    background: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.listeo-floating-chat-widget.dark-mode .listeo-floating-welcome-bubble-content {
+    color: #e5e5e5;
+}
+
+.listeo-floating-chat-widget.dark-mode .listeo-floating-welcome-bubble-arrow {
+    background: #1a1a1a;
+}
+
+/* Popup Container Dark Mode */
+.listeo-floating-chat-widget.dark-mode .listeo-floating-chat-popup {
+    background: transparent;
+}
+
+.listeo-floating-chat-popup .listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-container {
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Shimmer */
+.dark-mode .listeo-ai-chat-typing-dots,
+.dark-mode .listeo-ai-chat-loading,
+.dark-mode .listeo-ai-chat-shimmer-text {
+    filter: brightness(1.4)
+}
+
+/* ===== CART TOGGLE BUTTON ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-cart-toggle {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-chat-cart-toggle:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: var(--chat-text) !important;
+}
+
+/* ===== PRODUCT CARD (div mode) ===== */
+.listeo-ai-chat-wrapper.dark-mode div.listeo-ai-product-card .listeo-ai-listing-title a {
+    color: inherit !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode div.listeo-ai-product-card .listeo-ai-listing-title a:hover {
+    color: var(--ai-chat-primary-color, #4da3ff) !important;
+}
+
+/* ===== ADD TO CART BUTTON ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-add-to-cart-btn {
+    color: #fff !important;
+    background: var(--ai-chat-primary-color, #0073ee) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-add-to-cart-btn:hover {
+    background: var(--ai-chat-primary-color, #4da3ff) !important;
+    color: #fff !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-add-to-cart-btn.added {
+    background: #27ae60 !important;
+    color: #fff !important;
+}
+
+/* ===== CART POPUP OVERLAY ===== */
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup {
+    background: var(--chat-bg-secondary) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup-header {
+    border-bottom-color: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup-header h3 {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup-close {
+    background: color-mix(in srgb, var(--chat-border) 70%, transparent) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup-close svg {
+    stroke: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup-close:hover {
+    background: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup-close:hover svg {
+    stroke: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-empty {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-item {
+    border-bottom-color: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-item-title {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-item-title:hover {
+    color: var(--ai-chat-primary-color, #4da3ff) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-item-price {
+    color: var(--chat-text-secondary) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-item-qty {
+    border-color: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-qty-minus,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-qty-plus {
+    background: #303030 !important;
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-qty-minus:hover,
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-qty-plus:hover {
+    background: #404040 !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-qty-value {
+    color: var(--chat-text) !important;
+    border-color: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-item-remove {
+    color: var(--chat-text-muted) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-item-remove:hover {
+    color: #e74c3c !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-popup-footer {
+    border-top-color: var(--chat-border) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-subtotal-row {
+    color: var(--chat-text) !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-view-btn {
+    background: #303030 !important;
+    color: var(--chat-text) !important;
+    border: none !important;
+}
+
+.listeo-ai-chat-wrapper.dark-mode .listeo-ai-cart-view-btn:hover {
+    background: #404040 !important;
+}

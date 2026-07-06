@@ -1,0 +1,2031 @@
+.listeo-editor-modal-content,
+.listeo-editor-wrap {
+        font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+}
+
+/*---------------------------------------------------------------- ## Listeo Forms Editor CSS ----------------------------------------------------------------*/
+/*Clearfix for floating elements*/
+ .clearfix:before, .clearfix:after {
+     content: " ";
+     display: table;
+}
+ .clearfix:after{
+     clear: both;
+}
+ .listeo-forms-builder {
+     width: calc(100% - 15px);
+}
+/*page item itself*/
+ .form-editor-available-elements-container {
+     overflow: auto;
+     max-height: 500px;
+     border: 2px solid #ddd;
+     padding: 10px 18px;
+     border-radius: 5px;
+}
+ .form-editor-available-elements-container h4 {
+     background: #0485ba;
+     color: #fff;
+     padding: 13px 15px;
+     border-radius: 4px;
+}
+ body .fip-grey.icons-selector .selector {
+     border: 1px solid #ccc;
+     background-color: #fff;
+     border-radius: 4px;
+}
+ body .fip-grey.icons-selector .selector-search i {
+     line-height: 25px;
+     font-size: 16px;
+     color: #aaa;
+}
+ body .fip-grey.icons-selector .selector-popup {
+     -moz-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+     -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+     box-shadow: 0 0 11px rgb(0 0 0 / 20%);
+     border: none;
+     border-radius: 4px;
+     padding: 20px;
+}
+ body .fip-grey.icons-selector .selector-button {
+     font-size: 18px;
+    background: #fff;
+     border-radius: 0 4px 4px 0;
+}
+ body .fip-grey.icons-selector .selector-search input[type=text] {
+     border: 1px solid #e0e0e0;
+}
+ body .icons-selector .fip-icon-left-dir:before, body .icons-selector .fip-icon-right-dir:before {
+     font-size: 32px;
+     background: #2271b1;
+     color: #fff;
+     font-size: 20px;
+     padding: 10px;
+     border-radius: 4px;
+}
+ body .fip-grey.icons-selector .fip-icons-container {
+     background-color: #fff;
+     border: 1px solid #e0e0e0;
+     border-radius: 3px;
+}
+ body .fip-grey.icons-selector .fip-box {
+     border: 1px solid #ddd;
+     border-radius: 3px;
+}
+ body .icons-selector .fip-box {
+     display: inline-block;
+     margin: 2px;
+     width: 76px;
+     line-height: 45px;
+     text-align: center;
+     cursor: pointer;
+     vertical-align: top;
+     height: 45px;
+     font-size: 24px;
+}
+ .form-editor-available-elements-container .form_item, .form-editor-container .form_item{
+     outline: none;
+     font-size: 15px;
+     color: #707070;
+     margin: 0 0 16px 0;
+     padding: 14px;
+     width: 100%;
+     box-sizing: border-box;
+     display: block;
+     background-color: #f5f5f5;
+     box-shadow: none;
+     font-weight: 500;
+     opacity: 1;
+     border-radius: 3px;
+     position: relative;
+     padding-left: 45px;
+}
+ .form-editor-container .element_title_edit:hover {
+     color: #444;
+}
+ .form-editor-available-elements-container .form_item {
+     width: 100%;
+}
+ .form-editor-available-elements-container .form_item .options {
+     margin-left: 104px;
+     margin-top: 10px;
+}
+ .form-editor-available-elements-container .form_item .handle, .form-editor-container .form_item .handle {
+     color: #a0a0a0;
+     font-size: 18px;
+     float: left;
+     display: inline-block;
+     margin-right: 0;
+     position: absolute;
+     top: 0;
+     left: 0;
+     text-align: left;
+     cursor: move;
+     height: 45px;
+     width: calc(100% - 150px);
+     padding: 14px;
+     box-sizing: border-box;
+}
+
+.form_item.form_item_type_header {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.form_item.form_item_type_header .element_title_edit:hover,
+.form_item.form_item_type_header .element_title_edit {
+color: #fff ;
+background: #333;
+}
+
+.form_item.form_item_type_header .edit-form-field label {
+    color: #fff
+}
+
+.form_item.form_item_type_header .icons-selector .selected-icon,
+.form_item.form_item_type_header .field-icon{
+ color: #222;
+}
+
+
+
+.form_item.form_item_type_header .remove_item{
+ background: #444 !important;
+}
+ .form-editor-available-elements-container .element_title_edit, .form-editor-available-elements-container .remove_item {
+     display: none;
+}
+ .listeo-forms-builder-left {
+     float: left;
+     width: 57%;
+}
+ .listeo-forms-builder-right {
+     float: right;
+     width: 40% 
+}
+ .listeo-forms-builder-right .reset {
+     float: right;
+}
+body  .add_new_item {
+     border: 1px solid #274abb;
+     color: #274abb;
+     background: #eaecf2;
+     width: auto;
+     border-radius: 5px !important;
+     padding: 5px 15px !important;
+     text-decoration: none;
+     display: inline-block;
+     margin: 0px 0px 30px 0px;
+     text-align: center;
+     font-weight: bold;
+     font-size: 16px;
+     
+}
+/*removing an item from related pages*/
+ .form_item .remove_item.active{
+     display: block;
+}
+/*page item while dragging*/
+ .form-editor-container .form_item.ui-draggable-dragging, .form-editor-container .form_item.ui-sortable-helper {
+     border: solid 1px #dadada;
+     background: #fff;
+}
+/*dragging item over droppable zone*/
+ .right_container.hover-over-draggable{
+     border: solid 1px #dadada;
+}
+/*placeholder text for sorting items*/
+.form-editor-container .listeo-fafe-row-section .my-placeholder{
+ height: 50px;
+
+margin-bottom: 10px;
+ margin: 10px 5px;
+ -moz-box-sizing: border-box;
+box-sizing: border-box;
+width: calc(33% - 10px);
+ display: block;
+ float: left;
+ border-radius: 4px;
+}
+
+/*placeholder text for sorting items*/
+ .form-editor-container .my-placeholder{
+     height: 40px;
+     border: dashed 1px #dadada;
+     margin-bottom: 20px;
+  border-radius: 4px;
+}
+/*placeholder for when hovering over droppable*/
+ .form-editor-container .droppable-helper{
+     width: 100%;
+     height: 40px;
+     border: dashed 2px #d3d3d3;
+     margin-bottom: 10px;
+     border-radius: 4px;
+  text-align: center;
+  line-height: 40px;
+  display: none; 
+}
+
+.listeo-registration-form-builder .droppable-helper { display: block; }
+
+ .form-editor-container .droppable-helper:before {
+  content: "Drag and drop new fields here";
+  font-weight: 400;
+  font-size: 14px;
+  color: #999;
+  
+ }
+ .droppable-helper.active{
+     display: block;
+}
+ .edit-form-field {
+     padding: 1px 0 15px 0;
+     padding-left: 0px;
+     margin-top: 20px;
+}
+
+.edit-form-field div p {
+ display: flex;
+ align-items: center;
+ flex-direction: row;
+}
+ .edit-form-field label {
+     display: flex;
+     justify-content: space-between;
+     width: 163px;
+     vertical-align: top;
+     margin-top: 0;
+     font-size: 14px;
+     padding-right: 20px;
+     color: #444;
+}
+ .edit-form-field small {
+     display: block;
+     margin-left: 120px;
+}
+ .clearfix {
+     zoom: 1 
+}
+ .clearfix:after, .clearfix:before {
+     content: "";
+     display: table 
+}
+ .clear, .clearfix:after {
+     clear: both 
+}
+ .nobr {
+     white-space: nowrap 
+}
+ .listeo-form-editor .nav-tab-wrapper {
+     margin-bottom: 15px 
+}
+ .listeo-editor-wrap {
+     display: flex;
+}
+ .listeo-editor-wrap .nav-tab-container {
+     flex: 0 0 260px;
+     display: flex;
+     flex-direction: column;
+     background: #1f1f1f;
+     margin-right: -5px;
+     border-radius: 5px 0 0 5px;
+     position: relative;
+     max-width: 260px;
+     min-width: 260px;
+}
+
+ .listeo-editor-wrap h2.nav-tab-wrapper {
+    padding: 20px;
+    padding-top: 105px;
+    margin: 0 0px 0 0;
+    position: relative;
+    border-bottom: none;
+    position: sticky;
+    top: 26px;
+  display: flex;
+  flex-direction: column;
+ }
+ .listeo-editor-wrap h2.nav-tab-wrapper:before {
+     content: "";
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 80px;
+     background: url(listeo-editor.svg);
+     background-repeat: no-repeat;
+     background-size: 125px auto;
+     background-position: 30px 51%;
+     background-color: #2b2b2b;
+     padding: 20px;
+     box-sizing: border-box;
+     border-radius: 4px 0 0 0;
+}
+ .listeo-form-editor table th {
+     padding: 1em 0 1em 1em 
+}
+ .listeo-form-editor table td {
+     overflow: visible;
+     padding: 12px 0 12px 12px;
+     vertical-align: middle
+}
+ .listeo-form-editor table td input.input-text, .listeo-form-editor table td select {
+     width: 100%;
+     min-width: 100px
+}
+ .listeo-form-editor table td .na {
+     display: block;
+     color: #ccc;
+     text-align: center 
+}
+ .listeo-form-editor table td:last-child, .listeo-form-editor table th:last-child {
+     padding-right: 1em 
+}
+ .listeo-form-editor table tr:nth-child(odd) td {
+     background-color: #F9F9F9 
+}
+ .listeo-forms_page_listeo-fields-builder #wpfooter {
+     display: none;
+}
+ .form_item .field-options-predefined, .listeo-forms_page_listeo-fields-builder .field-options-predefined {
+     margin-left: 120px;
+     margin-top: 10px;
+}
+
+.listeo-form-editor table tr { cursor: move;}
+ .listeo-forms-builder-bottom {
+     margin-top: 25px;
+     padding-top: 20px;
+     border-top: 1px solid #e0e0e0;
+     overflow: hidden;
+     width: 100% 
+}
+/* .delete.button-link-delete {
+     float: right;
+     margin-top:20px;
+}
+ */
+ .reset.button-secondary {
+     float: right;
+     margin-right: 80px;
+}
+ .listeo-form-editor .main-options table {
+     width: 100%;
+     margin-top: 20px;
+     border-radius: 4px;
+}
+
+.listeo-editor_page_listeo-reviews-criteria .listeo-form-editor .main-options table   {
+border: 2px solid #e0e0e0;
+}
+
+ .listeo-forms-builder select {
+     border-color: #ccc;
+     min-width: 196px;
+     padding: 2px 8px;
+     box-shadow: none !important;
+     outline: none !important;
+     min-height: 38px;
+     padding: 0 12px !important;
+}
+ .listeo-forms-builder textarea, .listeo-forms-builder input[type="text"] {
+     border-color: #ccc !important;
+     box-shadow: none !important;
+}
+
+ .listeo-forms-builder select:focus,
+ .listeo-forms-builder textarea:focus, .listeo-forms-builder input[type="text"]:focus {
+     border-color: #4f94d4 !important;
+}
+ .listeo-forms-editor-bottom {
+     width: 100%;
+     margin-top:25px;
+}
+ .listeo-form-editor textarea {
+     width:100%;
+}
+ .listeo-form-editor table td {
+     vertical-align: top 
+}
+ .form-editor-container .form_item_order {
+     height: 0px;
+     opacity: 0;
+     pointer-events: none;
+     padding: 0;
+     margin: 0;
+     display: none;
+}
+ .form-editor-available-elements-container .element_title, .form-editor-container .element_title {
+     cursor: pointer;
+}
+ .form-editor-container .element_title_edit {
+     display: inline-block;
+     cursor: pointer;
+     margin-right: 0;
+     height: 46px;
+     position: absolute;
+     right: 50px;
+     top: 0;
+     line-height: 20px;
+     padding: 13px 17px;
+     box-sizing: border-box;
+     background: #00000007;
+     color: #808080;
+     transition: 0.2s;
+}
+ .form-editor-container .element_title_edit:hover {
+     color: #333;
+}
+ .form-editor-container .element_title_edit .dashicons{
+     transition: none;
+}
+ .form-editor-container label .dashicons, .form-editor-available-elements-container label .dashicons {
+     cursor: help 
+}
+ .placement-container {
+     margin-bottom: 20px;
+}
+ .field-options.options-container {
+     margin-top: 20px;
+}
+ .field-options-custom tr td {
+     padding-top: 0;
+}
+ #listeo-fafe-forms-editor .name-container {
+     display: none;
+}
+ .field-options-custom {
+     margin-top: 20px;
+     background: #fff;
+     border: 2px solid #e0e0e0;
+     border-radius: 5px;
+     padding: 15px 10px 12px 5px;
+     min-width: 45%;
+}
+ .remove_row {
+     color: #f00;
+     font-size: 0;
+}
+ .remove_row:after {
+     content: "×";
+     font-size: 20px;
+     background: #ff000014;
+     height: 35px;
+     width: 34px;
+     padding: 0;
+     margin: 0;
+     display: inline-block;
+     text-align: center;
+     line-height: 32px;
+     cursor: pointer;
+     border-radius: 3px;
+     color: #e41b1b;
+}
+ .add-new-option-table:hover, .add-new-option-table:focus, .add-new-option-table {
+     background: #009b7124;
+     border: 0;
+     display: inline-block;
+     color: #fff;
+     text-decoration: none;
+     text-shadow: none;
+     padding: 8px 15px;
+     margin-bottom: -20px;
+     color: #009b71;
+     transition: background 0.2s;
+     margin-top: 0;
+     outline: none;
+     box-shadow: none !important;
+     border-radius: 4px;
+}
+ .listeo-form-editor table.field-options-custom tr:nth-child(odd) td {
+     background: #fff;
+}
+ .form_item.form_item_listeo_order {
+     display: none;
+}
+ .field-options.options-container {
+     margin-top: 20px;
+     margin-right: 110px;
+}
+ .form-editor-container input.options {
+     width: 100%;
+}
+ #listeo_home_search_options .desc {
+     font-weight: normal;
+     font-size: 11px;
+}
+ .form-editor-available-elements-container .form_item_header .handle, .form-editor-container .form_item_header .handle, .form-editor-available-elements-container .form_item_header, .form-editor-container .form_item_header{
+     background: #666;
+     color:#fff;
+}
+ .form_item.form_item_header .remove_item {
+     background: #888;
+     color: #fff 
+}
+ .step-error-too-many, .step-error-exceed {
+     color: #a94442;
+     background-color: #f2dede;
+     border-color: #ebccd1;
+     padding: 5px;
+}
+ .listeo-forms-builder-left tbody td {
+     cursor: move;
+}
+ .listeo-forms-builder-left tbody .remove_row {
+     color: red;
+     cursor: pointer;
+}
+ .listeo-forms-builder-right tbody td {
+     cursor: move;
+}
+ .listeo-forms-builder-right tbody .remove_row {
+     color: red;
+     cursor: pointer;
+}
+
+
+.step-selectors.checkbox-group {
+    max-height: 200px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+ .listeo-fafe-section a.button, .listeo-fafe-section a.button {
+     background: #f0f0f0;
+     border: none;
+     color: #909090;
+     text-shadow: none;
+     box-shadow: none;
+     border-radius: 3px;
+     font-size: 16px;
+     transition: 0.3s;
+     display: inline-block;
+     padding: 0;
+     width: 46px;
+     height: 46px;
+     line-height: 46px;
+     text-align: center;
+}
+ .listeo-fafe-section a.button:hover {
+     background: #444;
+     border: none;
+     color: #fff;
+}
+ a.listeo-fafe-section-edit.button:before {
+     font-family: "dashicons";
+     content: "\f464" 
+}
+ .listeo-fafe-section a.button.listeo-fafe-section-remove-section:hover {
+     background: #f32630;
+     color: #fff;
+}
+ a.listeo-fafe-section-remove-section.button:before {
+     font-family: "dashicons";
+     content: "\f335";
+     font-size: 20px;
+}
+
+ .listeo-fafe-section input, .listeo-fafe-section input:focus {
+     box-shadow: none;
+     border: 1px solid #e0e0e0;
+     border-radius: 3px;
+     padding: 0px 12px;
+     font-size: 16px;
+     height: 46px;
+     line-height: 46px;
+}
+ .listeo-fafe-section-move {
+     list-style: none;
+     overflow: hidden;
+     position: absolute;
+     top: 0px;
+     right: 0px;
+}
+ .listeo-fafe-section-move li {
+     float: left;
+}
+ .listeo-fafe-section-move a.listeo-fafe-section-move-up.button:before {
+     font-family: "dashicons";
+     content: "\f343";
+     font-size: 20px;
+}
+ .listeo-fafe-section-move a.listeo-fafe-section-move-down.button:before {
+     font-family: "dashicons";
+     content: "\f347";
+     font-size: 20px;
+}
+ .listeo-fafe-row-section:first-child .listeo-fafe-section-move a.listeo-fafe-section-move-up.button{
+     display: none;
+}
+ .listeo-fafe-row-section:last-child .listeo-fafe-section-move a.listeo-fafe-section-move-down.button{
+     display: none;
+}
+.listeo-fafe-section-move-down { margin-left: 5px !important;}
+ .listeo-fafe-row-section:last{
+     background: red;
+     display: block;
+}
+ .form-editor-container .row-container {
+    /* border:1px solid red;
+     */
+    /* padding:15px;
+     */
+    overflow: hidden;
+    background: #fff;
+    border-left: 4px solid #fff;
+    box-shadow: none;
+    margin: 0;
+    padding: 0 0px 25px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 40px;
+}
+ .editor-block {
+     float: left;
+     box-sizing: border-box;
+     border: none;
+     padding: 0 15px;
+     background: #f2f2f2;
+     margin:5px;
+     border-radius: 3px;
+     cursor: move;
+}
+ .editor-block {
+     transition: background 0.2s;
+}
+ .editor-block:hover {
+     background: #eaeaea 
+}
+ .block-width-12 {
+     width: calc(100% - 10px);
+}
+ .block-width-6 {
+     width: calc(50% - 10px);
+}
+ .block-width-4 {
+     width: calc(33.3% - 10px);
+}
+ .block-width-3 {
+     width: calc(25% - 10px);
+}
+ .buttons-wrapper {
+     margin:25px 0px;
+     border-top: 1px solid #e0e0e0;
+     padding-top: 25px;
+}
+ .editor-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    min-height: 60px;
+    padding: 10px 15px;
+}
+ .editor-block h5 {
+     font-size: 13px;
+     color: #444;
+     margin: 4px 0;
+     align-self: center;
+}
+ .editor-block-tools {
+     align-self: center;
+}
+ .editor-block-tools input {
+     display: none;
+}
+ .editor-block-tools ul{
+     list-style: none;
+     display: inline-block;
+     margin-top: 0;
+     top: 0;
+     position: relative;
+     margin: 4px 0;
+}
+ .editor-block-tools li {
+     float: left;
+    /* font-family: dashicons;
+     */
+     margin-bottom: 0;
+}
+ .editor-block-tools li a {
+     border: none;
+     text-shadow: none;
+     box-shadow: none;
+     border-radius: 3px;
+     font-size: 13px;
+     transition: 0.3s;
+     display: inline-block;
+     padding: 0 10px;
+     line-height: 28px;
+     height: 28px;
+     margin-left: 3px;
+     color: rgba(0,0,0,0.35);
+     text-decoration: none;
+}
+ .editor-block-tools li.block-delete a, .editor-block-tools li.block-wider a, .editor-block-tools li.block-narrower a {
+     font-family: dashicons;
+     font-size: 18px !important;
+     padding: 0 !important;
+     width: 28px;
+     text-align: center;
+     background-color: rgba(0,0,0,0.08);
+     transition: 0.3s;
+}
+ .editor-block-tools li.block-delete a:hover, .editor-block-tools li.block-wider a:hover, .editor-block-tools li.block-narrower a:hover {
+     background-color: #444;
+     color: #fff;
+}
+ .editor-block-tools li.block-delete a:hover {
+     background: #f32630;
+     color: #fff;
+}
+ .block-wider a:before {
+     content: "\f139";
+}
+ .block-narrower a:before {
+     content: "\f141" 
+}
+ .block-delete a:before {
+     content: "\f335" 
+}
+/* MODAL */
+ .listeo-editor-modal {
+     bottom: 0;
+     left: 0;
+     position: fixed;
+     right: 0;
+     top: 0;
+     z-index: 300010;
+     display: none;
+     background: rgba(31, 29, 29, 0.8);
+}
+ .listeo-editor-modal-content{
+     background: #f9f9f9;
+     box-shadow: 0 0 20px 0 rgba(34, 34, 34, 0.4);
+     bottom: 0;
+     left: 0;
+     margin: auto;
+     max-width: 650px;
+     min-height: 300px;
+     padding: 15px;
+     position: absolute;
+     right: 0;
+     top: 0;
+     line-height: 20px;
+     margin: 100px auto;
+     border-radius: 3px;
+     overflow: hidden;
+     padding: 85px 15px;
+}
+ .listeo-editor-modal-content form {
+     overflow: auto;
+     height: 100%;
+}
+ .listeo-editor-modal-content form::-webkit-scrollbar {
+     width: 8px;
+}
+ .listeo-editor-modal-content form::-webkit-scrollbar-track {
+     border-radius: 10px;
+     background: #eee;
+}
+ .listeo-editor-modal-content form::-webkit-scrollbar-thumb {
+     border-radius: 10px;
+     background: #bbb 
+}
+ .listeo-modal-form {
+     margin-top: 0px;
+     padding: 7px;
+}
+ .listeo-modal-form .form-table th {
+     vertical-align: top;
+     text-align: left;
+     padding: 15px 10px 15px 0;
+     width: 150px;
+}
+ .listeo-modal-form .form-table td {
+     margin-bottom: 9px;
+     padding: 0px 0px;
+     line-height: 1.3;
+     vertical-align: middle;
+}
+ .listeo-modal-close {
+     position: absolute;
+     top: 19px;
+     right: 25px;
+     text-decoration: none;
+     color:#000;
+}
+ .listeo-editor-modal-header {
+     background-color: #ffffff;
+     border: none;
+     top: 0px;
+     left: 0;
+     padding: 0 20px;
+     padding-bottom: 0;
+     position: absolute;
+     right: 0;
+     height: 70px;
+     border-bottom: 1px solid #e0e0e0;
+}
+ .listeo-editor-modal-header h3 {
+     margin: 0;
+     padding: 0;
+     top: 50%;
+     position: absolute;
+     transform: translateY(-50%);
+     font-size: 18px;
+}
+ .listeo-editor-modal-header a.listeo-modal-close {
+     margin: 0;
+     padding: 0;
+     top: 50%;
+     position: absolute;
+     transform: translateY(-50%);
+     height: 35px;
+     background: #d6d6d6;
+     color: #707070;
+     width: 35px;
+     right: 20px;
+     text-align: center;
+     transition: 0.3s;
+     border-radius: 3px;
+     background: #e9e9e9;
+     color: #6c6c6c;
+}
+ .listeo-editor-modal-header a.listeo-modal-close:hover {
+     background: #dd3535;
+     color: #ffffff;
+}
+ .listeo-editor-modal-header a.listeo-modal-close span {
+     line-height: 35px;
+     font-size: 17px;
+}
+ .listeo-editor-modal-footer {
+     border-top: 1px solid #e0e0e0;
+     bottom: 0;
+     left: 0;
+     padding: 20px;
+     position: absolute;
+     right: 0;
+}
+ .media-modal-close {
+     color: rgb(102, 102, 102);
+     content: "ÃƒÂ¯Ã¢â‚¬Â¦Ã‹Å“";
+     vertical-align: middle;
+     font: 20px/1 dashicons;
+}
+ .block-edit .button {
+    /* background: url('/wp-admin/images/wpspin_light.gif') no-repeat;
+    */
+     background: #0085ba;
+     border: none;
+     color: #fff;
+     text-shadow: none;
+     box-shadow: none;
+     border-radius: 3px;
+     font-size: 13px;
+     transition: 0.3s;
+     display: inline-block;
+     padding: 0;
+     line-height: 28px;
+     height: 28px;
+     width: 28px;
+     text-align: center;
+     min-height: 28px;
+}
+ .block-edit .button:before {
+     content: "\f464";
+     font-family: "dashicons" 
+}
+ .editor-block-tools .editor-block-form-fields input {
+     display: block;
+}
+ .editor-block-form-fields {
+     display: none;
+}
+ .listeo-fafe-section table {
+     display: none 
+}
+ .listeo-editor-listing-types {
+     margin: 0;
+     padding: 0;
+}
+ .listeo-editor-listing-types li {
+     display: inline-block;
+     margin-right: 0;
+     margin-left: 2px;
+     margin-bottom: 0;
+     text-decoration: none;
+}
+ .listeo-editor-listing-types li a {
+     display: inline-block;
+     text-decoration: none;
+     background: #e0e0e0;
+     color: #333;
+     padding: 12px 16px;
+     font-weight: 500;
+     box-shadow:none;
+     border-radius: 4px 4px 0 0;
+     transition: 0.3s;
+     font-size: 14px;
+}
+ .listeo-editor-listing-types li a.active, .listeo-editor-listing-types li a:hover {
+     background-color:#0485ba;
+     color: #fff;
+}
+ .block-add-new a.button:focus, .block-add-new a.button:active, .block-add-new a.button {
+     border: none;
+     text-shadow: none;
+     box-shadow: none;
+     border-radius: 3px;
+     font-size: 14px;
+     transition: 0.3s;
+     display: inline-block;
+     padding: 0;
+     font-weight: 500;
+     width: auto;
+     height: auto;
+     line-height:24px;
+     text-align: center;
+     margin: 15px 5px 5px 5px;
+     padding: 6px 10px;
+     color: #009b71;
+     background: #009b7128;
+}
+ .block-add-new a.button:hover {
+     color: #009b71;
+     background: #009b7134;
+}
+ .block-add-new a.button:before {
+     font-family: "dashicons";
+     content: "\f132";
+     margin: 0 4px 0 -2px;
+     top: 2px;
+     position: relative;
+}
+ #listeo-cancel, #listeo-save-field {
+     background: #0485ba;
+     border: none;
+     color: #fff;
+     text-shadow: none;
+     box-shadow: none;
+     border-radius: 3px;
+     font-size: 14px;
+     transition: 0.3s;
+     display: inline-block;
+     padding: 0;
+     font-weight: 500;
+     width: auto;
+     height: auto;
+     line-height: 24px;
+     text-align: center;
+     margin: 0;
+     padding: 6px 10px;
+}
+ #listeo-cancel {
+     background: #d5d5d5;
+     color: #656565;
+}
+ input[type=checkbox], input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=radio], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+     border: 1px solid #ddd;
+     box-shadow: inset 0 1px 2px rgba(0,0,0,.07);
+     background-color: #fff;
+     color: #32373c;
+     outline: 0;
+     transition: 50ms border-color ease-in-out;
+     border-radius: 3px;
+     min-height: 38px;
+     padding: 0px 12px;
+     box-shadow: none;
+}
+ input[type=checkbox] {
+     margin: 10px 0;
+     height: 30px;
+     width: 30px;
+     text-align: center;
+     line-height: 30px;
+     top: 5px;
+     position: relative;
+     max-height: 30px;
+     display: inline-block;
+     min-height: 30px;
+     border-color: #c0c0c0;
+}
+
+input[type=checkbox]:focus {
+ box-shadow: none;
+}
+ input[type=checkbox]:checked:before {
+     top: 3px;
+     margin: 0;
+     line-height: 33px;
+     margin-right: 0;
+     right: -2px;
+     position: relative;
+     color: #1e8cbe;
+}
+ #listeo-show-names, .reset.button-secondary, .reset.button-secondary:focus, .wp-core-ui .button-primary.save-fields, .listeo-fafe-new-section.button-secondary:focus, .listeo-fafe-new-section.button-secondary {
+     background: #0485ba;
+     border: none;
+     color: #fff;
+     text-shadow: none;
+     box-shadow: none;
+     border-radius: 3px;
+     font-size: 14px;
+     transition: 0.3s;
+     display: inline-block;
+     padding: 0;
+     font-weight: 500;
+     width: auto;
+     height: auto;
+     line-height:24px;
+     text-align: center;
+     margin: 0;
+     padding: 6px 10px;
+}
+ .reset.button-secondary, .reset.button-secondary:focus, .wp-core-ui .button-primary.save-fields {
+     padding: 10px 15px;
+}
+ #listeo-show-names, .reset.button-secondary {
+     background: #ddd;
+     color: #777 
+}
+ #listeo-show-names:hover, .reset.button-secondary:hover {
+     background: #d0d0d0;
+     color: #777 
+}
+ #listeo-show-names {
+     margin-top: 10px;
+}
+ .listeo-fafe-new-section.button-secondary:focus, .listeo-fafe-new-section.button-secondary {
+     background: #0485ba;
+     border: none;
+     color: #fff;
+     margin-top: -10px;
+}
+ .listeo-fafe-new-section.button-secondary:before {
+     font-family: "dashicons";
+     content: "\f132";
+     margin: 0 4px 0 -2px;
+     top: 2px;
+     position: relative;
+}
+ .wp-core-ui .button-primary.save-fields:hover, .listeo-fafe-new-section.button-secondary:hover {
+     background: #0594ce;
+     color: #fff;
+}
+ .listeo-fafe-forms-editor-new-elements-container {
+     display: block;
+     width: 100%;
+}
+ .listeo-fafe-forms-editor-new-elements-container a.button:focus, .listeo-fafe-forms-editor-new-elements-container a.button {
+     border: none;
+     border-radius: 0;
+     box-shadow: none;
+     padding: 0;
+     margin: 0;
+     background: #eaeaea;
+     margin-bottom: 4px;
+     border-radius: 4px;
+     display: block;
+     padding: 8px 10px;
+     height: auto;
+     color: #666;
+     font-size: 13px;
+     font-weight: 400;
+     transition: 0.3s;
+}
+ .listeo-fafe-forms-editor-new-elements-container a.button:hover {
+     color: #fff;
+     background: #0485ba;
+}
+ .block-add-new {
+     width: 100%;
+     display: block;
+     float: left;
+}
+ .listeo-form-editor .edit-form-field textarea {
+     width: 70%;
+}
+ #listeo-field-search_radius small {
+     display: none;
+}
+ .edit-form-field div p.listeo-editor-width-field, .listeo-editor-css-field, .listeo-editor-placeholder-field {
+     display: none;
+}
+ .listeo-booking-fields-builder .edit-form-field div p.listeo-editor-width-field, .listeo-booking-fields-builder .listeo-editor-css-field, .listeo-booking-fields-builder .listeo-editor-placeholder-field {
+     display: flex;
+}
+
+ .form_item .remove_item{
+     color: #de1515;
+     padding-top:10px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     line-height: 22px;
+     background: #fff3f3 !important;
+}
+
+.listeo-form-options-section {
+    border: 1px solid #e0e0e0;
+    padding: 0 20px;
+    border-radius: 6px;
+    margin-top: 30px;
+}
+ .form_item .remove_item{
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     height: 46px;
+     line-height: 40px;
+     padding: 0px 10px;
+     color: #de1515;
+     padding-top: 14px;
+     font-size: 16px;
+     font-weight: 600;
+     cursor: pointer;
+     line-height: 22px;
+     background: #f8e1e1 !important;
+     width: 50px;
+     border-radius: 0 4px 4px 0;
+     text-align: center;
+}
+/* Searach Form Editor Styles */
+ .listeo-forms-builder {
+     background: #fff;
+     padding: 30px;
+     border-radius: 0 5px 5px 5px;
+     box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+     margin-top: 0;
+     width: calc(100% - 90px);
+}
+
+
+
+
+ .nav-tab-wrapper.form-builder {
+     border-bottom: 1px solid #c3c4c7;
+     margin: 0;
+     padding-top: 9px;
+     padding-bottom: 0;
+     line-height: inherit;
+     border: none;
+     margin-left: -5px;
+}
+ .nav-tab-wrapper.form-builder .nav-tab {
+}
+ .nav-tab-wrapper.form-builder .nav-tab{
+     border: none !important;
+     border-radius: 5px;
+     padding: 8px 15px;
+     transition: 0.3s;
+     background: transparent;
+     color: #aaa;
+     margin-left: 0;
+     outline: none !important;
+     white-space: normal;
+}
+ .nav-tab-wrapper.form-builder .nav-tab:focus, .nav-tab-wrapper.form-builder .nav-tab:active, .nav-tab-wrapper.form-builder .nav-tab:focus:active, .nav-tab-wrapper.form-builder .nav-tab:hover, .nav-tab-wrapper.form-builder .nav-tab:hover {
+    box-shadow: none;
+    border: none;
+    color: #fff;
+    background: rgb(0 0 0 / 23%);
+}
+ a.remove-row.button, a.remove-row.button:hover, a.remove-row.button:focus, a.remove-row.button:active {
+     background: #f5dcdc;
+     border: none;
+     color: #bc2727;
+     box-shadow: none;
+     outline: none;
+}
+ .nav-tab-wrapper.form-builder .nav-tab-active, .nav-tab-wrapper.form-builder .nav-tab-active:focus, .nav-tab-wrapper.form-builder .nav-tab-active:focus:active, .nav-tab-wrapper.form-builder .nav-tab-active:hover {
+    background: #ff003b;
+    box-shadow: 0 3px 10px #f9194269;
+    color: #fff;
+}
+ .listeo-forms-builder-left h3 {
+     margin-bottom: 0 !important;
+}
+ .form-editor-container {
+     margin-bottom: 40px;
+}
+ #listeo-show-names, .reset.button-secondary{
+     background: #f0f0f0;
+}
+ .metabox-holder.listeo-import-export {
+     display: flex;
+     flex-wrap: wrap;
+}
+ .metabox-holder.listeo-import-export .postbox {
+     display: flex;
+     flex-wrap: wrap;
+}
+ .metabox-holder.listeo-import-export .postbox {
+     background: #fff;
+     flex: 0 0 46%;
+     margin: 1%;
+     padding: 10px;
+     border-radius: 5px;
+     display: flex;
+     flex-direction: column;
+     /* justify-content: center; */
+}
+
+.postbox input#submit {
+ background: #2271b1;
+ color: #fff;
+ outline: none;
+ border-color: #2271b1;
+ border-radius: 4px;
+ padding: 2px 12px;
+}
+ .add-new-main-option.button-primary:hover {
+    color: #009b71;
+}
+ .add-new-main-option.button-primary, 
+ .add_new_item.button-primary.add-headline,
+ .add_new_item.button-primary.add-field {
+     background: #009b7124;
+     border: 0;
+     text-decoration: none;
+     text-shadow: none;
+     display: inline;
+     padding: 12px 18px !important;
+     font-weight: 500;
+     color: #009b71;
+     transition: background 0.2s;
+     margin-top: -20px;
+     outline: none;
+     box-shadow: none !important;
+}
+.add_new_item.button-primary.add-headline {
+    background-color: #e3e3e3;
+    color: #50575e;
+}
+ .add-new-main-option.button-primary {
+     padding: 8px 12px;
+}
+ .add-new-main-option.button-primary:hover, .add_new_item.button-primary.add-field:hover {
+     background: #009b7144;
+}
+ .listeo-admin-notice, .updated.listeo-admin-notice {
+     border: none;
+     margin: 0;
+     padding: 10px 15px;
+     border-radius: 4px;
+     box-shadow: none;
+     box-sizing: border-box;
+     width: calc(100% - 30px);
+     margin-bottom: 10px;
+     background: #cfe5f9;
+     color: #2271b1;
+    display: block;
+}
+ .listeo-admin-notice {
+     padding: 15px 18px;
+     margin-bottom: 20px;
+}
+ .listeo-editor-modal input[type="text"] {
+     border-color: #ccc;
+     /* transition: 0.3s; */
+}
+ .listeo-editor-modal select {
+     max-width: 100%;
+     border-color: #ccc;
+     padding: 3px 10px;
+}
+
+.listeo-editor-modal select:focus{ box-shadow: none; }
+ .listeo-editor-modal-header a.listeo-modal-close span {
+     transition: none;
+}
+
+ .add-listing-form-builder {
+     background:transparent;
+     padding: 0px;
+     box-shadow: 0px 0px 0px #fff;
+}
+#add-new-listeo-term-fields,
+ #add-new-listeo-search-form {
+     cursor: pointer;
+}
+
+.add-listing-form-builder #mainform {
+    background: #fff;
+    border-radius: 0 5px 5px 0;
+    padding: 0 25px;
+    padding-bottom: 10px;
+    position: relative;
+    flex: 1;
+}
+input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
+ box-shadow: none;
+ border-color: #5592c4;
+}
+#add-new-listeo-term-fields,
+#add-new-listeo-search-form {
+ background: #00a11f38 !important;
+ color: #60cc78 !important;
+ margin-top: 15px;
+ border-radius: 5px !important;
+ text-align: left;
+}
+button#add-new-listeo-term-fields{
+    height: 40px;
+}
+
+
+#add-new-listeo-search-form:hover {
+ background: #00a11f48;
+}
+
+.listeo-import-export .postbox h3 {
+    font-size: 17px;
+    margin-bottom: -20px;
+}
+
+.listeo-import-export .postbox p:last-child {
+    margin-bottom: -10px;
+}
+
+
+ .listeo-editor-form-header {
+
+}
+
+ .listeo-forms-builder .listeo-editor-form-header {
+    background: #f4f4f4;
+    padding: 0 30px;
+    margin: 0;
+    height: 80px;
+    line-height: 80px;
+    font-size: 19px;
+    font-weight: 500;
+    border-radius: 0 5px 0 0;
+    position: sticky;
+    top: 30px;
+  margin-left: -27px;
+  margin-top: -30px;
+  width: calc(100% + 50px);
+    z-index: 10;
+  margin-bottom: 20px;
+ background: #fff;
+ border-bottom: 1px solid #e0e0e0;
+ }
+
+ .add-listing-form-builder .listeo-editor-form-header {
+    background: #f4f4f4;
+    padding: 0 30px;
+    margin: 0;
+    height: 80px;
+    line-height: 80px;
+    font-size: 19px;
+    font-weight: 500;
+    border-radius: 0 5px 0 0;
+    position: sticky;
+    top: 30px;
+    z-index: 10;
+ width: calc(100% + 50px);
+ margin-left: -25px;
+ padding: 0 40px;
+ background: #fff;
+ border-bottom: 1px solid #e0e0e0;
+ }
+
+ .notice, div.error, div.updated { margin-left: 0; }
+
+.listeo-editor-form-header input.button-primary:focus,
+.listeo-editor-form-header input.button-primary {
+ position: absolute;
+ right: 30px;
+ top: 50%;
+ transform: translateY(-50%);
+    background: #0485ba;
+    color: #fff;
+ transition: 0.3s;
+ box-shadow: none;
+ border-radius: 5px !important;
+}
+
+.icons-selector .selected-icon i {
+    position: relative;
+    top: -3px;
+}
+
+#package-add-form .form-table td,
+#package-add-form .form-table th { padding: 8px; }
+
+#listeo-show-names {display: none;}
+.field-options-custom td {border: none !important; padding:10px 10px;}
+
+
+.field-desc,
+.field-id { display: none !important; }
+
+
+.search-filter-container {
+    margin-bottom: 15px;
+    padding: 0 5px;
+}
+
+#modal-element-search,
+.element-search-input {
+    width: 100%;
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        margin: 0px 5px 5px 0px;
+}
+
+.element-search-input::placeholder {
+    color: #aaa;
+}
+
+.form_item.hidden {
+    display: none;
+}
+.listeo-editor-wrap h2.nav-tab-wrapper span {
+    line-height: 19px;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: none;
+    border-radius: 5px;
+    margin: 10px 0 5px 0;
+    padding: 9px 15px;
+    color: #fff;
+    background: #ffffff0d;
+}
+
+
+/*fsdf*/
+ .form-editor-container {
+     padding-top: 20px;
+}
+
+.listeo-form-steps-editor {
+    overflow: hidden;
+}
+
+ .listeo-fafe-section {
+     background: #fff;
+     border-left: 4px solid #fff;
+     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+     margin: 0;
+     padding: 1px 0;
+}
+#listeo-form-steps-editor {
+    padding: 5px;
+}
+#listeo-form-steps-editor h3,
+ .listeo-fafe-section h3 {
+     margin: 5px;
+     padding: 20px 0 10px 0;
+     position: relative;
+}
+
+.listeo-modal-form .editor-block-form-fields {
+    display: block;
+}
+
+.step-selectors.checkbox-group label {
+    display: block;
+    margin-bottom: 0;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin: 6px 0;
+}
+.step-selectors.checkbox-group label input {
+    margin: 0;
+    height: 20px;
+    max-height: 20px;
+    width: 20px;
+    min-height: 20px;
+    line-height: 20px;
+    top: 0;
+    top: 0;
+    position: absolute;
+    left: 0;
+}
+/* .editor-block-form-fields { height: 330px;} */
+ .step-selectors.checkbox-group label input[type=checkbox]:checked:before {
+    top: 0;
+    margin: 0;
+    line-height: 20px;
+    margin-right: 0;
+    right: 2px;
+    position: relative;
+    color: #1e8cbe;
+}
+
+.editor-block-form-fields {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.editor-block-form-fields.active-block {
+    max-height: 300px; /* adjust based on your content height */
+    opacity: 1;
+}
+
+#listeo-form-steps-editor {
+ margin: 35px 0 0 0;
+ border: 2px solid #e0e0e0;
+ border-radius: 5px;
+ padding: 10px 30px;
+ padding-left: 25px;
+}
+
+.form-steps-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-steps-header h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.form-steps-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+    background-color: #0485ba;
+}
+
+.toggle-switch input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.no-steps-message {
+    background: #eaf0ff;
+    border: none;
+    border-radius: 5px;
+    margin: 15px 0;
+    color: #4e6db2 !important;
+}
+
+#listeo-form-steps-editor .buttons-wrapper {
+    border: none;
+    padding: 0;
+    padding-bottom: 25px;
+    margin: 0;
+}
+
+#add-step {
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: 0.3s;
+    display: inline-block;
+    padding: 0;
+    font-weight: 500;
+    width: auto;
+    height: auto;
+    line-height: 24px;
+    text-align: center;
+    margin: 0;
+    padding: 6px 10px;
+    color: #009b71;
+    background: #009b7128;
+    margin: 5px;
+}
+
+.step-selectors.checkbox-group {
+    border-radius: 5px;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #c2c2c2;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    max-height: 150px;
+}
+
+.form-step-blocks .editor-block:hover,
+.form-step-blocks .editor-block {
+    background: #f4f4f4;
+}
+
+#listeo-form-steps-editor h3 {
+    margin-top: -5px;
+}
+
+.editor-block-form-fields td input { width: 99%;}
+#listeo-form-steps-editor .editor-block-form-fields tr {
+        display: flex;
+        flex-direction: column;
+    }
+#listeo-form-steps-editor .editor-block-form-fields td,
+#listeo-form-steps-editor .editor-block-form-fields th {
+        margin: 0;padding: 0;
+        margin-top: 4px;
+    }
+
+
+#listeo-form-steps-editor .editor-block-form-fields {
+    width: 100%;
+}
+
+#listeo-form-steps-editor .editor-block-form-fields .form-table{
+    margin-bottom: 10px;
+}
+input[data-locked-group]+label {
+    font-weight: bold;
+    color: #666;
+}
+/* MicroModal Base Styling */
+.modal {
+    display: none;
+}
+
+.modal.is-open {
+    display: block;
+}
+
+.modal__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    /* Ensure it's above WP admin */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal__container {
+    background-color: #fff;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 100000;
+}
+
+/* Header */
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.modal__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* Form Fields */
+.modal__content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+
+
+.modal__content input,
+.modal__content select {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.modal__content button {
+    margin-top: 1.5rem;
+}
+
+.modal__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__title {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.modal__close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.modal__content input.button.button-primary {
+    width: auto;
+    margin-top: 20px;
+}
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes mmfadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes mmslideIn {
+    from {
+        transform: translateY(15%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mmslideOut {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10%);
+    }
+}
+.micromodal-slide {
+    display: none;
+}
+
+.micromodal-slide.is-open {
+    display: block;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+    animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+    animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+    animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+    animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+    will-change: transform;
+}
+
+.micromodal-slide .modal__container  .spinner{
+    margin: 25px 30px 0
+}
+
+
+.tooltip-icon {
+    cursor: help;
+    position: relative;
+    margin-left: 6px;
+    font-style: normal;
+    font-weight: bold;
+    float: right;
+   
+}
+
+.tooltip-icon::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    /* Above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    white-space: nowrap;
+    padding: 6px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 9999;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen-Sans,
+        Ubuntu,
+        Cantarell,
+        "Helvetica Neue",
+        sans-serif;
+}
+
+.tooltip-icon:hover::after {
+    opacity: 1;
+}
+
+/* Style value fields to look disabled but remain functional */
+input[name*='[name]'].auto-generated-style {
+    background-color: #f8f8f8;
+    color: #888;
+    border-color: #ddd;
+    cursor: text;
+    /* Keep normal cursor for advanced users */
+}
+
+/* Subtle hover effect to hint that it's editable for advanced users */
+input[name*='[name]'].auto-generated-style:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+/* When focused, make it look more like a normal input */
+input[name*='[name]'].value-field-focused {
+    background-color: #fff !important;
+    color: #333 !important;
+    border-color: #007cba !important;
+}
+
+/* When manually edited, make it look like a normal input */
+input[name*='[name]'].manually-edited {
+    background-color: #fff !important;
+    color: #333 !important;
+    border-color: #ddd;
+}
+
+input[name*='[name]'].manually-edited:focus {
+    border-color: #007cba;
+}
+
+/* Optional: Add a small indicator */
+.field-options-custom thead td:first-child {
+    position: relative;
+}
+
+.field-addtosearch.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.listeo-editor-type-form  table tr {cursor: default;}
+.listeo-form-editor textarea { padding: 20px;}
+
+
+.icons-selector .selector-button {
+    
+ max-width: 37px;}
+
+ body .icons-selector .fip-box {
+
+    width: 68px;
+ }
+
+/* ============================================================================
+   Reviews Criteria - Add Criteria Button & Modal
+   ============================================================================ */
+
+/* Add Criteria Button Styling */
+#add-new-reviews-criteria {
+background: #00a11f38 !important;
+    color: #60cc78 !important;
+    margin-top: 15px;
+     margin-top: 15px;
+    border-radius: 5px !important;
+    text-align: left;
+}
+
+#add-new-reviews-criteria:hover {
+    background: #08b !important;
+}
+
+/* Modal field groups */
+#listeo-add-criteria-modal .form-field {
+    margin-bottom: 20px;
+}
+
+#listeo-add-criteria-modal .form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+#listeo-add-criteria-modal .form-field select {
+    width: 100%;
+    padding: 8px;
+}
+
+/* Hierarchy info box in modal */
+.listeo-criteria-hierarchy-info ol li {
+    margin-bottom: 8px;
+}
+
+.listeo-criteria-hierarchy-info ol li strong {
+    color: #333;
+}
+
+/* Subtle hierarchy notice in content area */
+.listeo-criteria-hierarchy-notice {
+    border-radius: 4px;
+}
+
+.listeo-criteria-hierarchy-notice p {
+    line-height: 1.5;
+}
+
+

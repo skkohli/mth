@@ -1,0 +1,185 @@
+/* Taxonomy Responsive Slider Styles - Slick Style Navigation */
+
+/* Hide only navigation on desktop (992px and above), keep categories visible */
+@media (min-width: 992px) {
+  .taxonomy-slider-controls-container { display: none;}
+}
+
+/* Show slider functionality on mobile (below 992px) */
+@media (max-width: 991px) {
+    .taxonomy-responsive-slider .category-small-box, 
+    .taxonomy-responsive-slider .category-small-box-alt {
+        margin: 0;
+    }
+    
+    /* Wrapper to contain everything */
+    .taxonomy-slider-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+    }
+
+    /* Transform the categories container into a slider */
+    .taxonomy-responsive-slider {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        transition: transform 0.3s ease;
+        gap: 20px;
+        padding: 10px 0 0 0;
+        position: relative;
+        width: max-content !important;
+        left: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* Preserve existing item styles but make them not shrink and use responsive width for slider */
+    .taxonomy-responsive-slider .category-small-box,
+    .taxonomy-responsive-slider .category-small-box-alt {
+        flex-shrink: 0;
+        width: calc(100vw / 3 - 20px) !important; /* Default: 3 items per screen */
+    }
+
+    /* Smaller screens: 2 items per screen */
+    @media (max-width: 480px) {
+        .taxonomy-responsive-slider .category-small-box,
+        .taxonomy-responsive-slider .category-small-box-alt {
+            width: calc(100vw / 2 - 20px) !important; /* 2 items per screen */
+        }
+    }
+
+    /* Slider Controls Container - Slick Style */
+    .taxonomy-slider-controls-container {
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+        bottom: 0;
+        z-index: 10;
+    }
+    
+    .taxonomy-slider-controls {
+        position: relative;
+        display: inline-flex;
+        background: rgba(0, 0, 0, 0.03);
+        padding: 7px 3px;
+        border-radius: 50px;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+
+    .taxonomy-slide-dots { display: none !important;}
+    
+    /* Arrow buttons - Slick Style */
+    .taxonomy-slider-controls button.taxonomy-slide-next,
+    .taxonomy-slider-controls button.taxonomy-slide-prev {
+        display: inline-block;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        height: 14px;
+        width: 30px;
+background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8.268' height='14' viewBox='0 0 8.268 14'><path d='M109.521,6.454,103.259.224a.774.774,0,0,0-1.089,0l-.461.459a.764.764,0,0,0,0,1.083L106.968,7,101.7,12.235a.765.765,0,0,0,0,1.083l.461.459a.774.774,0,0,0,1.089,0l6.268-6.236a.77.77,0,0,0,0-1.087Z' transform='translate(-101.478)' fill='%23999'/></svg>");
+        background-repeat: no-repeat;
+        background-size: auto 100%;
+        background-position: 50%;
+        cursor: pointer;
+        opacity: 1;
+        transition: opacity 0.3s;
+    }
+    
+        .taxonomy-slider-controls button.taxonomy-slide-prev {
+        transform: rotate(180deg);
+        background-position: 50% 56%;
+    }
+    
+    .taxonomy-slider-controls button.taxonomy-slide-next:hover,
+    .taxonomy-slider-controls button.taxonomy-slide-prev:hover {
+        opacity: 0.7;
+    }
+    
+    .taxonomy-slider-controls button.taxonomy-slide-next.slick-disabled,
+    .taxonomy-slider-controls button.taxonomy-slide-prev.slick-disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+    }
+    
+    /* Dots Container */
+    .slide-m-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+    }
+    
+    /* Slick Dots - Match Theme Style */
+    /* Dots container - Slick Style */
+    .taxonomy-dots {
+        display: inline-flex;
+        margin: 0 7px;
+        padding: 0;
+        list-style: none;
+        gap: 6px;
+        align-items: center;
+    }
+    
+    .taxonomy-dots li {
+        margin: 0;
+        list-style: none;
+    }
+    
+    .taxonomy-dots li button {
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.25);
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+        transition: background-color 0.15s ease;
+    }
+    
+    .taxonomy-dots li.active button,
+    .taxonomy-dots li button:hover {
+        background: rgba(0, 0, 0, 0.75);
+    }    /* Hide navigation when disabled */
+    .taxonomy-slider-controls button.taxonomy-slide-prev.hidden,
+    .taxonomy-slider-controls button.taxonomy-slide-next.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Dark mode support */
+#dark-mode .taxonomy-slider-controls {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#dark-mode .taxonomy-slider-controls button.taxonomy-slide-next,
+#dark-mode .taxonomy-slider-controls button.taxonomy-slide-prev {
+background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='8.268' height='14' viewBox='0 0 8.268 14'><path d='M109.521,6.454,103.259.224a.774.774,0,0,0-1.089,0l-.461.459a.764.764,0,0,0,0,1.083L106.968,7,101.7,12.235a.765.765,0,0,0,0,1.083l.461.459a.774.774,0,0,0,1.089,0l6.268-6.236a.77.77,0,0,0,0-1.087Z' transform='translate(-101.478)' fill='%23999'/></svg>");
+}
+
+#dark-mode .taxonomy-slider-controls .taxonomy-dots li {
+    box-shadow: inset 0 0 0 2px #666;
+}
+
+#dark-mode .taxonomy-slider-controls .taxonomy-dots li.active {
+    box-shadow: inset 0 0 0 6px #666;
+}
+
+#dark-mode .taxonomy-slider-controls .taxonomy-dots li:after {
+    background-color: #666;
+}
+
+#dark-mode .taxonomy-slider-controls .taxonomy-dots li:hover {
+    box-shadow: inset 0 0 0 4px #666;
+}

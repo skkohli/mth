@@ -1,0 +1,1 @@
+(()=>{var s,i,t;s=jQuery,i=s(".dps-pack-wrappper"),t={init:function(){i.on("change","select#dokan-subscription-pack",this.show_details),this.show_details()},show_details:function(){let i=s("select#dokan-subscription-pack").val();s(".dps-pack").hide(),s(".dps-pack-"+i).show()}},s(document).ready(function(){i.length&&t.init()})})();

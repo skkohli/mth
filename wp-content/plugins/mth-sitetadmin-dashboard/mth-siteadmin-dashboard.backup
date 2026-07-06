@@ -1,0 +1,577 @@
+<?php
+/**
+ * Plugin Name: MTH Site Admin Dashboard
+ * Description: Adds a Site Admin role and a custom dashboard for property, user, subscription, analytics, and communication management.
+ * Version: 1.0.0
+ * Author: MTH
+ */
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+final class MTH_SiteAdmin_Dashboard {
+    const ROLE = 'siteadmin';
+    const CAP = 'mth_siteadmin_access';
+    const PAGE = 'mth-siteadmin';
+
+    public static function init() {
+        add_action('admin_menu', array(__CLASS__, 'register_menu'));
+        add_action('admin_head', array(__CLASS__, 'admin_styles'));
+
+        add_filter('login_redirect', array(__CLASS__, 'redirect_siteadmin_after_login'), 999, 3);
+        add_filter('woocommerce_login_redirect', array(__CLASS__, 'redirect_siteadmin_after_woocommerce_login'), 999, 2);
+        add_action('wp_ajax_nopriv_listeoajaxlogin', array(__CLASS__, 'handle_listeo_siteadmin_ajax_login'), 1);
+        add_filter('editable_roles', array(__CLASS__, 'hide_admin_role_from_siteadmin'));
+        add_filter('map_meta_cap', array(__CLASS__, 'protect_administrator_accounts'), 10, 4);
+        add_filter('user_has_cap', array(__CLASS__, 'allow_siteadmin_listeo_bookings'), 20, 4);
+    }
+
+    public static function activate() {
+        self::add_role_and_caps();
+    }
+
+    private static function dashboard_url() {
+        return admin_url('admin.php?page=' . self::PAGE);
+    }
+
+    private static function is_siteadmin_user($user) {
+        if (is_numeric($user)) {
+            $user = get_userdata((int) $user);
+        }
+
+        if (!$user instanceof WP_User) {
+            return false;
+        }
+
+        return in_array(self::ROLE, (array) $user->roles, true);
+    }
+
+    public static function redirect_siteadmin_after_login($redirect_to, $requested_redirect_to, $user) {
+        if (self::is_siteadmin_user($user)) {
+            return self::dashboard_url();
+        }
+
+        return $redirect_to;
+    }
+
+    public static function redirect_siteadmin_after_woocommerce_login($redirect_to, $user) {
+        if (self::is_siteadmin_user($user)) {
+            return self::dashboard_url();
+        }
+
+        return $redirect_to;
+    }
+
+    public static function handle_listeo_siteadmin_ajax_login() {
+        if (!isset($_POST['action']) || sanitize_key(wp_unslash($_POST['action'])) !== 'listeoajaxlogin') {
+            return;
+        }
+
+        if (!get_option('listeo_login_nonce_skip')) {
+            $nonce = isset($_POST['login_security']) ? sanitize_text_field(wp_unslash($_POST['login_security'])) : '';
+            if (!wp_verify_nonce($nonce, 'listeo-ajax-login-nonce')) {
+                return;
+            }
+        }
+
+        $username = isset($_POST['username']) ? sanitize_text_field(wp_unslash($_POST['username'])) : '';
+        $password = isset($_POST['password']) ? (string) wp_unslash($_POST['password']) : '';
+
+        if ($username === '' || $password === '') {
+            return;
+        }
+
+        $user = wp_authenticate($username, $password);
+
+        if (is_wp_error($user) || !self::is_siteadmin_user($user)) {
+            return;
+        }
+
+        $remember = !empty($_POST['rememberme']);
+
+        wp_clear_auth_cookie();
+        wp_set_current_user($user->ID);
+        wp_set_auth_cookie($user->ID, $remember);
+        do_action('wp_login', $user->user_login, $user);
+
+        wp_send_json(array(
+            'loggedin' => true,
+            'message'  => esc_html__('Login successful, redirecting...', 'mth-siteadmin'),
+            'redirect' => self::dashboard_url(),
+        ));
+    }
+
+    public static function allow_siteadmin_listeo_bookings($allcaps, $caps, $args, $user) {
+        if (empty($args[0]) || $args[0] !== 'manage_options') {
+            return $allcaps;
+        }
+
+        if (!self::is_siteadmin_user($user)) {
+            return $allcaps;
+        }
+
+        if (!self::is_listeo_bookings_context()) {
+            return $allcaps;
+        }
+
+        $allcaps['manage_options'] = true;
+
+        return $allcaps;
+    }
+
+    private static function is_listeo_bookings_context() {
+        if (!is_admin() && !wp_doing_ajax()) {
+            return false;
+        }
+
+        $page = isset($_GET['page']) ? sanitize_key(wp_unslash($_GET['page'])) : '';
+        if ($page === 'listeo_bookings_manage') {
+            return true;
+        }
+
+        $action = isset($_REQUEST['action']) ? sanitize_key(wp_unslash($_REQUEST['action'])) : '';
+        $allowed_actions = array(
+            'listeo_get_booking_details',
+            'listeo_update_booking_status',
+            'listeo_delete_booking',
+            'listeo_export_bookings_csv',
+        );
+
+        return wp_doing_ajax() && in_array($action, $allowed_actions, true);
+    }
+
+    private static function caps() {
+        $caps = array(
+            'read' => true,
+            self::CAP => true,
+
+            'upload_files' => true,
+            'edit_posts' => true,
+            'edit_others_posts' => true,
+            'edit_published_posts' => true,
+            'edit_private_posts' => true,
+            'publish_posts' => true,
+            'read_private_posts' => true,
+            'delete_posts' => true,
+            'delete_others_posts' => true,
+            'delete_published_posts' => true,
+            'delete_private_posts' => true,
+            'manage_categories' => true,
+
+            'list_users' => true,
+            'create_users' => true,
+            'edit_users' => true,
+            'promote_users' => true,
+            'delete_users' => true,
+
+            'manage_woocommerce' => true,
+            'view_woocommerce_reports' => true,
+        );
+
+        foreach (self::post_type_caps('listing', 'listings') as $cap) {
+            $caps[$cap] = true;
+        }
+
+        foreach (self::post_type_caps('product', 'products') as $cap) {
+            $caps[$cap] = true;
+        }
+
+        foreach (self::post_type_caps('shop_order', 'shop_orders') as $cap) {
+            $caps[$cap] = true;
+        }
+
+        foreach (self::post_type_caps('shop_subscription', 'shop_subscriptions') as $cap) {
+            $caps[$cap] = true;
+        }
+
+        return $caps;
+    }
+
+    private static function post_type_caps($singular, $plural) {
+        return array(
+            "edit_{$singular}",
+            "read_{$singular}",
+            "delete_{$singular}",
+            "edit_{$plural}",
+            "edit_others_{$plural}",
+            "edit_private_{$plural}",
+            "edit_published_{$plural}",
+            "publish_{$plural}",
+            "read_private_{$plural}",
+            "delete_{$plural}",
+            "delete_private_{$plural}",
+            "delete_published_{$plural}",
+            "delete_others_{$plural}",
+        );
+    }
+
+    private static function add_role_and_caps() {
+        if (!get_role(self::ROLE)) {
+            add_role(self::ROLE, 'Site Admin', self::caps());
+        }
+
+        $role = get_role(self::ROLE);
+        if ($role) {
+            foreach (self::caps() as $cap => $grant) {
+                if ($grant) {
+                    $role->add_cap($cap);
+                }
+            }
+        }
+
+        $admin = get_role('administrator');
+        if ($admin) {
+            $admin->add_cap(self::CAP);
+        }
+    }
+
+    public static function register_menu() {
+        add_menu_page(
+            'Site Admin Dashboard',
+            'Site Admin',
+            self::CAP,
+            self::PAGE,
+            array(__CLASS__, 'render_dashboard'),
+            'dashicons-chart-area',
+            3
+        );
+    }
+
+    public static function hide_admin_role_from_siteadmin($roles) {
+        if (current_user_can('manage_options') || !current_user_can(self::CAP)) {
+            return $roles;
+        }
+
+        unset($roles['administrator']);
+        return $roles;
+    }
+
+    public static function protect_administrator_accounts($caps, $cap, $user_id, $args) {
+        if (!in_array($cap, array('edit_user', 'delete_user', 'remove_user', 'promote_user'), true)) {
+            return $caps;
+        }
+
+        if (empty($args[0])) {
+            return $caps;
+        }
+
+        $actor = get_userdata($user_id);
+        $target = get_userdata((int) $args[0]);
+
+        if (!$actor || !$target) {
+            return $caps;
+        }
+
+        $actor_is_siteadmin = in_array(self::ROLE, (array) $actor->roles, true);
+        $target_is_admin = in_array('administrator', (array) $target->roles, true);
+
+        if ($actor_is_siteadmin && $target_is_admin && !user_can($user_id, 'manage_options')) {
+            return array('do_not_allow');
+        }
+
+        return $caps;
+    }
+
+    private static function count_posts_total($post_type) {
+        if (!post_type_exists($post_type)) {
+            return 0;
+        }
+
+        $counts = wp_count_posts($post_type);
+        $total = 0;
+
+        foreach (get_object_vars($counts) as $status => $count) {
+            if (!in_array($status, array('trash', 'auto-draft'), true)) {
+                $total += (int) $count;
+            }
+        }
+
+        return $total;
+    }
+
+    private static function count_posts_status($post_type, $status) {
+        if (!post_type_exists($post_type)) {
+            return 0;
+        }
+
+        $counts = wp_count_posts($post_type);
+        return isset($counts->{$status}) ? (int) $counts->{$status} : 0;
+    }
+
+    private static function bookings_count() {
+        global $wpdb;
+
+        $table = $wpdb->prefix . 'bookings_calendar';
+        $exists = $wpdb->get_var($wpdb->prepare('SHOW TABLES LIKE %s', $table));
+
+        if ($exists !== $table) {
+            return 'N/A';
+        }
+
+        $safe_table = str_replace('`', '``', $table);
+        return (int) $wpdb->get_var("SELECT COUNT(*) FROM `{$safe_table}`");
+    }
+
+    private static function subscriptions_count() {
+        if (!post_type_exists('shop_subscription')) {
+            return 'N/A';
+        }
+
+        return self::count_posts_total('shop_subscription');
+    }
+
+    private static function stat_card($icon, $label, $value, $note) {
+        if (is_numeric($value)) {
+            $value = number_format_i18n((int) $value);
+        }
+
+        echo '<div class="mth-sa-stat">';
+        echo '<span class="dashicons ' . esc_attr($icon) . '"></span>';
+        echo '<strong>' . esc_html($value) . '</strong>';
+        echo '<label>' . esc_html($label) . '</label>';
+        echo '<small>' . esc_html($note) . '</small>';
+        echo '</div>';
+    }
+
+    private static function button($icon, $label, $note, $url) {
+        echo '<a class="mth-sa-button" href="' . esc_url($url) . '">';
+        echo '<span class="dashicons ' . esc_attr($icon) . '"></span>';
+        echo '<span><strong>' . esc_html($label) . '</strong><small>' . esc_html($note) . '</small></span>';
+        echo '</a>';
+    }
+
+    private static function disabled_button($icon, $label, $note) {
+        echo '<span class="mth-sa-button is-disabled">';
+        echo '<span class="dashicons ' . esc_attr($icon) . '"></span>';
+        echo '<span><strong>' . esc_html($label) . '</strong><small>' . esc_html($note) . '</small></span>';
+        echo '</span>';
+    }
+
+    public static function render_dashboard() {
+        if (!current_user_can(self::CAP)) {
+            wp_die(esc_html__('You do not have permission to access this page.', 'mth-siteadmin'));
+        }
+
+        $users = count_users();
+        $total_users = isset($users['total_users']) ? (int) $users['total_users'] : 0;
+
+        $listing_url = admin_url('edit.php?post_type=listing');
+        $add_listing_url = admin_url('post-new.php?post_type=listing');
+        $pending_listing_url = admin_url('edit.php?post_type=listing&post_status=pending');
+        $subscription_url = post_type_exists('shop_subscription')
+            ? admin_url('edit.php?post_type=shop_subscription')
+            : admin_url('edit.php?post_type=product');
+
+        echo '<div class="wrap mth-sa-wrap">';
+        echo '<div class="mth-sa-hero">';
+        echo '<h1>Site Admin Dashboard</h1>';
+        echo '<p>Manage analytics, properties, owners, subscriptions, and communication from one place.</p>';
+        echo '</div>';
+
+        echo '<div class="mth-sa-stats">';
+        self::stat_card('dashicons-admin-users', 'Total Users', $total_users, 'All registered users');
+        self::stat_card('dashicons-admin-home', 'Listed Properties', self::count_posts_total('listing'), 'All listing statuses');
+        self::stat_card('dashicons-clock', 'Pending Approvals', self::count_posts_status('listing', 'pending'), 'Listings waiting for review');
+        self::stat_card('dashicons-calendar-alt', 'Bookings', self::bookings_count(), 'From Listeo bookings table');
+        self::stat_card('dashicons-update', 'Subscriptions', self::subscriptions_count(), 'WooCommerce Subscriptions if active');
+        echo '</div>';
+
+        echo '<div class="mth-sa-section">';
+        echo '<h2><span class="dashicons dashicons-chart-area"></span> Dashboard & Analytics</h2>';
+        echo '<div class="mth-sa-grid">';
+        self::button('dashicons-admin-users', 'Total Users', 'View and manage all users', admin_url('users.php'));
+        self::button('dashicons-admin-home', 'Listed Properties', 'View all property listings', $listing_url);
+        self::button('dashicons-clock', 'Pending Approvals', 'Approve or reject pending listings', $pending_listing_url);
+        self::button('dashicons-calendar-alt', 'Bookings', 'View property bookings', admin_url('admin.php?page=listeo_bookings_manage'));
+        self::button('dashicons-chart-bar', 'Reports & Charts', 'Open WooCommerce analytics', admin_url('admin.php?page=wc-admin&path=/analytics/overview'));
+        self::button('dashicons-update', 'Subscription Status', 'View active subscriptions', $subscription_url);
+        echo '</div></div>';
+
+        echo '<div class="mth-sa-section">';
+        echo '<h2><span class="dashicons dashicons-admin-home"></span> Property & Listing Management</h2>';
+        echo '<div class="mth-sa-grid">';
+        self::button('dashicons-plus-alt2', 'Add Listing', 'Create a new PG or hall listing', $add_listing_url);
+        self::button('dashicons-yes-alt', 'Approve Listings', 'Review pending properties', $pending_listing_url);
+        self::button('dashicons-edit', 'Edit Listings', 'Update property details', $listing_url);
+        self::button('dashicons-trash', 'Remove Listings', 'Move unwanted listings to trash', $listing_url);
+        self::button('dashicons-format-image', 'Photos & Images', 'Manage uploaded media', admin_url('upload.php'));
+        self::button('dashicons-calendar', 'Availability Dates', 'Manage booking availability', admin_url('admin.php?page=listeo_bookings_manage'));
+        echo '</div></div>';
+
+        echo '<div class="mth-sa-section">';
+        echo '<h2><span class="dashicons dashicons-groups"></span> User & Owner Management</h2>';
+        echo '<div class="mth-sa-grid">';
+        self::button('dashicons-groups', 'All Users', 'View users and owners', admin_url('users.php'));
+        self::button('dashicons-businessperson', 'Property Owners', 'View vendor / owner accounts', admin_url('users.php?role=seller'));
+        self::button('dashicons-yes', 'Approve Owners', 'Review owner registrations', admin_url('users.php?role=seller'));
+        self::button('dashicons-hidden', 'Block Owners', 'Change owner status or role', admin_url('users.php?role=seller'));
+        self::button('dashicons-no-alt', 'Remove Owners', 'Delete or downgrade owner users', admin_url('users.php?role=seller'));
+        echo '</div></div>';
+
+        echo '<div class="mth-sa-section">';
+        echo '<h2><span class="dashicons dashicons-money-alt"></span> Subscription Management</h2>';
+        echo '<div class="mth-sa-grid">';
+        self::button('dashicons-plus', 'Create Plan', 'Create subscription product / plan', admin_url('post-new.php?post_type=product'));
+        self::button('dashicons-edit-page', 'Manage Plans', 'Modify existing subscription plans', admin_url('edit.php?post_type=product'));
+        self::button('dashicons-update', 'Track Subscriptions', 'View subscription records', $subscription_url);
+        self::button('dashicons-cart', 'Orders', 'View subscription payments and orders', admin_url('edit.php?post_type=shop_order'));
+        echo '</div></div>';
+
+        echo '<div class="mth-sa-section">';
+        echo '<h2><span class="dashicons dashicons-email-alt2"></span> Communication Management</h2>';
+        echo '<div class="mth-sa-grid">';
+        self::button('dashicons-admin-users', 'Users & Owners', 'Open users involved in communication', admin_url('users.php'));
+        self::button('dashicons-admin-home', 'Related Listings', 'Open listings connected to enquiries', $listing_url);
+        self::button('dashicons-calendar-alt', 'Booking Contacts', 'Review booking-related contacts', admin_url('admin.php?page=listeo_bookings_manage'));
+        self::disabled_button('dashicons-email', 'Contact Tracking Log', 'Needs a custom contact/event logging table');
+        echo '</div></div>';
+
+        echo '</div>';
+    }
+
+    public static function admin_styles() {
+        if (!isset($_GET['page']) || sanitize_key(wp_unslash($_GET['page'])) !== self::PAGE) {
+            return;
+        }
+        ?>
+        <style>
+            .mth-sa-wrap { max-width: 1280px; }
+
+            .mth-sa-hero {
+                margin: 20px 0;
+                padding: 24px;
+                background: #fff;
+                border: 1px solid #dcdcde;
+                border-radius: 8px;
+            }
+
+            .mth-sa-hero h1 {
+                margin: 0 0 8px;
+                font-size: 28px;
+                line-height: 1.2;
+            }
+
+            .mth-sa-hero p {
+                margin: 0;
+                color: #50575e;
+                font-size: 15px;
+            }
+
+            .mth-sa-stats,
+            .mth-sa-grid {
+                display: grid;
+                gap: 14px;
+            }
+
+            .mth-sa-stats {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                margin: 18px 0;
+            }
+
+            .mth-sa-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .mth-sa-stat,
+            .mth-sa-section {
+                background: #fff;
+                border: 1px solid #dcdcde;
+                border-radius: 8px;
+            }
+
+            .mth-sa-stat {
+                padding: 18px;
+                min-height: 120px;
+            }
+
+            .mth-sa-section {
+                margin-top: 18px;
+                padding: 20px;
+            }
+
+            .mth-sa-section h2 {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin: 0 0 16px;
+                font-size: 20px;
+            }
+
+            .mth-sa-stat .dashicons {
+                color: #2271b1;
+                font-size: 28px;
+                width: 28px;
+                height: 28px;
+                margin-bottom: 12px;
+            }
+
+            .mth-sa-stat strong {
+                display: block;
+                font-size: 26px;
+                line-height: 1.1;
+                margin-bottom: 6px;
+            }
+
+            .mth-sa-stat label {
+                display: block;
+                font-weight: 700;
+                margin-bottom: 4px;
+            }
+
+            .mth-sa-stat small {
+                color: #646970;
+            }
+
+            .mth-sa-button {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                min-height: 82px;
+                padding: 16px;
+                background: #f6f7f7;
+                border: 1px solid #dcdcde;
+                border-radius: 8px;
+                text-decoration: none;
+                color: #1d2327;
+                transition: border-color .15s ease, background .15s ease, transform .15s ease;
+            }
+
+            .mth-sa-button:hover {
+                background: #fff;
+                border-color: #2271b1;
+                color: #1d2327;
+                transform: translateY(-1px);
+            }
+
+            .mth-sa-button .dashicons {
+                flex: 0 0 auto;
+                color: #2271b1;
+                font-size: 30px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .mth-sa-button strong {
+                display: block;
+                font-size: 15px;
+                margin-bottom: 4px;
+            }
+
+            .mth-sa-button small {
+                display: block;
+                color: #646970;
+                line-height: 1.35;
+            }
+
+            .mth-sa-button.is-disabled {
+                opacity: .65;
+                cursor: not-allowed;
+            }
+        </style>
+        <?php
+    }
+}
+
+register_activation_hook(__FILE__, array('MTH_SiteAdmin_Dashboard', 'activate'));
+MTH_SiteAdmin_Dashboard::init();

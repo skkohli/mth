@@ -1,0 +1,603 @@
+/* Listeo Content Carousel Styles */
+
+:root {
+  --carousel-success: #11998e;
+  --carousel-primary: rgba(34, 34, 34, 0.8); /* Default neutral dark with transparency */
+  --carousel-secondary: rgba(34, 34, 34, 0.6); /* Slightly more transparent for gradient effect */
+  --carousel-text: #2b2b2b;
+  --carousel-text-light: #666666;
+  --carousel-background: #ffffff;
+  --carousel-border: #d9d9d9;
+  --carousel-radius: 12px;
+  --carousel-spacing: 24px;
+  --carousel-card-width: 280px; /* Default card width */
+}
+
+#dark-mode .listeo-carousel-widget {
+  --carousel-primary: rgba(255, 255, 255, 0.1); /* Light transparent for dark mode */
+  --carousel-secondary: rgba(255, 255, 255, 0.05); /* Even more subtle for dark mode */
+  --carousel-text: #f7fafc;
+  --carousel-text-light: #b7b7b7;
+  --carousel-background: #424242;
+  --carousel-border: #303030;
+  --carousel-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+.listeo-carousel-widget {
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+/* Navigation Tabs */
+.carousel-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.carousel-tab {
+  padding: 7px 0;
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  border-radius: 0px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  font-size: 14px;
+  box-shadow: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  /* display: flex; */
+  /* gap: 10px; */
+}
+
+.carousel-tab:hover,
+.carousel-tab.active {
+  border-bottom: 2px solid;
+  color: var(--listeo-primary-color);
+  /* transform: translateY(-2px); */
+  /* box-shadow: var(--carousel-shadow); */
+}
+
+
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: var(--carousel-radius);
+}
+
+.carousel-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.carousel-wrapper:active {
+  cursor: grabbing;
+}
+
+.carousel-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: var(--carousel-spacing);
+  padding: 20px 30px 20px 0;
+  width: max-content;
+  min-height: 200px;
+}
+
+/* Card Base Styles */
+.carousel-card,
+.card-wide {
+  flex-shrink: 0;
+  border-radius: var(--carousel-radius);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-card {
+  width: var(--carousel-card-width);
+  /* height: 200px; */
+}
+
+.carousel-card:hover,
+.card-wide:hover {
+  transform: translateY(-4px);
+}
+
+/* Text Card Styles */
+.card-text {
+  background: var(--card-custom-bg, var(--carousel-background));
+  border: 1px solid var(--carousel-border);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 1600px) {
+    .card-text { padding: 45px; }
+}
+
+.card-text .card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--card-custom-title-color, var(--carousel-text));
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.card-text .card-description {
+  font-size: 16px;
+  color: var(--card-custom-text-color, var(--carousel-text-light));
+  line-height: 27px;
+  margin-bottom: 16px;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Wide Card Styles */
+.card-wide {
+  width: calc(var(--carousel-card-width) * 2);
+}
+
+/* Wide card text adjustments */
+.card-text .card-title {
+  font-size: 24px; /* Larger title for wide cards */
+}
+
+
+.card-text .card-cta {
+    color: var(--card-button-color, #fff);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    transition: border-color 0.2s ease;
+    align-self: flex-start;
+    background: var(--card-button-bg, var(--listeo-primary-color));
+    padding: 12px 17px;
+    border-radius: 70px;    transition: 0.3s;
+    line-height: 20px;
+}
+
+.card-text .card-cta:hover {
+  border-bottom-color: var(--carousel-primary);
+  color: var(--card-button-hover-color, #fff);
+  background: var(--card-button-hover-bg, var(--listeo-primary-color));
+}
+
+/* CTA Inverted Colors */
+.card-cta:hover,
+.card-text .card-cta.cta-inverted-colors {
+    color: var(--card-button-color, var(--listeo-primary-color));
+    background: var(--card-button-bg, var(--listeo-primary-color-light));
+    transition: 0.3s;
+}
+.card-cta.cta-inverted-colors:hover {
+    color: var(--card-button-hover-color, #fff);
+    background: var(--card-button-hover-bg, var(--listeo-primary-color));
+}
+
+
+/* Image Card Styles */
+.card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image .card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.card-image .media-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.card-image .card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 35px;
+}
+
+.card-image .card-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0px 0 7px 0;
+  color: white;
+  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7); */
+  z-index: 2;
+  position: relative;
+}
+
+.card-image .card-description {
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  /* text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7); */
+  margin: 0;
+  line-height: 26px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Taxonomy Card Styles */
+.card-taxonomy {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-taxonomy .card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  background: linear-gradient(135deg, var(--carousel-primary), var(--carousel-secondary));
+  padding: 24px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-taxonomy .taxonomy-icon {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-taxonomy .taxonomy-icon i {
+  font-size: 40px;
+  opacity: 0.9;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom icon styles for override icons */
+.card-taxonomy .taxonomy-icon .custom-icon {
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+}
+
+.card-taxonomy .taxonomy-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* SVG icons rendered by Listeo */
+.card-taxonomy .taxonomy-icon svg path,
+.card-taxonomy .taxonomy-icon svg circle,
+.card-taxonomy .taxonomy-icon svg rect,
+.card-taxonomy .taxonomy-icon svg polygon {
+  fill: white !important;
+}
+
+.card-taxonomy .taxonomy-icon .taxonomy-svg-icon {
+  width: 40px;
+  height: 40px;
+  max-width: 40px;
+  max-height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.card-taxonomy .card-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 10px 0;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.carousel-card:first-child { margin-left: 25px; }
+@media (max-width: 768px) {
+.carousel-card:first-child { margin-left: 0px; }
+}
+
+.card-taxonomy .taxonomy-count {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  color: white;
+  z-index: 2;
+  position: relative;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 12px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  line-height: 20px;
+}
+
+.card-taxonomy .taxonomy-description {
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.9;
+  margin: 0;
+  line-height: 1.4;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  position: relative;
+  margin-top: 10px;
+}
+
+/* Taxonomy card link styles */
+.card-taxonomy .taxonomy-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.card-taxonomy .taxonomy-link:hover {
+  text-decoration: none;
+  color: inherit;
+  transform: translateY(-2px);
+}
+
+.card-taxonomy .taxonomy-link:hover .card-content {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-taxonomy .taxonomy-link:hover .taxonomy-icon i {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.card-taxonomy .taxonomy-link:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Testimonial Card Styles */
+.card-testimonial {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-testimonial .card-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  padding: 35px;
+  position: relative;
+  background: linear-gradient(135deg, var(--carousel-secondary), var(--carousel-primary));
+}
+
+.card-testimonial .carousel-testimonial-quote {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  opacity: 1;
+}
+
+.card-testimonial .carousel-testimonial-author {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.card-testimonial .carousel-testimonial-title {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: -4px;
+}
+
+/* Navigation Arrows */
+.carousel-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 0;
+}
+
+.nav-arrow {
+  width: 48px;
+  height: 48px;
+  border: none;
+  background: #00000017;
+  border-radius: 50%;
+  color: #222;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  outline: none;
+}
+
+.nav-arrow i {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.nav-arrow:hover:not([disabled]) {
+  background: var(--listeo-primary-color);
+  color: #fff;
+}
+
+.nav-arrow:focus {
+
+}
+
+.nav-arrow:active {
+  transform: translateY(0);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.nav-arrow:disabled:hover {
+  border-color: var(--carousel-border);
+  color: var(--carousel-text-light);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .listeo-carousel-widget { margin: 0; padding: 10px;}
+  .carousel-card {
+    width: calc(100vw - 35px) !important;
+  }
+  
+  .card-wide {
+    width: calc(100vw - 35px) !important;
+  }
+
+  .listeo-carousel-widget {
+    padding: 16px;
+    --carousel-card-width: 240px; /* Smaller default for tablets */
+  }
+
+  .carousel-tabs {
+    gap: 6px;
+  }
+
+  .card-text .card-description {
+    display: -webkit-box;
+    -webkit-line-clamp: initial;
+    line-clamp: initial;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    zoom: 0.9;
+    }
+
+  .carousel-tab {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  .carousel-track {
+    gap: 16px;
+    padding: 4px 30px 4px 0;
+  }
+
+  .card-testimonial .card-content,
+  .card-icon .card-content,
+  .card-image .card-content,
+  .card-taxonomy .card-content {
+    padding: 20px;
+  }
+
+.carousel-tab {
+  color: #333;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 5px 12px;
+  border-radius: 100px;
+  line-height: 21px;
+  border-bottom: none;
+  zoom: 0.9
+}
+
+.carousel-tab:hover,
+.carousel-tab.active {
+  border-bottom: none;
+  background: var(--listeo-primary-color-light);
+  color: var(--listeo-primary-color);
+}
+
+}
+
+@media (max-width: 480px) {
+
+
+  .carousel-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .carousel-tab {
+    flex-shrink: 0;
+  }
+}
+
+/* Smooth Scrolling Enhancement */
+@media (prefers-reduced-motion: no-preference) {
+  .carousel-wrapper {
+    scroll-behavior: smooth;
+  }
+  
+  .carousel-card {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+/* Loading States */
+.carousel-card.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+#dark-mode .carousel-card.loading {
+  background: linear-gradient(90deg, #4a5568 25%, #2d3748 50%, #4a5568 75%);
+  background-size: 200% 100%;
+}

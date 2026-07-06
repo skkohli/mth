@@ -1,0 +1,82 @@
+{
+	"version": 1,
+	"updated_at": "2026-05-29T00:00:00Z",
+	"global_banner": {
+		"active": false,
+		"message": "",
+		"cta_text": "",
+		"cta_url": ""
+	},
+	"addons": [
+		{
+			"slug": "listeo-booking-plus",
+			"name": "Listeo Booking Plus",
+			"description": "Advanced booking on top of Listeo: resources, events, recurrence, multi-slot, service durations and constraints.",
+			"icon": "https://purethe.me/wp-content/uploads/2026/05/booking-plus.png",
+			"homepage": "https://purethemes.net/listeo-booking-plus/",
+			"plugin_file": "listeo-booking-plus/listeo-booking-plus.php",
+			"type": "paid_separate",
+			"featured": true,
+			"discount": {
+				"active": false,
+				"value": 0,
+				"code": "",
+				"expires_at": ""
+			}
+		},
+		{
+			"slug": "ai-chat-search",
+			"name": "PurioChat",
+			"description": "AI-powered semantic search and chat assistant. Lets visitors ask natural-language questions and get matched to listings.",
+			"icon": "https://purethemes.net/wp-content/uploads/2026/06/purio.png",
+			"homepage": "https://purethemes.net/ai-chatbot-for-wordpress/",
+			"plugin_file": "ai-chat-search/ai-chat-search.php",
+			"type": "license_included"
+		},
+		{
+			"slug": "ai-review-highlights",
+			"name": "AI Review Highlights",
+			"description": "Auto-summarize reviews into key highlights using AI. Surfaces pros, cons, and trending themes on listing pages.",
+			"icon": "",
+			"homepage": "https://docs.purethemes.net/listeo/knowledge-base/ai-reviews-highlights/",
+			"plugin_file": "ai-review-highlights/ai-review-summary.php",
+			"type": "license_included"
+		},
+		{
+			"slug": "listeo-data-scraper",
+			"name": "Listeo Data Importer",
+			"description": "Import listings from Google Places and Outscraper. AI-generated descriptions, photo galleries, bulk imports.",
+			"icon": "",
+			"homepage": "https://docs.purethemes.net/listeo/knowledge-base/listing-data-importer/",
+			"plugin_file": "listeo-data-scraper/listeo-data-scraper.php",
+			"type": "license_included"
+		},
+		{
+			"slug": "listeo-sms",
+			"name": "Listeo SMS",
+			"description": "SMS notifications for bookings, registrations and listing events. Twilio integration.",
+			"icon": "",
+			"homepage": "https://docs.purethemes.net/listeo/knowledge-base/sms-notification-otp-verification/",
+			"plugin_file": "listeo-sms/listeo-sms.php",
+			"type": "license_included"
+		},
+		{
+			"slug": "listeo-poi",
+			"name": "Listeo Points of Interest",
+			"description": "Show nearby points of interest (transit, schools, restaurants) on listing detail pages using Google Maps Places.",
+			"icon": "",
+			"homepage": "https://docs.purethemes.net/listeo/knowledge-base/point-of-interests/",
+			"plugin_file": "listeo-poi/listeo-poi.php",
+			"type": "license_included"
+		},
+		{
+			"slug": "wp-all-import-listeo-addon",
+			"name": "WP All Import — Listeo Add-on",
+			"description": "Map WP All Import fields to Listeo custom fields, custom taxonomies, gallery, location, prices and more.",
+			"icon": "",
+			"homepage": "https://docs.purethemes.net/listeo/knowledge-base/importing-listings-using-wp-all-import/",
+			"plugin_file": "wp-all-import-listeo-addon/wp-all-import-listeo-addon.php",
+			"type": "license_included"
+		}
+	]
+}

@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('dokan-hooks', 'dokan-utilities', 'lodash', 'react', 'react-dom', 'react-jsx-runtime', 'wc-components', 'wc-csv', 'wc-date', 'wp-api-fetch', 'wp-components', 'wp-compose', 'wp-date', 'wp-dom-ready', 'wp-element', 'wp-hooks', 'wp-html-entities', 'wp-i18n', 'wp-url'), 'version' => 'c408fed91d629d8b27ff');

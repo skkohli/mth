@@ -1,0 +1,3116 @@
+/*----------------------------------------------------------------
+# Listeo Core
+----------------------------------------------------------------*/
+
+.postbox-container .cmb2-metabox .cmb-th {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cmb-repeatable-group .cmb-group-title {
+    font-weight: normal;
+    font-size: 12px !important;
+}
+
+#poststuff .cmb-repeatable-group .cmb-group-title {
+    padding-left: 2.2em;
+    min-height: 1.75em;
+    line-height: 1.6;
+}
+
+.postbox-container .cmb2-wrap>.cmb-field-list>.cmb-row,
+.cmb-repeat-group-wrap .cmb2-wrap>.cmb-field-list>.cmb-row {
+    padding: 15px 0;
+}
+
+.postbox-container .cmb-repeat-group-field,
+.postbox-container .cmb-remove-field-row,
+.cmb-repeat-group-wrap .cmb-repeat-group-field,
+.cmb-repeat-group-wrap .cmb-remove-field-row {
+    padding-top: 15px;
+} 
+
+.postbox-container .cmb-row:not(:last-of-type) {
+    border-bottom: 0;
+}
+
+.postbox-container .cmb-repeat-row .cmb-td,
+.cmb-repeat-group-wrap .cmb-repeat-row .cmb-td {
+    padding-bottom: 15px;
+}
+
+.cmb2-wrap .cmb-row.cmb-repeat-row {
+    padding-top: 0;
+}
+
+.postbox-container .cmb2-metabox>.cmb-row.table-layout .cmb-repeat-table .cmb-tbody .cmb-row:not(:first-of-type) .cmb-td,
+.postbox-container .cmb2-metabox>.cmb-row .cmb-row.table-layout .cmb-repeat-table .cmb-tbody .cmb-row:not(:first-of-type) .cmb-td,
+.cmb-repeat-group-wrap .cmb2-metabox>.cmb-row.table-layout .cmb-repeat-table .cmb-tbody .cmb-row:not(:first-of-type) .cmb-td,
+.cmb-repeat-group-wrap .cmb2-metabox>.cmb-row .cmb-row.table-layout .cmb-repeat-table .cmb-tbody .cmb-row:not(:first-of-type) .cmb-td {
+    padding-top: 0;
+}
+
+.postbox-container .cmb-row,
+.cmb-repeat-group-wrap .cmb-row {
+    padding-bottom: 15px;
+}
+
+.postbox-container .cmb-row {
+    margin-bottom: 0;
+}
+
+.cmb-repeatable-group .cmb-group-title {
+    background-color: #f1f1f1;
+}
+
+.cmb-repeat-group-wrap .cmb-row.cmb-repeatable-grouping {
+    margin-bottom: .8em;
+}
+
+.postbox-container .cmb-row.cmb-repeatable-grouping {
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 12px;
+}
+
+.cmb-group-description .cmb2-metabox-description {
+    padding-top: 0;
+    color: #222;
+    font-style: normal;
+    font-size: 13px;
+}
+
+#poststuff .cmb-repeatable-group .cmb-group-name {
+    padding: 0 0 1em;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.cmb-repeat .cmb-add-row {
+    margin-top: 0;
+}
+
+.cmb2-metabox .select2-container {
+    min-width: 200px;
+}
+
+.payout-make-box {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0px;
+    border: 1px solid #e5e5e5;
+    width: 50%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+}
+
+.payout-make-box ul {
+    font-size: 16px;
+}
+
+.payout-make-box ul li {
+    margin: 15px 0px;
+}
+
+.payout-make-box ul li>span:first-child {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    vertical-align: top
+}
+
+.payout-make-box textarea:disabled {
+    color: #555;
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+
+
+/* ---------------------------------- */
+/* Slots
+------------------------------------- */
+.add-listing-headline i.fa {
+    top: -2px;
+}
+
+.availability-slots {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 30px);
+}
+
+.day-slots {
+    margin: 0 25px 30px 0;
+    flex: 0 0 calc(25% - 25px);
+}
+
+/* 24 hour clock type */
+.availability-slots.twenty-four-clock i.am-pm,
+.availability-slots.twenty-four-clock select.twelve-hr {
+    display: none;
+}
+
+/* Slot Headline */
+.day-slot-headline {
+    background-color: #66676b;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 7px 10px;
+    position: relative;
+    cursor: default;
+    font-weight: 600;
+}
+
+/* No Slots */
+.no-slots {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 10px;
+    display: flex;
+    cursor: default;
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.4s;
+    opacity: 1;
+    max-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 8px;
+}
+
+
+.no-slots,
+.no-slots-fadeout {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+}
+
+
+.no-slots.no-slots-fadein {
+    opacity: 1;
+    max-height: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 8px;
+    display: block;
+}
+
+
+/* Single Slot */
+.single-slot {
+    background-color: #f3f3f3;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 0;
+    display: flex;
+    cursor: move;
+}
+
+.single-slot.slot-animation {
+    animation-name: slotFadeIn;
+    animation-duration: 0.3s;
+}
+
+@keyframes slotFadeIn {
+    0% {
+        opacity: 0;
+        max-height: 0;
+    }
+
+    100% {
+        opacity: 1;
+        max-height: 150px;
+    }
+}
+
+.single-slot.cloned {
+    display: none;
+}
+
+.single-slot-left {
+    flex: 1;
+    padding: 12px 17px;
+}
+
+.single-slot-right {
+    flex: 0 0 auto;
+    background-color: #eee;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 4px 4px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 17px;
+}
+
+.single-slot-right strong {
+    display: flex;
+    font-weight: 600;
+    font-size: 14px;
+    width: 100%;
+    line-height: 20px;
+    margin-bottom: 3px;
+}
+
+.single-slot-time {
+    font-weight: 700;
+    color: #666;
+    line-height: 20px;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.single-slot-time i.am-pm {
+    font-style: normal;
+}
+
+
+/* Remove Button */
+.remove-slot {
+    background-color: #c8c8c8;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    height: 19px;
+    width: 19px;
+    line-height: 17px;
+    font-size: 11px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.remove-slot i {
+    position: relative;
+    left: -1px;
+}
+
+.remove-slot:hover {
+    background-color: #ec2c2c;
+}
+
+/* Add Slot */
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: translateX(5px);
+    }
+}
+
+.add-slot-shake-error {
+    animation-name: shake;
+    animation-duration: 0.6s;
+}
+
+.add-slot {
+    display: flex;
+    width: 100%;
+    background-color: #333;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 8px;
+}
+
+.add-slot span {
+    font-size: 14px;
+    color: #aaa;
+    padding: 0 8px;
+    font-weight: 600;
+    font-size: 12px;
+    position: relative;
+    top: 1px;
+}
+
+.add-slot-inputs {
+    flex: 1;
+    display: flex;
+    padding: 0;
+}
+
+.add-slot-btn {
+    flex: 0 0 1;
+}
+
+.add-slot-btn button {
+    outline: none;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 100%;
+    padding: 0 15px;
+    transition: 0.3s;
+}
+
+.add-slot-btn button:hover {
+    background-color: #66676b;
+    color: #fff;
+}
+
+.cmb2-wrap .add-slot-inputs input:focus,
+.cmb2-wrap .add-slot-inputs textarea:focus {
+    background-color: #4a4a4a;
+}
+
+.add-slot-inputs select,
+.add-slot-inputs input {
+    background-color: #4a4a4a;
+    border: none;
+    padding: 0;
+    height: 28px;
+    line-height: 1;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    margin-right: 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    box-shadow: none;
+}
+
+input[type="time"]::-webkit-clear-button {
+    display: none;
+}
+
+.add-slot-inputs select {
+    margin-right: 0;
+    border-radius: 0 3px 3px 0;
+    padding-left: 8px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    width: auto;
+    font-size: 13px;
+    margin-left: -4px;
+}
+
+.add-slot-inputs select option {
+    background-color: #333;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.add-slot-inputs input::-webkit-outer-spin-button,
+.add-slot-inputs input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.add-slot-inputs input {
+    padding-right: 4px;
+}
+
+.availability-slots.twenty-four-clock .add-slot-inputs input {
+    padding-right: 0;
+}
+
+/* Plus Minus Buttons */
+.plusminus {
+    display: inline-block;
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+    border-radius: 0;
+    width: 44px;
+    height: 72px;
+}
+
+.plusminus button {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #fff;
+    color: #aaa;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+    font-family: FontAwesome;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plusminus button:focus {
+    outline: none;
+}
+
+.plusminus button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.plusminus button:disabled:hover {
+    background: #bbb;
+    color: #fff;
+    cursor: default;
+}
+
+.plusminus button:first-child {
+    bottom: 0;
+}
+
+.plusminus button:first-child:before {
+    content: "\f068";
+    line-height: 25px;
+}
+
+.plusminus button:last-child {
+    top: 0;
+}
+
+.plusminus button:last-child:before {
+    content: "\f067";
+    line-height: 25px;
+}
+
+.plusminus input[type="number"] {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 24px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.plusminus input[type="number"]::-webkit-outer-spin-button,
+.plusminus input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.plusminus.horiz {
+    width: 74px;
+    height: 24px;
+}
+
+.plusminus.horiz button:first-child {
+    left: 0;
+    border-radius: 3px;
+}
+
+.plusminus.horiz button:last-child {
+    right: 0;
+    border-radius: 3px;
+    margin-left: 1px;
+}
+
+.plusminus.horiz:after {
+    bottom: 0;
+}
+
+.plusminus.horiz input[type="number"] {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    border-radius: 3px;
+}
+
+
+/* Slots Media Queries */
+@media (max-width: 1920px) {
+    .day-slots {
+        flex: 0 0 calc(25% - 25px);
+    }
+}
+
+@media (max-width: 1660px) {
+    .day-slots {
+        flex: 0 0 calc(47.3% - 25px);
+    }
+}
+
+@media (max-width: 1366px) {
+    .day-slots {
+        flex: 0 0 calc(47.3% - 25px);
+    }
+}
+
+@media (max-width: 1365px) {
+    .day-slots {
+        flex: 0 0 calc(47.3% - 25px);
+    }
+}
+
+@media (max-width: 1040px) {
+    .availability-slots {
+        width: 100%;
+    }
+
+    .day-slots {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .availability-slots {
+        width: 100%;
+    }
+
+    .day-slots {
+        flex: 0 0 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+        flex-direction: column;
+    }
+
+    .add-slot-inputs input {
+        width: 100%;
+    }
+
+    .add-slot-inputs span {
+        opacity: 0;
+        width: 5px;
+        height: 10px;
+    }
+
+    .add-slot-inputs {
+        width: 100%;
+    }
+
+    .add-slot {
+        flex-direction: column;
+    }
+
+    .add-slot-btn button {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 8px;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        padding: 3px 0;
+    }
+}
+
+
+
+/*Calendar*/
+#listeo-calendar-outer {
+    width: 100%;
+}
+
+#listeo-calendar-outer th {
+    text-align: center;
+    padding: 18px;
+    font-weight: normal;
+}
+
+#listeo-calendar-outer .prev {
+    display: inline-block;
+    float: left;
+    cursor: pointer
+}
+
+#listeo-calendar-outer .next {
+    display: inline-block;
+    float: right;
+    cursor: pointer
+}
+
+#listeo-calendar-outer #currentYear:focus {
+    outline: none;
+    background: #ff8e8e;
+}
+
+#listeo-calendar-outer .calendar-nav {
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    text-align: center;
+    padding: 10px;
+    color: #333;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+#listeo-calendar-outer .calendar-nav i {
+    color: #666;
+    padding: 5px;
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+#listeo-calendar-outer {
+    border-collapse: separate;
+    border-spacing: 12px;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+}
+
+#calendar-outer .week-name-title td {
+    display: inline-block;
+    padding: 10px 25px;
+
+}
+
+.label-_availability {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px
+}
+
+.week-day-cell td {
+    background: #fff;
+    color: #666;
+    border-radius: 3px;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+
+}
+
+/* .week-day-cell td span.calendar-day-date {
+    border-top: 3px solid #54ba1d;
+    display: block;    
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.5em;
+    padding: 10px 0px;
+} */
+/* .week-day-cell td.not_active span.calendar-day-date {
+    border-top: 3px solid #e91721;
+} */
+
+.calendar-day-date {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    background: #fff;
+    border-radius: 3px;
+    margin: 0 0 10px 0;
+    line-height: 35px;
+    padding-bottom: 7px;
+    width: 100%;
+}
+
+.week-day-cell td .calendar-day-date {
+    background: #EBF6E0;
+    color: #5f9025;
+}
+
+.week-day-cell td.not_active .calendar-day-date {
+    color: #de5959;
+    background: #ffe9e9;
+}
+
+.week-day-cell td .calendar-price span {
+    color: #666;
+    padding: 10px 5px;
+    font-size: 12px;
+    font-weight: 500;
+    width: 100%;
+    display: block;
+    border: 1px solid #e6e6e6;
+    background: #fff;
+    border-radius: 3px 3px 0 0;
+    border-bottom: none;
+    margin: 0;
+    line-height: 15px;
+}
+
+.week-day-cell td button {
+    background: #eeeeee;
+    color: #666;
+    border-radius: 0 0 3px 3px;
+    padding: 10px 5px;
+    border: none;
+    font-size: 12px;
+    font-weight: 500;
+    width: 100%;
+    margin: 0;
+    transition: 0.3s;
+    position: relative;
+    top: -1px;
+    line-height: 15px;
+}
+
+#listeo-calendar-outer .week-name-title th {
+    text-align: center;
+    font-weight: normal;
+    background: #f8f8f8;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 13px;
+    padding: 10px 0;
+    margin: 0;
+    line-height: 20px;
+    font-weight: 600;
+    color: #333
+}
+
+.week-day-cell td button:hover {
+    background: #e0e0e0;
+    color: #444;
+}
+
+.wait {
+    cursor: wait;
+}
+
+#listeo-listings-container {
+    transition: opacity 0.3s;
+}
+
+.fs-content #listeo-listings-container {
+    opacity: 1;
+}
+
+.loading {
+    opacity: 0.75
+}
+
+.opacity-1 {
+    opacity: 1
+}
+
+.opacity-05 {
+    opacity: 0.5;
+    transition: opacity 0.3s
+}
+
+.opacity-00 {
+    opacity: 0
+}
+
+
+.calendar-day-date-name {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    table#listeo-calendar-outer .week-name-title th {
+        display: none;
+    }
+
+    table#listeo-calendar-outer th {
+        display: block;
+    }
+
+    table#listeo-calendar-outer td {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    table#listeo-calendar-outer .listeo-empty-calendar-day {
+        display: none;
+    }
+
+    .calendar-day-date-name {
+        display: block;
+    }
+}
+
+
+/*!
+ * jQuery UI Datepicker 1.9.0
+ * http://jqueryui.com
+ *
+ * Copyright 2012 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Datepicker#theming
+ */
+.ui-datepicker {
+    display: none;
+    padding: .2em .2em 0;
+    width: 17em;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.ui-datepicker .ui-datepicker-header {
+    padding: .2em 0;
+    position: relative;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    height: 1.8em;
+    position: absolute;
+    top: 2px;
+    width: 1.8em;
+}
+
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
+    top: 1px;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent #242424 transparent transparent;
+}
+
+.ui-datepicker .ui-datepicker-next {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #242424;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-prev-hover {
+    left: 1px;
+}
+
+.ui-datepicker .ui-datepicker-next,
+.ui-datepicker .ui-datepicker-next-hover {
+    right: 1px;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+    display: block;
+    left: 50%;
+    margin-left: -8px;
+
+    position: absolute;
+    top: 50%;
+}
+
+.ui-datepicker .ui-datepicker-title {
+    line-height: 1.8em;
+    margin: 0 2.3em;
+    text-align: center;
+}
+
+.ui-datepicker .ui-datepicker-title select {
+    font-size: 1em;
+    margin: 1px 0;
+}
+
+.ui-datepicker select.ui-datepicker-month-year {
+    width: 100%;
+}
+
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+    width: 49%;
+}
+
+.ui-datepicker table {
+    border-collapse: collapse;
+    font-size: .9em;
+    margin: 0 0 .4em;
+    width: 100%;
+}
+
+.ui-datepicker th {
+    border: 0;
+    font-weight: bold;
+    padding: .7em .3em;
+    text-align: center;
+}
+
+.ui-datepicker td {
+    border: 0;
+    padding: 1px;
+}
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+    display: block;
+    padding: .2em;
+    text-align: right;
+    text-decoration: none;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane {
+    background-image: none;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    margin: .7em 0 0 0;
+    padding: 0 .2em;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+    cursor: pointer;
+    float: right;
+    margin: .5em .2em .4em;
+    overflow: visible;
+    padding: .2em .6em .3em .6em;
+    width: auto;
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+    float: left;
+}
+
+/* with multiple calendars */
+
+.ui-datepicker.ui-datepicker-multi {
+    width: auto;
+}
+
+.ui-datepicker-multi .ui-datepicker-group {
+    float: left;
+}
+
+.ui-datepicker-multi .ui-datepicker-group table {
+    margin: 0 auto .4em;
+    width: 95%;
+}
+
+.ui-datepicker-multi-2 .ui-datepicker-group {
+    width: 50%;
+}
+
+.ui-datepicker-multi-3 .ui-datepicker-group {
+    width: 33.3%;
+}
+
+.ui-datepicker-multi-4 .ui-datepicker-group {
+    width: 25%;
+}
+
+.ui-datepicker-multi .ui-datepicker-group-last .ui-datepicker-header {
+    border-left-width: 0;
+}
+
+.ui-datepicker-multi .ui-datepicker-group-middle .ui-datepicker-header {
+    border-left-width: 0;
+}
+
+.ui-datepicker-multi .ui-datepicker-buttonpane {
+    clear: left;
+}
+
+.ui-datepicker-row-break {
+    clear: both;
+    font-size: 0em;
+    width: 100%;
+}
+
+/* RTL support */
+
+.ui-datepicker-rtl {
+    direction: rtl;
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev {
+    left: auto;
+    right: 2px;
+}
+
+.ui-datepicker-rtl .ui-datepicker-next {
+    left: 2px;
+    right: auto;
+}
+
+.ui-datepicker-rtl .ui-datepicker-prev:hover {
+    left: auto;
+    right: 1px;
+}
+
+.ui-datepicker-rtl .ui-datepicker-next:hover {
+    left: 1px;
+    right: auto;
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane {
+    clear: right;
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button {
+    float: left;
+}
+
+.ui-datepicker-rtl .ui-datepicker-buttonpane button.ui-datepicker-current {
+    float: right;
+}
+
+.ui-datepicker-rtl .ui-datepicker-group {
+    float: right;
+}
+
+.ui-datepicker-rtl .ui-datepicker-group-last .ui-datepicker-header {
+    border-left-width: 1px;
+    border-right-width: 0;
+}
+
+.ui-datepicker-rtl .ui-datepicker-group-middle .ui-datepicker-header {
+    border-left-width: 1px;
+    border-right-width: 0;
+}
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+
+.ui-datepicker-cover {
+    filter: mask();
+    /*must have*/
+    height: 200px;
+    /*must have*/
+    left: -4px;
+    /*must have*/
+    position: absolute;
+    /*must have*/
+    top: -4px;
+    /*must have*/
+    width: 200px;
+    /*must have*/
+    z-index: -1;
+    /*must have*/
+}
+
+
+
+.description.header_radius {
+    margin: 0px;
+    margin-bottom: -15px;
+}
+
+
+/* Leaflet autocomplete  */
+#leaflet-geocode-cont {
+    position: absolute;
+    z-index: 110;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 0 0 4px 4px;
+    top: 30px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    display: none;
+    width: 400px;
+}
+
+#leaflet-geocode-cont.active {
+    display: block;
+}
+
+#leaflet-geocode-cont ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+#leaflet-geocode-cont ul li {
+    color: #888;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 11px 15px;
+    padding-left: 38px;
+    margin: 0;
+    border-bottom: 1px solid #e8e8e8;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    /*     white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis; */
+}
+
+#leaflet-geocode-cont ul li:before {
+    content: "\f041";
+    font-family: "FontAwesome";
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    margin-right: 0;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+#leaflet-geocode-cont ul li:hover:before {
+    color: #a0a0a0;
+}
+
+#leaflet-geocode-cont ul li:last-child {
+    border: none;
+    border-radius: 0 0 4px 4px;
+}
+
+#leaflet-geocode-cont ul li.selected,
+#leaflet-geocode-cont ul li:hover {
+    background: #fafafa;
+}
+
+#leaflet-geocode-cont span.highlight {
+    color: #222;
+    font-weight: 700;
+}
+
+.cmb2-id--address .cmb-td {
+    position: relative;
+}
+
+.listeo-fafe-forms-editor-new-elements-container {
+    float: left;
+}
+
+.block-add-new {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+
+.cmb2-id--geolocation-long .cmb2-metabox-description,
+.cmb2-id--geolocation-lat .cmb2-metabox-description 
+{ color:red; font-weight: bold;}
+div#setting-error-tgmpa {
+    border-color: red;
+    background: #ffc2c266;
+}
+
+.cmb-type-opening-hours-listeo input {
+    margin: 0px 10px 10px 0px;
+    padding: 5px;
+}
+
+.listeo-admin-test-api {
+    padding: 10px;
+    margin: 10px 0px;
+    border: 1px solid #3bb93b;
+    border-left: 4px solid #3bb93b;
+    background: #d9f1d9;
+}
+
+
+/*-------------------------------
+# Listeo Core UI
+--------------------------------*/
+#listeo-core-ui {
+    display: flex;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#listeo-core-ui form {
+    flex: 1;
+    padding: 0px;
+}
+
+
+#listeo-core-ui h2.nav-tab-wrapper {
+    padding: 20px;
+    padding-top: 105px;
+    margin: 0 0px 0 0;
+    position: relative;
+    border-bottom: none;
+    position: sticky;
+    top: 26px;
+}
+
+#nav-tab-container {
+    flex: 1;
+    max-width: 250px;
+    background: #222;
+    border-radius: 4px 0 0 4px;
+}
+
+
+#listeo-core-ui h2.nav-tab-wrapper:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: url(listeocore.svg);
+    background-repeat: no-repeat;
+    background-size: 125px auto;
+    background-position: 30px 51%;
+    background-color: #2b2b2b;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 4px 0 0 0;
+    /* border-bottom: 1px solid #e0e0e0; */
+}
+
+#listeo-core-ui a.nav-tab {
+    display: block;
+    float: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    padding: 10px 13px;
+    color: #aaa;
+    transition: color 0.3s, background 0.3s;
+    border-radius: 3px;
+    line-height: 22px;
+    box-shadow: none;
+    white-space: normal;
+}
+
+#listeo-core-ui a.nav-tab i {
+    padding-right: 4px;
+}
+
+#listeo-core-ui a.nav-tab.nav-tab-active,
+#listeo-core-ui a.nav-tab.nav-tab-active:focus,
+#listeo-core-ui a.nav-tab.nav-tab-active:focus:active,
+#listeo-core-ui a.nav-tab.nav-tab-active:hover {
+    color: #000;
+    border: none !important;
+    color: #fff;
+    background: #ff003b !important;
+    box-shadow: 0 3px 10px #f9194269;
+}
+
+#listeo-core-ui a.nav-tab:hover {
+    color: #f91942;
+    background: #f9194212;
+    color: #fff;
+    background: rgb(0 0 0 / 23%);
+}
+
+#listeo-core-ui a.nav-tab.nav-tab-active {
+    color: #fff;
+}
+
+#listeo-core-ui form h2 {
+    background: #f4f4f4;
+    padding: 0 30px;
+    margin: 0;
+    height: 80px;
+    line-height: 80px;
+    font-size: 19px;
+    font-weight: 500;
+    border-radius: 0 5px 0 0;
+    position: sticky;
+    top: 26px;
+    z-index: 10;
+}
+
+#listeo-core-ui form h2 i {
+    padding-right: 5px;
+}
+
+#listeo-core-ui form .form-table {
+    padding: 0px;
+    display: block;
+    margin: 0;
+}
+
+#listeo-core-ui tbody {
+    width: 100%;
+    display: block;
+}
+
+#listeo-core-ui tbody tr {
+    border-bottom: 1px solid #e9e9e9;
+    padding: 10px 30px;
+    display: block;
+}
+
+#listeo-core-ui .form-table th {
+    vertical-align: top;
+    text-align: left;
+    padding: 20px 10px 20px 0;
+    line-height: 1.3;
+    font-weight: 600;
+    min-width: 400px;
+    max-width: 500px;
+}
+
+
+#listeo-core-ui .form-table .description {
+    display: block;
+    font-weight: 400;
+    color: #777;
+    font-size: 13px;
+    line-height: 22px;
+    margin-top: 5px;
+}
+
+
+#listeo-core-ui input {
+    color: #444;
+    border-radius: 4px;
+    padding: 6px 10px;
+    border-color: #b9b9b9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+#listeo-core-ui input[type=radio] {
+    border-radius: 50px;
+    width: 17px;
+    height: 17px;
+    box-shadow: none;
+    background: #fff;
+    position: relative;
+    border: 2px solid #d0d0d0;
+}
+
+#listeo-core-ui input[type=checkbox] {
+    background: #fff;
+    border: none;
+    box-shadow: none;
+    border-radius: 3px;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    border: 2px solid #d0d0d0;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+#listeo-core-ui input[type=checkbox]::before {
+    content: "\f00c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    top: 0;
+    position: absolute;
+    left: 0;
+    color: #fff;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    line-height: 18px;
+    font-size: 11px;
+    background: transparent;
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+#listeo-core-ui input[type=checkbox]:checked {
+    background: #0eb25a;
+    border-color: #0eb25a;
+}
+
+#listeo-core-ui input[type=checkbox]:checked::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+#listeo-core-ui input[type=radio]::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    content: "";
+    border-radius: 50%;
+    margin: 0;
+    background-color: #1e8cbe;
+    line-height: 0;
+    width: 9px;
+    height: 9px;
+    vertical-align: middle;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 2px;
+}
+
+#listeo-core-ui input[type=radio]:checked {
+    background: #0eb25a;
+    border-color: #0eb25a;
+    ;
+}
+
+#listeo-core-ui label {
+    vertical-align: middle;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+
+#listeo-core-ui input[type=radio]:checked::before {
+    opacity: 1;
+    visibility: visible;
+    background: #fff;
+}
+
+#listeo-core-ui .listeo-admin-test-api {
+    padding: 15px;
+    margin: 10px 0px;
+    background: #e7f6e7;
+    border: none;
+    border-radius: 4px;
+    color: #2d852d;
+}
+
+#listeo-core-ui .listeo-admin-test-api a {
+    color: #126d12;
+}
+
+.wp-core-ui #listeo-core-ui select {
+    color: #444;
+    border-radius: 4px;
+    padding: 6px 10px;
+    padding-right: 25px;
+    border-color: #b9b9b9;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+#listeo-core-ui .submit {
+    border-top: none;
+    padding: 0px 30px 20px 30px;
+}
+
+#listeo-core-ui form h2 a,
+#listeo-core-ui form h2 input[type=submit],
+#listeo-core-ui .submit input[type=submit] {
+    border: none;
+    color: #fff;
+}
+
+#listeo-core-ui form h2 a,
+#listeo-core-ui form h2 input[type=submit] {
+    position: absolute;
+    right: 0;
+    top: 21px;
+    right: 30px
+}
+
+.wp-core-ui #listeo-core-ui .button-primary {
+    background: #0eb25a;
+    outline: none;
+    box-shadow: none;
+    transition: 0.3s;
+}
+
+.wp-core-ui #listeo-core-ui .button-primary:hover {
+    background: #0da352;
+    outline: none;
+    box-shadow: none;
+}
+
+.wp-core-ui #listeo-core-ui select,
+.wp-core-ui #listeo-core-ui input[type="number"],
+.wp-core-ui #listeo-core-ui input[type="text"] {
+    width: 280px;
+}
+
+.listeo_settings_title th.listeo_settings_title {
+    width: 50%;
+    font-size: 16px;
+}
+
+.listeo_settings_title td {
+    display: none;
+}
+
+#listeo-core-ui .form-table th.listeo_settings_title span.description {
+    display: block;
+}
+
+#listeo-core-ui .form-table th.listeo_settings_title span.description h3 {
+    line-height: 24px;
+    font-size: 16px;
+    margin: 0;
+}
+
+#listeo-core-ui .form-table th.listeo_settings_title span.description .noticebox {
+    border-radius: 4px;
+    background: #2e89f1;
+    color: #ffffff;
+    padding: 12px 16px;
+    margin: 0;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+#listeo-core-ui .form-table td {
+    width: 100%;
+}
+
+
+.listeo_settings_title {
+    background: #f6f6f6;
+    /* border: none; */
+}
+
+
+@media (max-width: 1100px) {
+    #listeo-core-ui tbody tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #listeo-core-ui .form-table td {
+        padding: 0 0 20px 0;
+    }
+}
+
+/* License Activation CSS */
+.el-license-container {
+    padding: 20px 30px;
+    margin: 30px;
+    background: #f8f8f8;
+    border-radius: 4px;
+    color: #777;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.el-license-info-title {
+    color: #333;
+    font-weight: 600;
+}
+
+.el-license-valid {
+    color: #1f9f4c;
+    font-weight: 500;
+    background: #3aba6829;
+    border-radius: 3px;
+    padding: 2px 5px;
+    font-size: 14px;
+}
+
+a.el-blue-btn {
+    color: #0073aa;
+    font-weight: 500;
+    background: #0073aa1a;
+    border-radius: 3px;
+    padding: 2px 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a.el-blue-btn:after {
+    content: " \2192"
+}
+
+.license-validation-popup {
+    display: block;
+    width: calc(100% - 20px);
+    position: relative;
+    background: #e7f6ff;
+    border: 2px solid #96bcd2;
+    padding: 25px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-image: url(sad_face.svg);
+    background-repeat: no-repeat;
+    background-size: 65px;
+    background-position: 30px 50%;
+    padding-left: 125px;
+    color: #3f3f3f;
+    box-shadow: 0 3px 4px rgb(0 0 0 / 10%);
+    border: none;
+    background-color: #fff;
+    border-left: 4px solid #23282d;
+    border-radius: 0;
+    margin: 40px 0 20px 0;
+}
+
+.lc-toggle input { opacity: 0 !important; }
+
+#listeo-core-ui .form-table.license-form-div th {
+    min-width: 250px;
+}
+
+
+.wp-core-ui #listeo-core-ui .form-table.license-form-div input[type="text"] {
+    width: 300px;
+}
+
+.sl.sl-icon-arrow-left:before {
+    content: "\003c";
+}
+
+.sl.sl-icon-arrow-right:before {
+    content: "\003e";
+}
+
+  .listeo-type-item {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px;
+      margin-bottom: 0px;
+      position: relative;
+  }
+
+  .listeo-type-item { transition: 0.3s; } .listeo-type-item:hover { box-shadow: 0 3px 8px rgba(0,0,0,0.05); }
+
+  .listeo-type-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 15px;
+  }
+
+  .listeo-type-title h4 {
+      margin: 0 0 5px 0;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+  }
+
+  .listeo-default-badge {
+      background: #72aee6;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      margin-left: 10px;
+      font-weight: 500;
+  }
+
+  .listeo-type-slug {
+      font-family: monospace;
+      background: #f1f1f1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+      color: #666;
+  }
+
+  .listeo-status-active {
+      color: #46b450;
+      font-weight: 600;
+      font-size: 12px;
+  }
+
+  .listeo-status-inactive {
+      color: #dc3232;
+      font-weight: 600;
+      font-size: 12px;
+  }
+
+  .listeo-type-description {
+      color: #666;
+      font-size: 13px;
+      margin: 0 0 15px 0;
+      line-height: 1.5;
+  }
+
+  .listeo-type-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 15px;
+  }
+
+  .listeo-feature-tag {
+      background: #0073aa;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+  }
+
+  .listeo-type-meta {
+      margin-bottom: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+  }
+
+  .listeo-listings-count {
+      font-size: 13px;
+      color: #666;
+  }
+
+  .listeo-type-actions {
+      display: flex;
+      gap: 10px;
+  }
+
+  .add_new_item {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+  }
+
+
+.list-box-listing.bookings {
+    padding: 23px 30px;
+    border-bottom: 1px solid #eaeaea;
+    transition: 0.3s;
+    position: relative;
+    background: #fff;
+    display: flex;
+}
+
+/* Bookings Styles */
+.bookings {
+    margin: 10px 0;
+}
+
+.bookings .list-box-listing-img a:before {
+    display: none;
+}
+
+.bookings .list-box-listing-img {
+    max-width: 70px;
+    max-height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.bookings .list-box-listing-content .inner {
+    top: 0;
+    transform: none
+}
+
+.bookings .list-box-listing-img {
+    margin-right: 5px;
+}
+
+.bookings .list-box-listing-content .inner h3 {
+    margin-bottom: 20px;
+}
+
+.inner-booking-list h5 {
+    display: inline-block;
+    font-weight: 600;
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+    min-width: 140px;
+}
+
+.inner-booking-list ul {
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.inner-booking-list ul li {
+    display: inline-block;
+    padding: 0;
+    margin: 0 0 4px 0;
+}
+
+.inner-booking-list ul li:after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    margin: 0 10px;
+    height: 12px;
+    top: 1px;
+    background-color: #ddd;
+    width: 1px;
+}
+
+.inner-booking-list ul li:last-child:after {
+    display: none;
+}
+
+.inner-booking-list ul li.highlighted {
+    padding: 2px 10px;
+    line-height: 22px;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: #eee !important;
+    color: #777;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.waiting-booking .inner-booking-list ul li.highlighted,
+.pending-booking .inner-booking-list ul li.highlighted {
+    background-color: #E9F7FE !important;
+    color: #3184ae;
+}
+
+.approved-booking .inner-booking-list ul li.highlighted {
+    background-color: #EBF6E0 !important;
+    color: #5f9025;
+}
+
+.bookings .inner h3 span.booking-status {
+    border-radius: 50px;
+    line-height: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #fff;
+    font-style: normal;
+    padding: 2px 8px;
+    margin-left: 3px;
+    position: relative;
+    top: -2px;
+}
+
+.inner-booking-list p {
+    font-size: 15px;
+    margin-bottom: 8px;
+    margin-top: 3px;
+    display: block;
+    line-height: 24px;
+}
+
+.approved-booking .bookings .inner h3 span.booking-status {
+    background-color: #64bc36;
+}
+
+.approved-booking.expired-booking .bookings .inner h3 span.booking-status {
+    background-color: #aaa;
+}
+
+.waiting-booking .bookings .inner h3 span.booking-status {
+    background-color: #61b2db;
+}
+
+.pending-booking .bookings .inner h3 span.booking-status {
+    background-color: #61b2db;
+}
+
+.canceled-booking .bookings .inner h3 span.booking-status {
+    background-color: #ee3535;
+}
+
+.bookings .inner h3 span.booking-status.paid {
+    background-color: #3b940c;
+}
+
+.bookings .inner h3 span.booking-status.paid,
+.bookings .inner h3 span.booking-status.unpaid {
+    margin-left: 0;
+}
+
+
+.bookings .inner h3 span.booking-status.unpaid {
+    background-color: #ee3535;
+}
+
+/* Content */
+.list-box-listing-content {
+    flex: 1;
+    padding-left: 25px;
+}
+
+.list-box-listing-content .inner {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    vertical-align: top;
+}
+
+.list-box-listing-content .inner h3 {
+    font-size: 18px;
+    bottom: -2px;
+    position: relative;
+    font-weight: 500;
+    margin: 0;
+    line-height: 27px;
+}
+
+.list-box-listing-content .inner span {
+    font-size: 15px;
+    font-weight: 300;
+    display: inline-block;
+}
+
+
+.list-box-listing-content .inner .expiration-date,
+.list-box-listing-content .inner .numerical-rating,
+.list-box-listing-content .inner .star-rating {
+    margin: 5px 0 0 0;
+    display: block;
+}
+
+
+#payout_environment,
+#payout_sandbox_client_id,
+#payout_sandbox_client_secret,
+#payout_live_client_id,
+#payout_live_client_secret,
+#payout_email_subject,
+#payout_email_message,
+#payout_trx_note {
+    width: 80% !important;
+}
+
+#listeo-make-payout {
+    position: relative;
+}
+
+#listeo-make-payout .loader-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0000003b;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+#listeo-make-payout .loader-div .fa-spinner {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+}
+
+.listeo-hidden {
+    display: none;
+    visibility: hidden;
+}
+
+
+.listeo-editor .metabox-holder {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + 25px);
+}
+
+.listeo-editor .metabox-holder .postbox {
+    background: #fff;
+    flex: 0 0 calc(50% - 35px);
+    margin-right: 25px;
+    border: none;
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+    border-radius: 5px;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.listeo-editor .metabox-holder .postbox .button {
+    border-color: #2271b1;
+    vertical-align: top;
+    background: #2271b1;
+    color: #fff;
+    font-size: 15px;
+    line-height: 24px;
+    padding: 5px 10px;
+    box-shadow: none;
+}
+
+.toplevel_page_listeo-fields-and-form #wpbody-content {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.listeo-editor .metabox-holder .postbox>h3 {
+    font-size: 18px;
+}
+
+
+table.fixed.packages {
+    table-layout: fixed;
+    border: none;
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+table.fixed.packages .actions a {
+    margin: 2px 0;
+}
+
+
+table.fixed.packages .actions a.icon-delete:focus,
+table.fixed.packages .actions a.icon-delete:hover,
+table.fixed.packages .actions a.icon-delete {
+    background: #f5dcdc;
+    border: none;
+    color: #bc2727;
+    box-shadow: none;
+    outline: none;
+}
+
+table.fixed.packages .actions a.icon-edit:focus,
+table.fixed.packages .actions a.icon-edit:hover,
+table.fixed.packages .actions a.icon-edit {
+    background: #cde7fc;
+    border: none;
+    color: #2271b1;
+    box-shadow: none;
+    outline: none;
+}
+
+#package-edit-listing-form,
+#package-add-form {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+}
+
+
+
+body .fip-grey.icons-selector .selector {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+body .fip-grey.icons-selector .selector-search i {
+    line-height: 25px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+body .fip-grey.icons-selector .selector-popup {
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+    -webkit-box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
+    box-shadow: 0 0 11px rgb(0 0 0 / 20%);
+    border: none;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+body .fip-grey.icons-selector .selector-button {
+    font-size: 18px;
+    background: #fff;
+    border-radius: 0 4px 4px 0;
+}
+
+body .fip-grey.icons-selector .selector-search input[type=text] {
+    border: 1px solid #e0e0e0;
+}
+
+body .icons-selector .fip-icon-left-dir:before,
+body .icons-selector .fip-icon-right-dir:before {
+    font-size: 32px;
+    background: #2271b1;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+body .fip-grey.icons-selector .fip-icons-container {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+}
+
+body .fip-grey.icons-selector .fip-box {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+body .icons-selector .fip-box {
+    display: inline-block;
+    margin: 2px;
+    width: 76px;
+    line-height: 45px;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: top;
+    height: 45px;
+    font-size: 24px;
+}
+
+
+/* .post-type-listing .form-table:not(#col-left .form-table),
+.post-type-listing #col-left {
+    padding: 30px;
+    padding-right: 0;
+    display: inline-block;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background: #fff;
+    box-sizing: border-box;
+} */
+
+.post-type-listing .form-table {
+    margin-top: 20px;
+}
+
+.post-type-listing #col-right {
+    float: right;
+    width: 65%;
+    padding-left: 30px;
+    box-sizing: border-box;
+    margin-top: -10px;
+}
+
+.post-type-listing .cmb2-wrap .cmb-multicheck-toggle {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+
+.post-type-listing #addtag .cmb-th {
+    float: none;
+    width: auto;
+    margin-bottom: 15px;
+    background: #f0f0f0;
+    padding: 0;
+    border-radius: 4px;
+    padding: 10px;
+    border: none;
+    margin-top: 20px;
+    width: calc(100% - 45px);
+}
+
+.post-type-listing textarea {
+    max-width: calc(100% - 25px) !important;
+}
+
+.post-type-listing .submit .button-primary {
+    /*color: #009b71;*/
+    /*    background: #009b7128;*/
+    /*    border: none !important;*/
+    /*    box-shadow: none !important;*/
+    /*    font-weight: 500;*/
+    padding: 7px 15px;
+}
+
+body.post-type-listing .submit {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.post-type-listing .form-field img {
+    height: auto;
+    max-width: 56px;
+    background: #fff;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+
+.post-type-listing .edit-tag-actions input {
+    padding: 5px 16px;
+}
+
+.post-type-listing .edit-tag-actions {
+    display: flex;
+    align-items: center;
+}
+
+.post-type-listing a.delete {
+    background: #f5dcdc;
+    border: none;
+    color: #bc2727;
+    box-shadow: none;
+    outline: none;
+    padding: 5px 18px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+
+.post-type-listing .cmb2-id-listeo-taxonomy-type .cmd-td {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-type-listing .cmb2-id-listeo-taxonomy-type.cmb-inline li {
+    display: block;
+}
+
+
+#message.updated.woocommerce-message:not(.wc-connect){
+    display: none !important;
+}
+
+.cmb2-checkbox-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 10px !important;
+    background: #fff;
+}
+
+label[for="listeo_taxonomy_top_layout"],
+label[for="listeo_taxonomy_content_layout"],
+label[for="listeo_taxonomy_category_content_layout"],
+label[for="listeo_taxonomy_search_form"],
+label[for="listeo_taxonomy_type"],
+label[for="listeo_taxonomy_multicheck"] {
+    background: #2c3338;
+    padding: 14px !important;
+    margin-left: -10px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+.wp-core-ui #listeo-core-ui .button-primary.license-deactivate-btn:hover,
+.wp-core-ui #listeo-core-ui .button-primary.license-deactivate-btn {
+    border: none;
+    font-size: 15px;
+    padding: 5px 15px;
+    background: #ef8a0020;
+    border: 1px solid #ef8a0070;
+    color: #d57b00;
+    font-weight: 500;
+}
+
+.wp-core-ui #listeo-core-ui .button-primary.license-deactivate-btn:hover {
+    background: #ef8a0030;
+}
+
+.fullcalendar-container {
+    margin: 20px 0;
+}
+
+#fullcalendar {
+    margin-top: 15px;
+    height: 600px;
+}
+
+.calendar-toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.calendar-instructions {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 10px;
+}
+
+.calendar-instructions ul {
+    margin: 5px 0 0 15px;
+    font-size: 13px;
+}
+
+.calendar-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.fc-day.blocked-date {
+    background-color: #ffdddd !important;
+}
+
+.fc-day.has-price {
+    background-color: #d4edda !important;
+}
+
+.fc-daygrid-day.fc-day-selected {
+    background-color: rgba(0, 120, 215, 0.2) !important;
+}
+
+#price-dialog {
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    width: 300px;
+}
+
+.price-dialog-buttons {
+    margin-top: 15px;
+    text-align: right;
+}
+
+.price-dialog-buttons button {
+    margin-left: 10px;
+}
+
+.price-dialog-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.price-dialog-buttons button {
+    flex: 1;
+    padding: 0;
+    line-height: 36px;
+    height: 36px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.price-dialog-buttons #price-confirm {
+    background: #222;
+}
+
+.price-dialog-buttons #price-cancel {
+    background: #eee;
+    color: #333;
+}
+
+.fc a {
+    color: #222;
+}
+
+#price-dialog {
+    zoom: 0.9;
+}
+
+/* Add price indicator to calendar cells */
+.date-price-indicator {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    background: rgba(0, 128, 0, 0.7);
+    color: white;
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+/* Calendar Tooltip Styles */
+.selection-tooltip,
+#single-date-tooltip,
+#selection-tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    display: flex;
+    gap: 5px;
+    pointer-events: auto;
+}
+
+.selection-tooltip .tooltip-btn {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.selection-tooltip .block-btn {
+    background-color: #f91942;
+    color: white;
+}
+
+.selection-tooltip .price-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.selection-tooltip .clear-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.cmb-row.cmb-type-listeo-calendar.cmb2-id--availability {
+    position: relative
+}
+.form-step-blocks.row-container.ui-sortable {
+   clear: both;
+   overflow: hidden;
+}
+ .listeo-license-reset-section {
+     border-top: 1px solid #ccc;
+     padding-top: 20px;
+     margin-top: 20px;
+     background: #f9f9f9;
+     padding: 15px;
+     border-radius: 3px;
+ }
+
+ .listeo-license-reset-section strong {
+     color: #d63638;
+ }
+
+ .listeo-license-reset-section small {
+     color: #666;
+     font-style: italic;
+ }
+
+ .listeo-license-reset-header form {
+     display: inline-block;
+     margin-left: 10px;
+ }
+
+ .listeo-license-reset-header .button-small {
+     font-size: 11px;
+     height: 24px;
+     line-height: 22px;
+     padding: 0 8px;
+     vertical-align: top;
+ }
+
+/* Drag and Drop Styles for Custom Listing Types */
+.listeo-drag-handle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: move;
+    color: #ccc;
+    transition: color 0.3s ease;
+    z-index: 10;
+}
+
+.listeo-type-item {
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.listeo-type-item:hover .listeo-drag-handle {
+    color: #666;
+}
+
+/* .listeo-type-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+} */
+
+.listeo-dragging {
+    /* transform: rotate(3deg) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3) !important; */
+    z-index: 1000;
+}
+
+.listeo-sorting-active .listeo-type-item:not(.listeo-dragging) {
+    opacity: 0.7;
+    transform: scale(0.95);
+}
+
+.listeo-type-item-placeholder {
+    background: #f0f0f1 !important;
+    border: 2px dashed #c3c4c7 !important;
+    border-radius: 8px;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+}
+
+.listeo-type-item-placeholder:before {
+    content: "\f179";
+    font-family: dashicons;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #c3c4c7;
+    line-height: 1;
+}
+
+.listeo-reorder-loading {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.9);
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 20;
+}
+
+.listeo-reorder-success {
+    animation: listeo-success-flash 0.6s ease-in-out;
+}
+
+@keyframes listeo-success-flash {
+    0% { background-color: #46b450; }
+    100% { background-color: inherit; }
+}
+
+.listeo-types-grid.listeo-sorting-active {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Mobile responsiveness for drag handles */
+@media (max-width: 768px) {
+    .listeo-drag-handle {
+        position: relative;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        background: #f9f9f9;
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+    
+    .listeo-drag-handle .dashicons {
+        margin-right: 5px;
+    }
+    
+    .listeo-drag-handle:after {
+        content: "Drag to reorder";
+        font-size: 12px;
+        color: #666;
+    }
+}
+
+/* Custom button styles for listing type actions */
+.listeo-type-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Edit button - light blue background with blue text, no border */
+.listeo-edit-btn {
+    background-color: #1976d220 !important;
+    color: #1976d2 !important;
+    border: none !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    transition: all 0.2s ease !important;
+}
+
+.listeo-edit-btn:hover {
+    background-color: #1976d240 !important;
+    color: #1565c0 !important;
+}
+
+.listeo-edit-btn:focus {
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.3) !important;
+    outline: none !important;
+}
+
+/* Delete button - red background with white text */
+.listeo-delete-btn {
+    background-color: #f4433620 !important;
+    color: #f44336  !important;
+    border: none !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    margin-left: auto !important;
+}
+
+.listeo-delete-btn:hover {
+    background-color: #f4433630 !important;
+}
+
+.listeo-delete-btn:focus {
+    box-shadow:none !Important;
+    outline: none !important;
+}
+
+/* Drag button - gray background with gray text */
+.listeo-drag-btn {
+    background-color: #f5f5f5 !important;
+    color: #757575 !important;
+    border: none !important;
+    padding: 6px 8px !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    cursor: move !important;
+    transition: all 0.2s ease !important;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* line-height: 42px; */
+}
+
+.listeo-drag-btn:hover {
+    background-color: #eeeeee !important;
+    color: #616161 !important;
+    border-color: #d0d0d0 !important;
+}
+
+.listeo-drag-btn:focus {
+    box-shadow: 0 0 0 2px rgba(117, 117, 117, 0.3) !important;
+    outline: none !important;
+}
+
+.listeo-drag-btn .dashicons {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    margin: 0 -1px;
+}
+
+/* Add new listing type nav-tab button */
+.nav-tab-add-new {
+    background-color: #0073aa !important;
+    color: white !important;
+    text-decoration: none !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    border-radius: 3px 3px 0 0 !important;
+    display: inline-block !important;
+    margin: 0 2px 0 0 !important;
+}
+
+.nav-tab-add-new:hover,
+.nav-tab-add-new:focus {
+    background-color: #005a87 !important;
+    color: white !important;
+    text-decoration: none !important;
+    outline: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .listeo-type-actions {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .listeo-edit-btn,
+    .listeo-delete-btn,
+    .listeo-drag-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* NEW Badge styles for admin menu */
+.listeo-new-badge {
+    background: linear-gradient(45deg, #ff6b6b, #ff4757);
+    color: white !important;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+    display: inline-block;
+    text-shadow: none;
+    box-shadow: 0 2px 4px rgba(255, 75, 87, 0.3);
+    animation: listeo-pulse 2s ease-in-out infinite alternate;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@keyframes listeo-pulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Hover effect */
+a:hover .listeo-new-badge {
+    background: linear-gradient(45deg, #ff4757, #ff3838);
+    box-shadow: 0 3px 6px rgba(255, 75, 87, 0.4);
+}
+
+/* Listing Types Grid Layout */
+.listeo-types-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+      /* Breakpoint-based approach for more control */
+        @media screen and (max-width: 480px) {
+            .listeo-types-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .listeo-type-item {
+                min-width: 300px; /* Allow smaller on mobile */
+            }
+        }
+
+        @media screen and (min-width: 481px) and (max-width: 840px) {
+            .listeo-types-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+        }
+
+        @media screen and (min-width: 841px) and (max-width: 1240px) {
+            .listeo-types-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1241px) and (max-width: 1640px) {
+            .listeo-types-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 22px;
+            }
+        }
+
+        @media screen and (min-width: 1641px) {
+            .listeo-types-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+        }
+
+        @media screen and (min-width: 1941px) {
+            .listeo-types-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+        }
+.listeo-type-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.listeo-type-icon {
+    flex-shrink: 0;
+}
+
+.form_item .listeo-type-icon img {
+    max-width: 32px !important;
+    max-height: 32px !important;
+    height: auto !important;
+}
+
+.listeo-type-icon svg {
+    max-width: 32px !important;
+    min-height: 32px !important;
+    height: auto !important;
+}
+
+.listeo-type-title {
+    flex: 1;
+}
+
+.listeo-feature-tag {
+    display: inline-block;
+    background: #e6f9e8;
+    color: #407647;
+    padding: 4px 8px;
+    margin: 0;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.listeo-feature-tag-primary {
+    /* background: #0073aa;
+    color: white;
+    font-weight: 600; */
+}
+.listeo-feature-tag:before {
+    font-family: dashicons;
+    content: '\f147';
+    font-size: 16px;
+    line-height: 0;
+    position: relative;
+    top: 4px;
+    margin-left: -5px;
+}
+.listeo-feature-tag-disabled {
+    background: #999;
+    color: white;
+}
+
+.listeo-feature-tag-secondary {
+    /* background: #f56e28;
+    color: white; */
+}
+
+/* Listing Types Admin Styles */
+.listeo-listing-types-admin .card {
+    max-width: none;
+    margin-bottom: 20px;
+}
+
+.listeo-type-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.listeo-feature-badge {
+    display: inline-block;
+    background: #0073aa;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.listeo-default-badge {
+    background: #72aee6;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    margin-left: 8px;
+}
+
+.listeo-status-active {
+    color: #46b450;
+    font-weight: 600;
+}
+
+.listeo-status-inactive {
+    color: #dc3232;
+    font-weight: 600;
+}
+
+.listeo-listing-types-table {
+    background: white;
+    border: 1px solid #c3c4c7;
+    border-spacing: 0;
+}
+
+.listeo-listing-types-table th,
+.listeo-listing-types-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #c3c4c7;
+}
+
+.listeo-listing-types-table th {
+    background: #f6f7f7;
+    font-weight: 600;
+}
+
+.listeo-type-form .form-table th {
+    width: 200px;
+    padding: 15px 10px;
+}
+
+.listeo-type-form .form-table td {
+    padding: 15px 10px;
+}
+
+.listeo-form-section {
+    background: white;
+    border: 1px solid #c3c4c7;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+}
+
+.listeo-form-section h3 {
+    margin: 0;
+    padding: 12px 16px;
+    border-bottom: 1px solid #c3c4c7;
+    background: #f6f7f7;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.listeo-form-section .form-table {
+    margin: 0;
+}
+
+.required {
+    color: #d63638;
+}
+
+/* Feature Options Styles */
+.feature-option.feature-disabled {
+    cursor: not-allowed;
+    color: #999 !important;
+}
+
+.feature-option.feature-disabled input[type="checkbox"] {
+    cursor: not-allowed;
+}
+
+.feature-option.feature-disabled strong {
+    color: #999 !important;
+}
+
+.feature-option.feature-disabled small {
+    color: #ccc !important;
+}
+
+/* Column Styles */
+.listeo-custom-types-list .column-slug code {
+    background: #f1f1f1;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Grid Layout Icon Styles */
+.listeo-type-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listeo-type-icon-content {
+    max-width: 32px;
+    max-height: 32px;
+}
+
+.listeo-type-icon-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.listeo-type-icon-placeholder {
+    width: 32px;
+    height: 32px;
+    background: #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+}
+
+.listeo-type-name {
+    margin: 0 0 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.listeo-type-description {
+    color: #666;
+    font-size: 13px;
+    margin: 0 0 15px 0;
+}
+
+.listeo-type-info {
+    margin-bottom: 10px;
+}
+
+ .listeo-type-actions .wp-core-ui .button, 
+ .listeo-type-actions .wp-core-ui .button-secondary {
+    color: #5c0e34;
+    border-color: #2271b1;
+    background: #f6f7f7;
+    vertical-align: top;
+} 
+
+/* Toggle Container Layout */
+.lc-toggle-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.lc-toggle-content {
+    flex: 1;
+}
+
+.lc-toggle-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.lc-toggle-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2327;
+    line-height: 1.4;
+}
+
+.lc-toggle-description {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+  
+}
+
+.lc-toggle {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .lc-toggle-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .lc-toggle {
+        align-self: flex-start;
+    }
+}
+
+/* Feature options disabled state */
+.feature-option.feature-disabled {
+    opacity: 0.4 !important;
+}
+
+.feature-option.feature-disabled .lc-toggle {
+    pointer-events: none;
+}
+
+.feature-option.feature-disabled .lc-toggle-slider {
+    background: #e0e0e0 !important;
+}
+
+.feature-option.feature-disabled .lc-toggle-title,
+.feature-option.feature-disabled .lc-toggle-description {
+    color: #999 !important;
+}
+
+/* Booking features container spacing */
+#booking-features-container .lc-toggle-container {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#booking-features-container .lc-toggle-container:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}

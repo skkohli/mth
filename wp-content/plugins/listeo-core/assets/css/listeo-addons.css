@@ -1,0 +1,396 @@
+/**
+ * Listeo Add-ons — admin page (design system from claude.ai/design handoff).
+ * Variant B: paid add-ons get a PRO ribbon + dark "Buy now" + inline price.
+ * Global radius: 8px on rectangular elements; pills/circles unchanged.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.wrap.lba-root {
+	--red:#fb1e4e; --red-dk:#e30e3c; --red-tint:#ffe9ee;
+	--ink:#181818; --ink-soft:#3a3a3a; --muted:#717171; --faint:#9a9a9a;
+	--field:#f3f3f3; --card:#ffffff; --line:#e5e5e5; --line-soft:#f2f2f2;
+	--green:#2e7d32; --green-bg:#e8f5e9;
+	--amber:#bf7400; --amber-bg:#fff3e0;
+	--gray-bg:#f1f1f1;
+	--dark:#1f1f1f;
+	--lba-radius:8px;
+
+	margin: 0 auto;
+	padding: 40px 20px;
+	max-width: 1200px;
+	background: transparent;
+	border-radius: 0;
+	font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	color: var(--ink);
+	-webkit-font-smoothing: antialiased;
+}
+
+.lba-root * { box-sizing: border-box; }
+
+/* WP core hides .wp-header-end via the admin stylesheet, this just ensures
+   no leaked rule introduces vertical space here. */
+.lba-root .wp-header-end {
+	margin: 0; border: 0; height: 0;
+}
+
+/* WP notice spacing inside our gray field */
+.lba-root .notice,
+.lba-root > .updated,
+.lba-root > .error {
+	margin: 0 0 20px 0;
+}
+
+/* ===== page header ===== */
+.lba-pagehead {
+	display: block;
+	background-color: #ffffff; border: none; border-radius: var(--lba-radius);
+	padding: 26px 30px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+.lba-pagehead__title { display: flex; gap: 18px; align-items: flex-start; width: 100%; }
+
+.lba-pagehead__icon {
+	width: 50px; height: 50px; flex: 0 0 auto; border-radius: var(--lba-radius);
+	background: transparent; color: var(--red);
+	display: flex; align-items: center; justify-content: center; margin-top: 2px;
+	overflow: hidden;
+}
+
+.lba-pagehead__icon img {
+	display: block;
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+}
+
+.lba-pagehead h1 {
+	margin: 0; font-size: 28px; font-weight: 600; letter-spacing: 0;
+	color: var(--ink); padding: 0; line-height: 1.1;
+}
+
+.lba-pagehead p {
+	margin: 6px 0 0; font-size: 15px; color: var(--muted);
+	max-width: none; line-height: 1.55;
+}
+
+/* ===== page sections ===== */
+.lba-section { margin-top: 40px; }
+.lba-section__title {
+	margin: 0 0 20px;
+	padding: 0;
+	color: var(--ink);
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 0;
+}
+
+/* ===== summary / help panels ===== */
+.lba-summary,
+.lba-help-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 22px;
+}
+
+.lba-panel {
+	position: relative;
+	background-color: #ffffff;
+	border: none;
+	border-radius: var(--lba-radius);
+	padding: 24px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+
+.lba-panel h3 {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 14px;
+	padding: 0;
+	color: var(--ink);
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: 0;
+}
+
+.lba-panel p {
+	margin: 0 0 14px;
+	color: var(--muted);
+	font-size: 14px;
+	line-height: 1.6;
+}
+
+.lba-panel hr {
+	height: 1px;
+	margin: 16px 0;
+	border: 0;
+	background: var(--line-soft);
+}
+
+.lba-panel__icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 34px;
+	height: 34px;
+	flex: 0 0 auto;
+	border-radius: var(--lba-radius);
+	color: #222;
+	background: #f1f1f1;
+}
+
+.lba-status-text { font-weight: 600; }
+.lba-status-text--active { color: var(--green); }
+.lba-status-text--expired { color: var(--red); }
+.lba-status-text--warning { color: var(--amber); }
+
+.lba-support-badge {
+	display: inline-flex;
+	align-items: center;
+	margin: 0 12px 0 0;
+	padding: 6px 10px;
+	border-radius: 5px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1;
+}
+.lba-support-badge--active { color: var(--green); background: var(--green-bg); }
+.lba-support-badge--expired { color: var(--red); background: var(--red-tint); }
+.lba-support-badge--warning { color: var(--amber); background: var(--amber-bg); }
+
+.lba-help { padding-bottom: 4px; }
+.lba-help-card { display: flex; flex-direction: column; }
+.lba-help-card .lba-panel__icon {
+	background: #dcedff;
+	color: #0073ee;
+}
+.lba-help-card .lba-btn { align-self: flex-start; margin-top: auto; }
+
+/* ===== filters ===== */
+.lba-filters {
+	display: flex; align-items: center; gap: 10px;
+	margin: 0 0 22px; flex-wrap: wrap;
+}
+
+.lba-filters__label {
+	font-size: 14px; color: var(--muted); font-weight: 500; margin-right: 4px;
+}
+
+.lba-pill {
+	display: inline-flex; align-items: center; gap: 8px;
+	font-family: inherit; font-size: 13.5px; font-weight: 600;
+	color: var(--ink-soft); background: var(--card);
+	border: 1px solid var(--line); border-radius: var(--lba-radius);
+	padding: 9px 14px; cursor: pointer;
+	transition: border-color .15s, box-shadow .15s, background .15s, color .15s;
+}
+.lba-pill em {
+	font-style: normal; color: var(--faint); font-weight: 600; font-size: 12.5px;
+}
+.lba-pill:hover { border-color: #d9d9d9; box-shadow: 0 1px 3px rgba(20,20,20,.05); }
+
+.lba-pill--on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.lba-pill--on em { color: rgba(255,255,255,.6); }
+.lba-pill--prem { color: var(--red); }
+.lba-pill--prem em { color: #f3a3b6; }
+.lba-pill--prem.lba-pill--on { background: var(--red); color: #fff; border-color: var(--red); }
+.lba-pill--prem.lba-pill--on em { color: rgba(255,255,255,.7); }
+
+/* ===== global banner (optional, driven by dashboard.json) ===== */
+.lba-banner {
+	display: flex; align-items: center; justify-content: space-between; gap: 16px;
+	padding: 16px 20px; margin-bottom: 22px;
+	background: linear-gradient(135deg, var(--red-tint) 0%, #fff 100%);
+	border: 1px solid #f7d6de; border-left: 4px solid var(--red);
+	border-radius: var(--lba-radius);
+}
+.lba-banner p { margin: 0; font-size: 14px; color: var(--ink-soft); }
+
+/* ===== grid ===== */
+.lba-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+
+/* ===== card ===== */
+.lba-card {
+	position: relative; background-color: #ffffff; border: none;
+	border-radius: var(--lba-radius); padding: 24px 24px 22px;
+	display: flex; flex-direction: column;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+	transition: box-shadow .18s, opacity .15s;
+}
+.lba-card:hover {
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+}
+.lba-card.is-hidden { display: none; }
+
+.lba-card__head { display: flex; align-items: flex-start; gap: 15px; }
+
+.lba-ico {
+	width: 52px; height: 52px; flex: 0 0 auto; border-radius: var(--lba-radius);
+	background: var(--field); color: var(--red);
+	display: flex; align-items: center; justify-content: center;
+	font-size: 23px; font-weight: 600; line-height: 1; overflow: hidden;
+}
+.lba-ico--paid { background: var(--red-tint); }
+.lba-ico img { width: 100%; height: 100%; object-fit: contain; padding: 0; }
+
+.lba-card__heading {
+	display: flex; flex-direction: column; gap: 9px; min-width: 0; flex: 1;
+}
+
+.lba-card__title {
+	margin: 0; font-size: 17px; font-weight: 600; line-height: 1.25;
+	color: var(--ink); letter-spacing: 0; padding: 0;
+}
+
+/* badges */
+.lba-badge {
+	display: inline-flex;
+	align-items: center;
+	align-self: flex-start;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1;
+	text-transform: none;
+	padding: 6px 10px;
+	border-radius: 5px;
+	white-space: nowrap;
+}
+.lba-badge--green { color: var(--green); background: var(--green-bg); }
+.lba-badge--amber { color: var(--amber); background: var(--amber-bg); }
+.lba-badge--gray  { color: var(--muted); background: var(--gray-bg); }
+.lba-badge--red   { color: var(--red); background: var(--red-tint); }
+
+.lba-card__desc {
+	margin: 18px 0 20px; font-size: 14.5px; line-height: 1.62;
+	color: var(--muted); flex: 1;
+}
+
+/* PRO ribbon (variant B — premium cards) */
+.lba-pro {
+	position: absolute; top: 18px; right: 18px;
+	font-size: 11px; font-weight: 600; letter-spacing: 0;
+	color: #fff; background: linear-gradient(135deg, var(--red), #ff5a7d);
+	padding: 4px 10px; border-radius: var(--lba-radius);
+	box-shadow: 0 4px 10px rgba(251,30,78,.32);
+	pointer-events: none;
+}
+
+/* inline price next to "Buy now" */
+.lba-price-inline {
+	font-size: 14px; font-weight: 600; color: var(--ink);
+}
+
+/* discount chip (when dashboard.json sets an active percent promo) */
+.lba-discount {
+	display: inline-flex; align-items: center; gap: 8px;
+	margin: -8px 0 18px;
+	font-size: 12.5px; font-weight: 600; color: var(--red);
+	background: var(--red-tint); border: 1px dashed #f5c0cd;
+	border-radius: var(--lba-radius); padding: 8px 12px;
+}
+.lba-discount__code {
+	display: inline-flex; align-items: center; gap: 6px;
+	background: #fff; border: 1px solid #f3c4d0; border-radius: var(--lba-radius);
+	padding: 2px 8px; cursor: pointer;
+	font-family: inherit; color: var(--red); font-weight: 600;
+}
+.lba-discount__code:hover { background: var(--red-tint); }
+.lba-discount__copy { font-size: 10.5px; font-weight: 600; letter-spacing: 0; color: var(--red); text-transform: none; }
+
+/* actions */
+.lba-actions {
+	display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+	margin-top: auto;
+}
+
+.lba-btn {
+	display: inline-flex; align-items: center; gap: 7px;
+	font-family: inherit; font-size: 13px; font-weight: 600;
+	border-radius: 6px; padding: 8px 12px; cursor: pointer;
+	border: 1px solid transparent; text-decoration: none; line-height: 1.2;
+	transition: background .15s, box-shadow .15s, color .15s, border-color .15s;
+}
+.lba-btn svg { width: 14px; height: 14px; }
+.lba-btn--primary { background: var(--green-bg); color: var(--green); box-shadow: none; }
+.lba-btn--primary:hover { background: #d8edd9; color: var(--green); box-shadow: none; }
+.lba-btn--dark { background: var(--dark); color: #fff; box-shadow: none; }
+.lba-btn--dark:hover { background: #000; color: #fff; box-shadow: none; }
+.lba-btn--secondary {
+	background: #fff;
+	color: var(--dark);
+	border-color: var(--line);
+	box-shadow: none;
+}
+.lba-btn--secondary:hover {
+	background: #f6f6f6;
+	color: #000;
+	border-color: #d8d8d8;
+}
+.lba-btn--ghost {
+	background: #fff; color: #555;
+	border-color: var(--line); box-shadow: none; cursor: default;
+}
+.lba-btn--ghost:hover { color: #555; }
+.lba-btn[disabled], .lba-btn.is-busy { opacity: .85; cursor: progress; }
+
+.lba-root a:focus,
+.lba-root a:active,
+.lba-root button:focus,
+.lba-root button:active,
+.lba-root .lba-btn:focus,
+.lba-root .lba-btn:active,
+.lba-root .lba-pill:focus,
+.lba-root .lba-pill:active,
+.lba-root .lba-discount__code:focus,
+.lba-root .lba-discount__code:active {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.lba-link {
+	display: inline-flex; align-items: center;
+	background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px;
+	font-family: inherit; font-size: 13px; font-weight: 600; line-height: 1.2;
+	color: var(--dark); cursor: pointer; text-decoration: none;
+}
+.lba-link:hover { background: #f6f6f6; border-color: #d8d8d8; color: #000; text-decoration: none; }
+.lba-link:focus { outline: none; box-shadow: none; }
+
+/* inline error under actions row */
+.lba-card__error {
+	flex-basis: 100%;
+	margin-top: 4px; padding: 8px 12px;
+	background: #fef2f2; border: 1px solid #fecaca; border-radius: var(--lba-radius);
+	color: #991b1b; font-size: 12.5px; line-height: 1.45;
+}
+
+/* install spinner */
+.lba-spinner {
+	display: inline-block; width: 12px; height: 12px;
+	border: 2px solid currentColor; border-right-color: transparent;
+	border-radius: 50%; animation: lba-spin .8s linear infinite;
+	vertical-align: -2px;
+}
+@keyframes lba-spin { to { transform: rotate(360deg); } }
+
+/* empty state */
+.lba-empty {
+	background-color: #ffffff; border: none; border-radius: var(--lba-radius);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+	padding: 40px 30px; text-align: center; color: var(--muted); font-size: 14.5px;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+	.lba-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+	.lba-summary,
+	.lba-help-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 782px) {
+	.wrap.lba-root { padding: 24px 14px 32px; margin: 0 auto; }
+	.lba-pagehead { padding: 20px 22px; }
+	.lba-pagehead h1 { font-size: 22px; }
+	.lba-grid { grid-template-columns: 1fr; }
+	.lba-filters { gap: 8px; }
+}

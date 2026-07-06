@@ -1,0 +1,1353 @@
+/* Site Health Tab Enhanced Styles */
+
+  /* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap'); */
+
+  .health-check-body {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+
+/* Main Health Check Grid Layout */
+.listeo-health-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    margin: 24px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.listeo-health-section {
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+    min-height: fit-content;
+}
+
+
+.listeo-health-section h2 {
+    margin: 0 0 8px 0;
+    color: #333333;
+    font-size: 19px;
+    font-weight: 600;
+    padding-bottom: 8px;
+}
+
+/* Stats Cards Grid */
+.listeo-stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin: 0;
+}
+
+.listeo-stat-card {
+    background: #f5f5f5;
+    /* background: linear-gradient(135deg, #f3fff7 0%, #ffffff 80%);
+    border: 1px solid #ceeed9; */
+    background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 80%);
+    border: 1px solid #dfe1ee;
+    border-radius: 5px;
+    padding: 24px 20px;
+    text-align: center;
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.08); */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.listeo-stat-card:has(.stat-critical) {
+    background: linear-gradient(135deg, #ffeeee 0%, #ffffff 80%);
+    border: 1px solid #f0d2d2;
+}
+
+
+.listeo-stat-card h3 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    color: #666666;
+    /* text-transform: uppercase; */
+    /* font-weight: 700; */
+    /* letter-spacing: 0.5px; */
+}
+
+.listeo-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.listeo-stat-label {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+}
+
+/* Memory Usage Bars */
+.listeo-memory-bars {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.listeo-memory-item {
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s ease;
+}
+
+.listeo-memory-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.listeo-memory-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #333333;
+    font-size: 14px;
+}
+
+.listeo-memory-bar {
+    width: 100%;
+    height: 24px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.listeo-memory-progress {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.listeo-health-check-page .health-check-header {
+    display: none;
+}
+
+.listeo-memory-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: 700;
+    color: #f5f5f5;
+    z-index: 2;
+
+}
+
+/* Status Colors */
+.memory-good { 
+    background: linear-gradient(135deg, #00a32a, #008a24);
+}
+
+.memory-warning { 
+    background: linear-gradient(135deg, #dba617, #c4941a);
+}
+
+.memory-critical { 
+    background: linear-gradient(135deg, #d63638, #b32d2e);
+}
+
+.stat-good { 
+    color: #0073aa;
+}
+
+.stat-warning { 
+    color: #dba617;
+}
+
+.stat-critical { 
+    color: #d63638;
+}
+
+/* Enhanced Content Sections */
+.health-check-header {
+    margin-bottom: 32px;
+    padding: 24px 0;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.health-check-title-section h1 {
+    font-size: 28px;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+/* Remove duplicate h2 styling - moved to .listeo-health-section h2 */
+
+/* Debug Section Styling */
+.listeo-debug-section {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+.listeo-debug-section h3 {
+    margin: 0 0 16px 0;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.listeo-debug-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.listeo-debug-status {
+    padding: 12px;
+    background: #f8f8f8;
+    border-radius: 4px;
+    border-left: 4px solid #d0d0d0;
+}
+
+.listeo-debug-status.status-good {
+    border-left-color: #00a32a;
+    background: #edf7ed;
+}
+
+.listeo-debug-status.status-warning {
+    border-left-color: #dba617;
+    background: #fff8e1;
+}
+
+.listeo-debug-status.status-error {
+    border-left-color: #d63638;
+    background: #fef2f2;
+}
+
+/* Button Enhancements */
+.listeo-debug-control,
+.listeo-memory-limit-fix,
+.listeo-test-email {
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+
+/* Email Configuration Section */
+.listeo-email-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.listeo-email-status {
+    padding: 14px;
+    background: #f8f8f8;
+    border-radius: 4px;
+    border-left: 4px solid #d0d0d0;
+}
+
+.listeo-email-status.mail-good {
+    border-left-color: #666666;
+}
+
+.listeo-email-status.mail-warning {
+    border-left-color: #999999;
+}
+
+.listeo-email-status.mail-error {
+    border-left-color: #333333;
+}
+
+/* Error Log Display */
+.listeo-error-log {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #f8f8f8;
+    max-height: 320px;
+    overflow-y: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.listeo-error-entry {
+    padding: 10px;
+    border-bottom: 1px solid #e8e8e8;
+    color: #333333;
+}
+
+.listeo-error-entry.listeo-related {
+    background: #f0f0f0;
+    border-left: 3px solid #666666;
+}
+
+.listeo-error-tag {
+    background: #333333;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 10px;
+    margin-right: 6px;
+    font-weight: 700;
+}
+
+.listeo-no-errors {
+    padding: 20px;
+    text-align: center;
+    color: #666666;
+    font-weight: 600;
+}
+
+/* Tables Enhancement */
+.listeo-health-check-table-pages {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 16px 0;
+    background: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.listeo-health-check-table-pages td {
+    padding: 6px 16px;
+    border-bottom:none;
+    color: #333333;
+}
+
+.listeo-health-section table { border: none;}
+
+/* Warning/Info Boxes */
+.listeo-warning-box {
+    padding: 16px;
+    margin: 16px 0;
+    border-radius: 4px;
+    border-left: 4px solid;
+}
+
+.listeo-warning-box.critical {
+    background: #f5f5f5;
+    border-left-color: #333333;
+    color: #333333;
+}
+
+.listeo-warning-box.warning {
+    background: #f9f9f9;
+    border-left-color: #999999;
+    color: #666666;
+}
+
+.listeo-warning-box.success {
+    background: #f8f8f8;
+    border-left-color: #666666;
+    color: #444444;
+}
+
+/* Form Elements */
+.listeo-form-input {
+    padding: 10px 14px;
+    border: 1px solid #d0d0d0;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 300px;
+    transition: border-color 0.3s ease;
+}
+
+.listeo-form-input:focus {
+    outline: none;
+    border-color: #999999;
+    box-shadow: 0 0 0 2px rgba(153,153,153,0.1);
+}
+
+/* Button Styles */
+.button-secondary-light {
+    background-color: #e3f2fd !important;
+    border: none !important;
+    color: #1976d2 !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+.button-secondary-light:hover {
+    background-color: #bbdefb !important;
+    color: #1565c0 !important;
+}
+
+.button-secondary-light:focus {
+    background-color: #bbdefb !important;
+    color: #1565c0 !important;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2) !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .listeo-health-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .listeo-stats-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .listeo-debug-grid,
+    .listeo-email-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .listeo-memory-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+    
+    .listeo-form-input {
+        min-width: 100%;
+    }
+}
+
+/* Animation for progress bars */
+@keyframes progressLoad {
+    from { width: 0; }
+}
+
+.listeo-memory-progress {
+    animation: progressLoad 1.2s ease-out;
+}
+
+/* Accessibility improvements */
+.listeo-stat-card:focus,
+.listeo-memory-item:focus {
+    outline: 2px solid #999999;
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.listeo-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.listeo-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e0e0e0;
+    border-top: 2px solid #999999;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Additional Inline Styles Moved to Classes */
+
+/* Memory Warning/Critical Boxes */
+.listeo-memory-warning {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.health-check-body .fail::before, 
+.health-check-body .error::before { display: none; }
+
+.listeo-memory-warning.critical {
+    background-color: #fef2f2;
+    border-left: 4px solid #d63638;
+    color: #d63638;
+}
+
+.listeo-memory-warning.warning {
+    background-color: #fff8e1;
+    border-left: 4px solid #dba617;
+    color: #b5860f;
+}
+
+.listeo-memory-warning-content {
+    margin-bottom: 8px;
+}
+
+.listeo-memory-fix-container {
+    margin-top: 10px;
+}
+
+.listeo-memory-limit-fix.critical-button {
+    background: #d63638 !important;
+    color: white !important;
+    border-color: #d63638 !important;
+    font-size: 14px;
+    padding: 3px 12px;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #b32d2e;
+    text-shadow: 0 -1px 1px #b32d2e, 1px 0 1px #b32d2e, 0 1px 1px #b32d2e, -1px 0 1px #b32d2e;
+}
+
+.listeo-memory-note {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666666;
+}
+
+/* Debug Action Buttons */
+.listeo-debug-actions {
+    margin-bottom: 15px;
+}
+
+.listeo-debug-actions h4 {
+    margin: 0 0 10px 0;
+}
+
+.listeo-debug-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+body .listeo-debug-buttons button.listeo-debug-control { padding: 3px 12px; border-radius: 5px;}
+.listeo-debug-buttons button { border: none !important;}
+.listeo-debug-control.enable-full {
+    background: #f6e8e8;
+    color: #d63638;
+    border-color: #d63638;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.listeo-debug-control.enable-full:hover {
+    background: #d63638;
+    color: white;
+}
+
+.listeo-debug-control.disable-all {
+    background: #e2f9e2;
+    color: #00a32a;
+    border-color: #00a32a;
+    transition: all 0.3s ease;
+}
+
+.listeo-debug-control.disable-all:hover {
+    background: #00a32a;
+    color: white;
+}
+
+.listeo-debug-control.enable-logging {
+    background: #fff3d1;
+    color: #dba617;
+    border-color: #dba617;
+    transition: all 0.3s ease;
+}
+
+.listeo-debug-control.enable-logging:hover {
+    background: #dba617;
+    color: white;
+}
+
+.listeo-debug-control.disable-display {
+    background: #f0f0f1;
+    color: #646970;
+    border-color: #646970;
+    transition: all 0.3s ease;
+}
+
+.listeo-debug-control.disable-display:hover {
+    background: #646970;
+    color: white;
+}
+
+.listeo-debug-descriptions {
+    font-size: 12px;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+/* Success Messages */
+.listeo-success-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    color: #00a32a;
+    font-weight: 600;
+    background: #edf7ed;
+    border-radius: 3px;
+    border: 1px solid #00a32a;
+    text-align: center;
+}
+
+/* Email Test Section */
+.listeo-email-test {
+    margin-bottom: 20px;
+}
+
+.listeo-email-test h4 {
+    margin: 0 0 10px 0;
+}
+
+.listeo-email-test-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.listeo-test-email.blue-button:hover,
+.listeo-test-email.blue-button {
+    background: #0073aa;
+    color: white;
+    border-color: #0073aa;
+    padding: 0px 12px;
+}
+
+.listeo-email-tip {
+    font-size: 13px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+
+.listeo-email-test-result {
+    margin-top: 10px;
+}
+
+/* Warning Boxes with Dynamic Colors */
+.listeo-dynamic-warning {
+    padding: 15px;
+    border-left: 4px solid;
+    border-radius: 3px;
+    margin-bottom: 15px;
+}
+
+.listeo-dynamic-warning.critical {
+    background: #fef2f2;
+    border-left-color: #d63638;
+}
+
+.listeo-dynamic-warning.critical h4,
+.listeo-dynamic-warning.critical p,
+.listeo-dynamic-warning.critical .listeo-dynamic-warning-content {
+    color: #d63638;
+}
+
+.listeo-dynamic-warning.warning {
+    background: #fff8e1;
+    border-left-color: #dba617;
+}
+
+.listeo-dynamic-warning.warning h4,
+.listeo-dynamic-warning.warning p,
+.listeo-dynamic-warning.warning .listeo-dynamic-warning-content {
+    color: #b5860f;
+}
+
+.listeo-dynamic-warning h4 {
+    margin: 0 0 10px 0;
+}
+
+.listeo-dynamic-warning p {
+    margin: 0 0 10px 0;
+}
+
+.listeo-dynamic-warning-content {
+    font-size: 13px;
+}
+
+/* Email Issues Details */
+.listeo-email-details {
+    margin-top: 15px;
+}
+
+.listeo-email-details summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #666666;
+}
+
+.listeo-email-details-content {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f6f7f7;
+    border-radius: 3px;
+    font-size: 13px;
+    color: #666666;
+}
+
+/* Status Icons */
+.listeo-status-icon {
+    color: #646970;
+}
+
+.listeo-status-icon.success {
+    color: #00a32a;
+}
+
+.listeo-status-icon.error {
+    color: #d63638;
+}
+
+/* wp-config.php Warning */
+.listeo-config-warning {
+    margin-top: 10px;
+    padding: 8px;
+    background: #f9f9f9;
+    border-left: 4px solid #999999;
+    color: #666666;
+    font-size: 12px;
+}
+
+/* Additional Missing Styles */
+
+/* Debug status colors - dynamic based on state */
+.listeo-debug-status-text {
+    color: #00a32a;
+}
+
+.listeo-debug-status-text.enabled {
+    color: #dba617;
+}
+
+.listeo-debug-status-text.critical {
+    color: #d63638;
+}
+
+/* Mail server status header */
+.listeo-mail-status-header {
+    margin: 0 0 15px 0;
+}
+
+/* Email status text colors */
+.listeo-email-status-text {
+    color: #646970;
+}
+
+.listeo-email-status-text.good {
+    color: #00a32a;
+}
+
+.listeo-email-status-text.warning {
+    color: #dba617;
+}
+
+.listeo-email-status-text.error {
+    color: #d63638;
+}
+
+.listeo-email-content {
+    color: #333333;
+}
+
+.listeo-email-meta {
+    color: #666666;
+    font-size: 14px;
+}
+
+/* Remove all remaining margin/padding styles that were inline */
+.listeo-section-header {
+    margin: 0 0 15px 0;
+}
+
+.listeo-debug-actions-header {
+    margin: 0 0 10px 0;
+}
+
+.listeo-email-test-header {
+    margin: 0 0 10px 0;
+}
+
+.listeo-dynamic-warning-header {
+    margin: 0 0 10px 0;
+}
+
+
+.health-check-body { max-width: 100%;}
+
+.listeo-health-check-title-section {
+    margin: 25px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.listeo-health-check-page #wpbody-content {
+    background: #f6f6f6;
+}
+
+/* WordPress Heartbeat Monitoring Styles */
+
+/* Status Indicators */
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-indicator.status-good {
+    background: #00a32a;
+}
+
+.status-indicator.status-warning {
+    background: #dba617;
+}
+
+.status-indicator.status-critical {
+    background: #d63638;
+}
+
+/* Removed old banner styles - now using combined display */
+
+/* Listeo Heartbeat Box */
+.listeo-heartbeat-box {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.listeo-heartbeat-box:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.listeo-heartbeat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.listeo-heartbeat-header h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.heartbeat-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Heartbeat Controls */
+.heartbeat-controls {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.heartbeat-btn {
+    background: #ededed;
+    border: none;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.heartbeat-btn:hover {
+    background: #222;
+    color: white;
+    border-color: #222;
+}
+
+.heartbeat-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Responsive for Heartbeat */
+@media (max-width: 768px) {
+    .heartbeat-controls {
+        justify-content: center;
+    }
+}
+
+/* Status text in heartbeat section */
+#heartbeat-interval {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Combined Heartbeat Status Display */
+.heartbeat-interval-display .listeo-heartbeat-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.heartbeat-combined-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 0;
+}
+
+.heartbeat-current-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+.heartbeat-interval-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.interval-number {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #333 0%, #666 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.heartbeat-current-status .status-indicator {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.heartbeat-status-text {
+    flex: 1;
+    padding-left: 20px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.heartbeat-status-text strong {
+    display: block;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.heartbeat-status-text span {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Add dynamic border color based on status */
+.heartbeat-interval-display {
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid #dba617;
+
+}
+
+.heartbeat-interval-display.status-good {
+    border-left-color: #00a32a;
+}
+
+.heartbeat-interval-display.status-warning {
+    border-left-color: #dba617;
+}
+
+.heartbeat-interval-display.status-critical {
+    border-left-color: #d63638;
+}
+
+/* Database Health Section Styles */
+.listeo-database-stats-container {
+    margin-top: 20px;
+}
+
+.listeo-loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    color: #666;
+}
+
+.listeo-loading .spinner {
+    float: none;
+    margin: 0;
+}
+
+.database-overview {
+    margin-top: 20px;
+}
+
+.database-overview h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.db-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.db-stat-card {
+    background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 80%);
+    border: 1px solid #dfe1ee;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+
+.db-stat-card h5 {
+    margin: 0 0 8px 0;
+    color: #212121;
+    font-size: 14px;
+    font-weight: 500;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 0.5px; */
+}
+
+.db-size {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0073aa;
+}
+
+.db-stat-card small {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+    line-height: 1.3;
+    font-weight: normal;
+}
+
+/* Transient Health Section Styles */
+
+.listeo-transient-box,
+.listeo-revision-box {
+    margin-top: 20px;
+}
+
+.listeo-transient-header,
+.listeo-revision-header {
+    margin-bottom: 20px;
+}
+
+.listeo-transient-header h4,
+.listeo-revision-header h4 {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.stats-summary {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.status-indicator {
+    font-size: 24px;
+    line-height: 1;
+}
+
+.stats-details {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.stat-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-item strong {
+    color: #333;
+    font-weight: 600;
+}
+
+.stats-message {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 12px 15px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+    border-left: 3px solid #ddd;
+}
+
+.status-good .stats-message {
+    background: #e8f5e8;
+    border-left-color: #00a32a;
+    color: #0a6b2b;
+}
+
+.status-warning .stats-message {
+    background: #fff8e1;
+    border-left-color: #dba617;
+    color: #8b6914;
+}
+
+.status-critical .stats-message {
+    background: #ffeaea;
+    border-left-color: #d63638;
+    color: #a62f31;
+}
+
+/* Revision Health Section Styles */
+
+.listeo-revision-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.listeo-revision-controls label {
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.listeo-revision-controls select {
+    /* padding: 5px 10px; */
+    /* border: 1px solid #ddd; */
+    /* border-radius: 3px; */
+    /* background: #fff; */
+}
+
+/* Cleanup Actions */
+.listeo-transient-actions,
+.listeo-revision-actions {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.listeo-transient-actions h4,
+.listeo-revision-actions h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.listeo-transient-buttons,
+.listeo-revision-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+body .listeo-cleanup-transients,
+body .listeo-cleanup-revisions {
+    padding: 3px 16px !important;
+    border-radius: 5px !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+
+.listeo-cleanup-transients[disabled],
+.listeo-cleanup-revisions[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.listeo-cleanup-descriptions {
+    background: #f8f9fa;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.listeo-cleanup-descriptions strong {
+    color: #333;
+}
+
+.listeo-cleanup-results {
+    margin-top: 20px;
+}
+
+.listeo-cleanup-results .notice {
+    margin: 0;
+    border-radius: 5px;
+}
+
+.listeo-cleanup-results .notice p {
+    margin: 0;
+    padding: 12px 15px;
+}
+
+/* Loading states */
+.transient-loading,
+.revision-loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    color: #666;
+    justify-content: center;
+}
+
+.transient-loading .spinner,
+.revision-loading .spinner {
+    float: none;
+    margin: 0;
+}
+
+/* Enhanced button styles */
+.button.button-primary.listeo-cleanup-transients,
+.button.button-primary.listeo-cleanup-revisions {
+    background: #00a32a26;
+    border: none !important;
+    color: #00a32a;
+}
+
+.button.button-primary.listeo-cleanup-transients:hover,
+.button.button-primary.listeo-cleanup-revisions:hover {
+    background: #00a32a2e;
+
+}
+
+.button.button-link-delete.listeo-cleanup-transients,
+.button.button-link-delete.listeo-cleanup-revisions {
+    background: #d636381c;
+    border: none !important;
+    color: #d63638;
+}
+
+.button.button-link-delete.listeo-cleanup-transients:hover,
+.button.button-link-delete.listeo-cleanup-revisions:hover {
+    background: #d6363830;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .interval-number {
+        font-size: 24px;
+    }
+    
+    .heartbeat-combined-content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .heartbeat-status-text {
+        border-left: none;
+        border-top: 1px solid #e0e0e0;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+    
+    .heartbeat-controls {
+        justify-content: center;
+    }
+    
+    /* Database health responsive */
+    .db-stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .stats-details {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .stats-summary {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .listeo-transient-buttons,
+    .listeo-revision-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .listeo-revision-controls {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    .listeo-revision-controls label {
+        text-align: center;
+    }
+}
+
+.listeo-transient-buttons .wp-core-ui .button, .wp-core-ui .button-secondary {
+    color: #ffffff;
+    border-color: #2271b1;
+    background: #f6f7f7;
+    vertical-align: top;
+}

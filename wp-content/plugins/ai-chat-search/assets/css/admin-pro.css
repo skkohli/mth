@@ -1,0 +1,401 @@
+/**
+ * Admin Pro Features Styling
+ *
+ * Styles for locked features and upgrade prompts in free version
+ */
+
+/* Pro Badge */
+.ai-chat-pro-badge {
+    display: inline-block;
+    background: #0073ee;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 8px;
+    vertical-align: middle;
+    cursor: help;
+}
+
+
+
+/* Locked Post Type Rows */
+.ai-chat-post-type-row {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.ai-chat-post-type-row.locked {
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    opacity: 0.7;
+    box-shadow: none
+}
+
+.ai-chat-post-type-row.locked .dashicons-lock {
+    color: #a0a5aa;
+    margin-right: 5px;
+}
+
+.ai-chat-post-type-row:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.post-type-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.post-type-header strong {
+    font-size: 14px;
+}
+
+/* Upgrade Links */
+.upgrade-link {
+    color: #0073ee !important;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.upgrade-link:hover {
+    color: #005bb5 !important;
+    text-decoration: underline;
+}
+
+/* Upgrade Prompt Box */
+.ai-chat-upgrade-prompt {
+    background: #0073ee;
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.upgrade-prompt-icon .dashicons {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    opacity: 0.9;
+}
+
+.upgrade-prompt-content {
+    flex: 1;
+}
+
+.upgrade-prompt-content h3 {
+    color: white;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.upgrade-prompt-content .description {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 15px;
+}
+
+.upgrade-features-list {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+}
+
+.upgrade-features-list li {
+    color: rgba(255,255,255,0.95);
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.upgrade-features-list .dashicons-yes-alt {
+    color: #4ade80;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+}
+
+.upgrade-prompt-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.upgrade-prompt-actions .button {
+    font-weight: 600;
+    padding: 8px 20px;
+    height: auto;
+}
+
+.upgrade-prompt-actions .button-primary {
+    background: white;
+    color: #0073ee;
+    border-color: white;
+}
+
+.upgrade-prompt-actions .button-primary:hover {
+    background: #f0f0f0;
+    color: #005bb5;
+    border-color: #f0f0f0;
+}
+
+.upgrade-prompt-actions .button-secondary {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border-color: rgba(255,255,255,0.4);
+}
+
+.upgrade-prompt-actions .button-secondary:hover {
+    background: rgba(255,255,255,0.3);
+    border-color: rgba(255,255,255,0.6);
+}
+
+/* Pro Feature Locked Overlay */
+.ai-chat-pro-feature-locked {
+    position: relative;
+    min-height: 400px;
+}
+
+.ai-chat-pro-feature-locked .lock-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    max-width: 500px;
+}
+
+.ai-chat-pro-feature-locked .lock-overlay .lock-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ai-chat-pro-feature-locked .lock-overlay .dashicons {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #0073ee;
+    margin-bottom: 20px;
+}
+
+.ai-chat-pro-feature-locked .lock-overlay h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #1e293b;
+}
+
+.ai-chat-pro-feature-locked .lock-overlay p {
+    color: #64748b;
+    margin-bottom: 0px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.ai-chat-pro-feature-locked .benefits-list {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+    text-align: left;
+}
+
+.ai-chat-pro-feature-locked .benefits-list li {
+    padding: 0;
+    color: #475569;
+    position: relative;
+    padding-left: 24px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.ai-chat-pro-feature-locked .benefits-list li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0073ee;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.ai-chat-pro-feature-locked .button-hero {
+    padding: 12px 30px;
+    height: auto;
+    border-radius: 6px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #0073ee 0%, #005bb5 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,115,238,0.4);
+    transition: 0.3s;
+    outline: none; border: none;
+}
+
+.ai-chat-pro-feature-locked .button-hero:hover {
+    background: linear-gradient(135deg, #067af6 0%, #0466c7 100%) ;
+    box-shadow: 0 6px 16px rgba(0,115,238,0.5);
+}
+
+.ai-chat-pro-feature-locked .feature-preview {
+    filter: blur(5px);
+    opacity: 0.3;
+    pointer-events: none;
+    user-select: none;
+}
+
+.ai-chat-pro-feature-locked .preview-container {
+    position: relative;
+}
+
+.ai-chat-pro-feature-locked .preview-blurred {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Feature Locked Section */
+.ai-chat-locked-features {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border: 2px solid #e0e7ff;
+    border-radius: 8px;
+    padding: 40px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.ai-chat-locked-features .lock-icon {
+    margin-bottom: 20px;
+}
+
+.ai-chat-locked-features .lock-icon .dashicons {
+    font-size: 64px;
+    width: 64px;
+    height: 64px;
+    color: #0073ee;
+}
+
+.ai-chat-locked-features h3 {
+    font-size: 24px;
+    color: #1e293b;
+    margin: 0 0 15px 0;
+}
+
+.ai-chat-locked-features .description {
+    font-size: 16px;
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.ai-chat-locked-features .pro-features-list {
+    list-style: none;
+    margin: 30px 0;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.ai-chat-locked-features .pro-features-list li {
+    padding: 10px 0;
+    font-size: 15px;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ai-chat-locked-features .pro-features-list .dashicons-yes-alt {
+    color: #0073ee;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.ai-chat-locked-features .cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.ai-chat-locked-features .button-large {
+    padding: 12px 30px;
+    height: auto;
+    font-size: 16px;
+}
+
+.ai-chat-locked-features .button-primary {
+    background: #0073ee;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,115,238,0.4);
+}
+
+.ai-chat-locked-features .button-primary:hover {
+    background: #005bb5;
+    box-shadow: 0 6px 16px rgba(0,115,238,0.5);
+}
+
+/* Locked Post Type Cards (for grid layout) */
+.post-type-card.locked {
+    opacity: 0.7;
+    background: #f9f9f9;
+    border: 1px dashed #ccc !important;
+    box-shadow: none !important;
+}
+
+.post-type-card.locked .post-type-icon {
+    opacity: 0.5;
+}
+
+.post-type-card.locked .toggle-switch-locked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 26px;
+    background: #e0e0e0;
+    border-radius: 13px;
+    color: #999;
+}
+
+.post-type-card.locked .toggle-switch-locked .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .ai-chat-upgrade-prompt {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .upgrade-prompt-actions {
+        flex-direction: column;
+    }
+
+    .upgrade-prompt-actions .button {
+        width: 100%;
+    }
+
+    .ai-chat-locked-features .cta-buttons {
+        flex-direction: column;
+    }
+
+    .ai-chat-locked-features .button-large {
+        width: 100%;
+    }
+}

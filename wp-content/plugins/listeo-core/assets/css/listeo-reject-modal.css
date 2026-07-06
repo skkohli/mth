@@ -1,0 +1,96 @@
+/* Rejection Modal Styles */
+.listeo-modal {
+	position: fixed;
+	z-index: 100000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+
+.listeo-modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 20px;
+	border: 1px solid #ddd;
+	width: 500px;
+	max-width: 90%;
+	border-radius: 4px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	position: relative;
+}
+
+.listeo-modal-close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+	line-height: 20px;
+}
+
+.listeo-modal-close:hover,
+.listeo-modal-close:focus {
+	color: #000;
+}
+
+.listeo-modal-content h2 {
+	margin-top: 0;
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
+.listeo-modal-content p {
+	margin: 0 0 15px 0;
+	color: #666;
+}
+
+#listeo-rejection-reason {
+	width: 100%;
+	margin: 15px 0;
+	padding: 8px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-family: inherit;
+	font-size: 14px;
+	resize: vertical;
+}
+
+#listeo-rejection-reason:focus {
+	border-color: #0073aa;
+	outline: none;
+	box-shadow: 0 0 0 1px #0073aa;
+}
+
+.listeo-modal-actions {
+	text-align: right;
+	margin-top: 15px;
+}
+
+.listeo-modal-actions .button {
+	margin-left: 10px;
+}
+
+/* Rejected Status Badge */
+.listeo-status-tag.listeo-status-rejected {
+	background-color: #dc3232;
+	color: #fff;
+	padding: 4px 8px;
+	border-radius: 3px;
+	font-size: 12px;
+	font-weight: 600;
+	display: inline-block;
+}
+
+/* Icon for reject button */
+.button.icon-reject:before {
+	content: '\f153';
+	font-family: dashicons;
+	font-size: 17px;
+	line-height: 1;
+	display: inline-block;
+	margin-right: 5px;
+	vertical-align: middle;
+}

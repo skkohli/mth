@@ -1,0 +1,425 @@
+/**
+ * Hierarchical Taxonomy Display Widget Styles
+ * Modern, clean design with expandable hierarchical categories
+ */
+
+
+
+.hierarchical-taxonomy-display .listeo-grid {
+    display: block;
+    columns: var(--columns, 3);
+    column-gap: 16px;
+    column-fill: balance;
+}
+
+.hierarchical-taxonomy-display .listeo-grid-cols-2 {
+    --columns: 2;
+}
+
+.hierarchical-taxonomy-display .listeo-grid-cols-3 {
+    --columns: 3;
+}
+
+.hierarchical-taxonomy-display .listeo-grid-cols-4 {
+    --columns: 4;
+}
+
+.hierarchical-taxonomy-display .hierarchical-taxonomy-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: box-shadow 0.2s ease-in-out;
+    break-inside: avoid;
+    margin-bottom: 16px;
+    display: inline-block;
+    width: 100%;
+}
+
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card:hover {
+    box-shadow:  0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+body .hierarchical-taxonomy-item:hover {
+
+
+}
+.hierarchical-taxonomy-card svg path,
+.hierarchical-taxonomy-card svg circle,
+.hierarchical-taxonomy-card svg rect,
+.hierarchical-taxonomy-card svg polygon {
+    fill: var(--listeo-primary-color) !important;
+    transition: fill 0.3s ease;
+}
+.hierarchical-taxonomy-display .hierarchical-taxonomy-item {
+    padding: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    background: #ffffff;
+}
+
+.hierarchical-taxonomy-display .hierarchical-taxonomy-item:hover {
+    background-color: #f8f8f8;
+}
+
+.hierarchical-taxonomy-display .hierarchical-taxonomy-item.has-children:hover {
+    background-color: #f0f0f0;
+}
+
+/* Flex utilities */
+.hierarchical-taxonomy-display .listeo-flex {
+    display: flex;
+}
+
+.hierarchical-taxonomy-display .listeo-items-center {
+    align-items: center;
+}
+
+.hierarchical-taxonomy-display .listeo-justify-between {
+    justify-content: space-between;
+}
+
+.hierarchical-taxonomy-display .listeo-space-x-2 > * + * {
+    margin-left: 8px;
+}
+
+.hierarchical-taxonomy-display .listeo-space-x-3 > * + * {
+    margin-left: 12px;
+}
+
+.hierarchical-taxonomy-display .listeo-flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.hierarchical-taxonomy-display .listeo-flex-grow {
+    flex-grow: 1;
+}
+
+/* Sizing utilities */
+.hierarchical-taxonomy-display .listeo-w-4 {
+    width: 16px;
+}
+
+.hierarchical-taxonomy-display .listeo-h-4 {
+    height: 16px;
+}
+
+.hierarchical-taxonomy-display .listeo-w-5 {
+    width: 20px;
+}
+
+.hierarchical-taxonomy-display .listeo-h-5 {
+    height: 20px;
+}
+
+/* Typography */
+.hierarchical-taxonomy-display .listeo-font-semibold {
+    font-weight: 600;
+}
+
+.hierarchical-taxonomy-display .listeo-font-medium {
+    font-weight: 500;
+}
+
+.hierarchical-taxonomy-display .listeo-text-sm {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.hierarchical-taxonomy-display .listeo-text-xs {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.hierarchical-taxonomy-display .listeo-m-0 {
+    margin: 0;
+}
+
+.hierarchical-taxonomy-display .listeo-text-decoration-none {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.hierarchical-taxonomy-display .listeo-text-decoration-none:hover {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* Icon styling */
+.hierarchical-taxonomy-display .taxonomy-icon {
+    color: var(--listeo-primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.hierarchical-taxonomy-display .taxonomy-icon i {
+    font-size: 20px;
+}
+
+.hierarchical-taxonomy-display .taxonomy-icon svg {
+    fill: currentColor;
+    color: inherit;
+    max-height: 25px;
+}
+
+/* Title styling */
+.hierarchical-taxonomy-display .taxonomy-title {
+    color: #111827;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+}
+
+.hierarchical-taxonomy-display .taxonomy-count {
+    color: #6a6a6a;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+    margin-top: 2px;
+}
+
+/* Children container */
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-children-container {
+    background-color: transparent;
+    border-top: 1px solid #e0e0e0;
+    overflow: hidden;
+}
+
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-child-taxonomy-item {
+    padding: 9px 16px;
+    border-top: 1px solid #e0e0e0;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-child-taxonomy-item:first-child {
+    border-top: none;
+}
+
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-child-taxonomy-item:hover {
+    background-color: #f6f6f6;
+    text-decoration: none;
+    color: inherit;
+}
+
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-child-taxonomy-title {
+    color: #374151;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-child-taxonomy-item .taxonomy-icon {
+    color: #6a6a6a;
+    width: 16px;
+    height: 16px;
+}
+
+body .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-child-taxonomy-item .taxonomy-icon i {
+    font-size: 16px;
+}
+
+/* Utility classes */
+.hierarchical-taxonomy-display .listeo-hidden {
+    display: none;
+}
+
+.hierarchical-taxonomy-display .listeo-cursor-pointer {
+    cursor: pointer;
+}
+
+.hierarchical-taxonomy-display .listeo-transition-colors {
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.hierarchical-taxonomy-display .listeo-duration-200 {
+    transition-duration: 0.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hierarchical-taxonomy-display .listeo-grid {
+        columns: 1;
+    }
+    
+    .hierarchical-taxonomy-display .hierarchical-taxonomy-item {
+        padding: 14px;
+    }
+    
+    .hierarchical-taxonomy-display .child-taxonomy-item {
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hierarchical-taxonomy-display .listeo-grid-cols-4 {
+        --columns: 2;
+    }
+    
+    .hierarchical-taxonomy-display .listeo-grid-cols-3 {
+        --columns: 2;
+    }
+}
+
+/* Loading state */
+.hierarchical-taxonomy-display .loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Focus states for accessibility */
+.hierarchical-taxonomy-display .hierarchical-taxonomy-item:focus,
+.hierarchical-taxonomy-display .child-taxonomy-item:focus {
+    outline: 2px solid #374151;
+    outline-offset: 2px;
+}
+
+/* Empty state */
+.hierarchical-taxonomy-display .empty-state {
+    text-align: center;
+    padding: 32px;
+    color: #6a6a6a;
+    font-style: italic;
+}
+
+/* Custom scrollbar for child containers with many items */
+.hierarchical-taxonomy-display .listeo-children-container {
+    max-height: 390px;
+    overflow-y: auto !important;
+}
+
+.hierarchical-taxonomy-display .listeo-children-container::-webkit-scrollbar {
+    width: 4px;
+}
+
+.hierarchical-taxonomy-display .listeo-children-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+.hierarchical-taxonomy-display .listeo-children-container::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 2px;
+}
+
+.hierarchical-taxonomy-display .listeo-children-container::-webkit-scrollbar-thumb:hover {
+    background: #9a9a9a;
+}
+
+/* ===== DARK MODE STYLES ===== */
+/* Dark mode styles for the hierarchical taxonomy widget */
+
+/* Main container dark mode */
+body#dark-mode .hierarchical-taxonomy-display {
+    background-color: #1a1a1a;
+}
+
+/* Grid dark mode */
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-grid {
+    background-color: #1a1a1a;
+}
+
+/* Card dark mode */
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-card {
+    background-color: #2d2d2d;
+    border-color: #404040;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-card:hover {
+    background-color: #333333;
+    border-color: #555555;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Main taxonomy item dark mode */
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-item {
+    color: #e0e0e0;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-item:hover {
+    background-color: #333333;
+}
+
+/* Taxonomy title dark mode */
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-title {
+    color: #ffffff;
+}
+
+/* Taxonomy count dark mode */
+body#dark-mode .hierarchical-taxonomy-display .taxonomy-count {
+    color: #a0a0a0;
+    background-color: #404040;
+}
+
+/* Expand arrow dark mode */
+body#dark-mode .hierarchical-taxonomy-display .taxonomy-arrow {
+    color: #a0a0a0;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .taxonomy-arrow:hover {
+    color: #ffffff;
+}
+
+/* Children container dark mode */
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-card .listeo-children-container {
+    background-color: #252525;
+    border-top-color: #404040;
+}
+
+/* Child taxonomy item dark mode */
+body#dark-mode .hierarchical-taxonomy-display .listeo-child-taxonomy-item {
+    color: #d0d0d0;
+    border-top-color: #3a3a3a;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .listeo-child-taxonomy-item:hover {
+    background-color: #2f2f2f;
+    color: #ffffff;
+}
+
+/* Child taxonomy title dark mode */
+body#dark-mode .hierarchical-taxonomy-display .listeo-child-taxonomy-title {
+    color: #d0d0d0;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .listeo-child-taxonomy-item:hover .listeo-child-taxonomy-title {
+    color: #ffffff;
+}
+
+/* Icons dark mode */
+body#dark-mode .hierarchical-taxonomy-display .taxonomy-icon {
+    color: #a0a0a0;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .hierarchical-taxonomy-item:hover .taxonomy-icon,
+body#dark-mode .hierarchical-taxonomy-display .listeo-child-taxonomy-item:hover .taxonomy-icon {
+    color: #ffffff;
+}
+
+/* Empty state dark mode */
+body#dark-mode .hierarchical-taxonomy-display .empty-state {
+    color: #a0a0a0;
+}
+
+/* Scrollbar dark mode */
+body#dark-mode .hierarchical-taxonomy-display .listeo-children-container::-webkit-scrollbar-track {
+    background: #2d2d2d;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .listeo-children-container::-webkit-scrollbar-thumb {
+    background: #555555;
+}
+
+body#dark-mode .hierarchical-taxonomy-display .listeo-children-container::-webkit-scrollbar-thumb:hover {
+    background: #777777;
+}
+
+body#dark-mode body .hierarchical-taxonomy-item:hover {
+    background-color: #444 !important
+}

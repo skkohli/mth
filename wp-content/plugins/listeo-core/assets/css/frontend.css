@@ -1,0 +1,1969 @@
+#cmb2-metabox-front-end-post-form h5 {
+	font-size: 24px;
+	margin: 60px 0 30px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+
+}
+
+#submit_map {
+	height: 300px;
+	margin-bottom: 50px;
+}
+.label-_availability,
+.label-_opening_hours,
+.label-_menu,
+.label-_slots {
+	display: none;
+}
+
+.slider-disabled,
+.disabled .rangeslider {
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+opacity: 0.5;
+}
+
+.time-slot .day {display: none;}
+body .no-slots-information {
+	padding-bottom: 5px;
+    margin-top: 5px;
+}
+
+.listing-widget .booking-event-date {
+	display: none;
+}
+ .fa.booking-loading-icon {
+	display: none;
+	margin-left:7px;
+}
+.dashboard-list-box.loading .booking-loading-icon {
+	display: inline-block;
+	margin-left:7px;
+}
+
+ .woocommerce-checkout #order_review.listeo-pay-form{
+ 	float: none;
+ 	width:100%;
+ }
+
+/* Next Page Button for Map Container */
+.listeo-next-page-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #fff;
+    color: #222;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.3s ease;
+
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#dark-mode .listeo-next-page-button {
+	background: #222; color: #fff;
+}
+
+.listeo-next-page-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.listeo-next-page-button .button-text {
+    flex: 1;
+    line-height: 1.3;
+}
+
+.listeo-next-page-button i {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .listeo-next-page-button {
+        
+    }
+}
+
+/* Ensure button doesn't interfere with map controls */
+#map-container {
+    position: relative;
+}
+
+.listeo-next-page-button:active {
+    transform: translateY(0);
+}
+
+/* Calendar daily prices styling */
+.fc-day-price {
+    position: absolute;
+    bottom: 2px;
+    right: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #666;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1px 3px;
+    border-radius: 2px;
+    line-height: 1;
+    z-index: 10;
+}
+
+.fc-daygrid-day:hover .fc-day-price {
+    color: #333;
+    background: rgba(255, 255, 255, 1);
+}
+
+/* Responsive price display */
+@media (max-width: 768px) {
+    .fc-day-price {
+        font-size: 9px;
+        bottom: 1px;
+        right: 2px;
+        padding: 1px 2px;
+    }
+}
+
+/* Public single-listing calendar: events are not clickable, so don't imply
+   interactivity with a pointer cursor (the dashboard calendar, which has no
+   data-listing-id, keeps its click-to-details pointer). */
+#calendar[data-listing-id] .fc-event,
+#calendar[data-listing-id] .fc-daygrid-event-harness-abs,
+#calendar[data-listing-id] .fc-daygrid-event {
+    cursor: default;
+}
+ a.book-now.button.inactive {
+ 	background-color:gray; 
+ }
+
+
+ 
+
+.switch_box{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 100px;
+	min-width: 50px;
+	height: 50px;
+
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+}
+
+.add-listing-section .switch_box{
+	min-height: 67px
+}
+
+.switch_box.inside-switch{
+	height: auto;
+	min-height: auto;
+	position: absolute;
+	right: 21px;
+	top: 5px;	
+	zoom:0.7;
+}
+/* Switch 1 Specific Styles Start */
+
+
+input[type="checkbox"].switch_1{
+	font-size: 20px;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	width: 3.5em;
+	height: 1.5em;
+	background: #ddd;
+	border-radius: 3em;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  }
+ 
+  input[type="checkbox"].switch_1:after{
+	position: absolute;
+	content: "";
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 50%;
+	background: #fff;
+
+	-webkit-transform: scale(.7);
+	        transform: scale(.7);
+	left: 0;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  }
+  
+  input[type="checkbox"].switch_1:checked:after{
+	left: calc(100% - 1.5em);
+  }
+	
+
+/* Switch 1 Specific Style End */
+
+.woocommerce-order-pay.user_not_logged_in .woocommerce-info {
+	width: 41.66666667%;
+    margin-left: 25%;
+
+}
+#chart-date-range-enabler,
+#booking-date-range-enabler {
+    float: right;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px;
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    box-sizing: border-box;
+    color: #666;
+    font-weight: 600;
+    transition: 0.3s;
+    background-color: #fff;
+    margin-left: 15px;
+    top: 0px;
+}
+
+.sign-in-form label input[type="checkbox"] {
+    height: auto;
+    width: 20px;
+    box-shadow: 0px 0px 0px 0px;
+}
+
+
+
+.second-slot-taken:not( .disabled ), .first-slot-taken:not( .disabled ) {
+	position: relative;
+	z-index: 0;
+}
+
+.second-slot-taken:not( .disabled )::before, .first-slot-taken:not( .disabled )::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	z-index: -1;
+	mix-blend-mode: soft-light;
+}
+
+.second-slot-taken:not( .disabled )::before {
+	border-bottom: 34px solid #f4f4f4;
+	border-left: 32px solid transparent;
+}
+
+.first-slot-taken:not( .disabled )::before {
+	border-top: 34px solid #f4f4f4;
+	border-right: 32px solid transparent;
+}
+
+.daterangepicker.daterangepicker td.disabled, .daterangepicker.daterangepicker option.disabled {
+	background-color: #f4f4f4;
+}
+
+
+.first-slot-taken:not(.active, .in-range, :hover) {
+	color: #c37979 !important;
+}
+
+.first-slot-taken:not(.active, .in-range, :hover)::before {
+	border-top: 34px solid #ffe9e9;
+	border-right: 32px solid transparent;
+	mix-blend-mode: normal;
+	color: #c37979;
+}
+
+.daterangepicker .calendar-table td.available.second-slot-taken:not(.active, .in-range, :hover) {
+	background: #e0f6dd;
+	color: #6a9664;
+}
+
+.daterangepicker .calendar-table td.available.second-slot-taken:not(.active, .in-range, :hover):before {
+	border-bottom: 34px solid #ffe9e9;
+	border-left: 36px solid transparent;
+	mix-blend-mode: normal;
+}
+
+/* FullCalendar Daily Prices Styles */
+.fc-day-price {
+	position: absolute;
+	bottom: 2px;
+	right: 4px;
+	font-size: 14px;
+	font-weight: 400;
+	background: rgba(76, 175, 80, 0.1);
+	color: #2E7D32;
+	padding: 1px 4px;
+	border-radius: 3px;
+	line-height: 1.2;
+	z-index: 3;
+}
+
+.fc-daygrid-day {
+	position: relative;
+}
+
+.fc-daygrid-day:hover .fc-day-price,
+.fc-day-price:hover {
+	background: rgba(76, 175, 80, 0.1);
+	color: #2E7D32;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.fc-day-price {
+		font-size: 10px;
+		padding: 1px 2px;
+		bottom: 1px;
+		right: 2px;
+	}
+}
+
+.fc-toolbar-chunk { filter: grayscale(100%); }
+
+/* Custom Search Fields Grouped Styles */
+.custom-search-fields-container {
+	margin-top: 15px;
+}
+
+.custom-search-group {
+	border: none;
+	width: 100%;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	background: transparent;
+	display: flex;
+	flex-direction: column;
+}
+
+.custom-search-group-header {
+	padding: 0;
+	background: transparent;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	position: relative;
+	border-radius: 4px;
+}
+
+.custom-search-group-header:hover {
+
+}
+
+.custom-search-group-title {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 8px;
+	margin-bottom: 10px;
+}
+
+.custom-search-group-title .toggle-icon {
+	font-size: 14px;
+	transition: transform 0.3s ease;
+	color: var(--listeo-primary-color);
+}
+
+.custom-search-group-content {
+	padding: 15px;
+	background: transparent;
+	border: 1px solid #e0e0e0;
+	border-radius: 5px;
+	padding-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	opacity:1;
+	transition: opacity 0.2s;
+}
+.custom-search-group-content:not(.collapsed) {
+	
+}
+.custom-search-group-content.collapsed {
+	opacity: 0;
+}
+
+
+.custom-search-field-wrapper {
+	margin-bottom: 15px;
+	float: none;
+	min-height: 45px;
+}
+
+.checkboxes .bootstrap-select li { padding: 0;}
+
+.custom-search-field-wrapper:last-child {
+	margin-bottom: 0;
+}
+
+
+.custom-search-field-wrapper .col-md-12:last-child { margin-bottom: 0; padding-bottom: 0;}
+.custom-search-field-wrapper .col-md-12 { margin: 0; padding: 0;}
+
+.custom-search-field-wrapper  .checkboxes.one-in-row label { margin-top: 2px !important;}
+
+/* Panel-specific styles for split map layout */
+.custom-fields-panel {
+	margin-right: 10px;
+}
+
+.custom-fields-panel a {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.custom-fields-panel .panel-dropdown-content {
+	min-width: 150px;
+}
+
+.custom-fields-panel .custom-search-field-wrapper {
+	
+/* overflow: hidden; */
+	
+min-height: 75px;
+
+}
+
+.panel-dropdown-content .custom-search-field-wrapper {display: flex;flex-direction: column;}
+.custom-fields-panel {display: flex;flex-direction: column;}
+
+.panel-dropdown-content .custom-search-field-wrapper .checkboxes label:before {
+	top: 0px
+}
+.custom-fields-panel .custom-search-field-wrapper:last-child {
+	border-bottom: none;
+}
+.panel-dropdown  .custom-search-field-wrapper .checkboxes:not('.one-in-row') label::before { top: 20px}
+
+
+.custom-search-field-wrapper .bootstrap-select.btn-group, 
+.custom-search-field-wrapper input, 
+.custom-search-field-wrapper textarea, 
+.custom-search-field-wrapper input, 
+.custom-search-field-wrapper select, 
+.custom-search-field-wrapper.chosen-container {
+	margin-bottom: 0 !important;
+	border-radius: 4px;
+}
+.main-search-inner .custom-search-field-wrapper .bootstrap-select.btn-group { border: 1px solid #e0e0e0; }
+
+	
+.main-search-input  .panel-dropdown .custom-search-field-wrapper  a {
+	line-height: 20px;
+	height: auto;
+	padding: 7px 10px;
+	vertical-align: middle;
+} 
+
+.custom-search-field-label { 
+	font-weight: 600; font-size: 14px; color: #333; 
+}
+
+.custom-search-field-label:not(.panel-dropdown-content .custom-search-field-label) { 
+	margin-top: 12px !important;
+}
+
+.panel-dropdown-content  .custom-search-field-wrapper:first-of-type .custom-search-field-label,
+.custom-search-group-content .custom-search-field-wrapper:first-of-type .custom-search-field-label {
+	margin-top: 0 !important;
+}
+
+#dark-mode .custom-search-field-label {color: #fff; }
+
+/* Dark Mode */
+/* Dark Mode CSS - Color-related properties only */
+
+body#dark-mode #cmb2-metabox-front-end-post-form h5 {
+    border-bottom: 1px solid #333;
+}
+
+body#dark-mode .slider-disabled,
+body#dark-mode .disabled .rangeslider {
+    -webkit-filter: grayscale(100%) brightness(0.7);
+    -moz-filter: grayscale(100%) brightness(0.7);
+    -ms-filter: grayscale(100%) brightness(0.7);
+    -o-filter: grayscale(100%) brightness(0.7);
+}
+
+body#dark-mode .fc-day-price {
+    color: #ccc;
+    background: rgba(40, 40, 40, 0.9);
+}
+
+body#dark-mode .fc-daygrid-day:hover .fc-day-price {
+    color: #fff;
+    background: rgba(60, 60, 60, 1);
+}
+
+body#dark-mode a.book-now.button.inactive {
+    background-color: #555;
+}
+
+body#dark-mode input[type="checkbox"].switch_1 {
+    background: #444;
+}
+
+body#dark-mode input[type="checkbox"].switch_1:after {
+    background: #222;
+}
+
+body#dark-mode #chart-date-range-enabler,
+body#dark-mode #booking-date-range-enabler {
+    background: #333;
+    color: #ccc;
+    background-color: #333;
+}
+
+body#dark-mode .second-slot-taken:not(.disabled)::before {
+    border-bottom: 34px solid #2a2a2a;
+}
+
+body#dark-mode .first-slot-taken:not(.disabled)::before {
+    border-top: 34px solid #2a2a2a;
+}
+
+body#dark-mode .daterangepicker.daterangepicker td.disabled, 
+body#dark-mode .daterangepicker.daterangepicker option.disabled {
+    background-color: #2a2a2a;
+}
+
+body#dark-mode .first-slot-taken:not(.active, .in-range, :hover) {
+    color: #e87979 !important;
+}
+
+body#dark-mode .first-slot-taken:not(.active, .in-range, :hover)::before {
+    border-top: 34px solid #4a2a2a;
+    color: #e87979;
+}
+
+body#dark-mode .daterangepicker .calendar-table td.available.second-slot-taken:not(.active, .in-range, :hover) {
+    background: #2a4a2a;
+    color: #8cc77f;
+}
+
+body#dark-mode .daterangepicker .calendar-table td.available.second-slot-taken:not(.active, .in-range, :hover):before {
+    border-bottom: 34px solid #4a2a2a;
+}
+
+/* FullCalendar Daily Prices Dark Mode */
+body#dark-mode .fc-day-price {
+    background: rgba(76, 175, 80, 0.2);
+    color: #81C784;
+}
+
+body#dark-mode .fc-daygrid-day:hover .fc-day-price,
+body#dark-mode .fc-day-price:hover {
+    background: rgba(76, 175, 80, 0.3);
+    color: #A5D6A7;
+}
+
+body#dark-mode .fc-toolbar-chunk { 
+    filter: grayscale(100%) brightness(0.8); 
+}
+
+/* Custom Search Fields Dark Mode */
+body#dark-mode .custom-search-group-title {
+    color: #e0e0e0;
+}
+
+body#dark-mode .custom-search-group-title .toggle-icon {
+    color: var(--listeo-primary-color, #4CAF50);
+}
+
+body#dark-mode .custom-search-group-content {
+    background: transparent;
+    border: 1px solid #444;
+}
+
+body#dark-mode .main-search-inner .custom-search-field-wrapper .bootstrap-select.btn-group { 
+    border: 1px solid #444; 
+}
+
+/* Additional dark mode improvements */
+body#dark-mode .woocommerce-order-pay.user_not_logged_in .woocommerce-info {
+    background: #333;
+    color: #e0e0e0;
+}
+
+/* Form inputs and selects */
+body#dark-mode .custom-search-field-wrapper input,
+body#dark-mode .custom-search-field-wrapper textarea,
+body#dark-mode .custom-search-field-wrapper select {
+    background: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body#dark-mode .custom-search-field-wrapper input::placeholder,
+body#dark-mode .custom-search-field-wrapper textarea::placeholder {
+    color: #999;
+}
+
+/* Bootstrap select dark mode */
+body#dark-mode .bootstrap-select .dropdown-toggle {
+    background: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body#dark-mode .bootstrap-select .dropdown-menu {
+    background: #333;
+    border-color: #555;
+}
+
+body#dark-mode .bootstrap-select .dropdown-menu li a {
+    color: #e0e0e0;
+}
+
+body#dark-mode .bootstrap-select .dropdown-menu li a:hover {
+    background: #444;
+    color: #fff;
+}
+
+/* Panel dropdown dark mode */
+body#dark-mode .custom-fields-panel .panel-dropdown-content {
+    background: #333;
+    border-color: #555;
+}
+
+body#dark-mode .custom-fields-panel a {
+    color: #e0e0e0;
+}
+
+/* Checkbox styling for dark mode */
+body#dark-mode .checkboxes label {
+    color: #e0e0e0;
+}
+
+body#dark-mode .sign-in-form label input[type="checkbox"] {
+    background: #333;
+    border-color: #555;
+}
+
+/* User Location Marker Styles */
+.listeo-user-location-marker {
+    background: transparent !important;
+    border: none !important;
+}
+
+.user-location-container {
+    position: relative;
+    z-index: 1000;
+}
+
+.user-location-marker {
+    width: 15px;
+    height: 15px;
+    background: #007cba;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 124, 186, 0.4);
+    position: relative;
+    animation: userLocationPulse 2s infinite;
+    border: 3px solid white;
+}
+
+/* Pulsing animation for user location marker */
+@keyframes userLocationPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 124, 186, 0.4);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 4px 20px rgba(0, 124, 186, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 10px rgba(0, 124, 186, 0.4);
+    }
+}
+
+/* User location popup styles */
+.user-location-popup {
+    text-align: center;
+    min-width: 200px;
+}
+
+.user-location-popup strong {
+    color: #007cba;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user-location-popup small {
+    color: #666;
+    font-size: 11px;
+}
+
+/* Dark mode styles for user location */
+body#dark-mode .user-location-marker {
+    background: #4a9eff;
+    box-shadow: 0 2px 10px rgba(74, 158, 255, 0.4);
+}
+
+body#dark-mode .user-location-popup strong {
+    color: #4a9eff;
+}
+
+body#dark-mode .user-location-popup small {
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .user-location-marker {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.listeo-user-location-marker {pointer-events: none !important;}
+
+/* Message Attachments Styling */
+.message-attachment-upload {
+    margin: 15px 0 0 0;
+    padding: 0px 0;
+    border-top: none;
+}
+
+.attachment-label {
+    display: inline-block;
+    padding: 4px 15px;
+    background: #f4f4f4;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+}
+
+/* Custom tooltip */
+.attachment-label:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+.attachment-label:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+    margin-bottom: -4px;
+    z-index: 1000;
+}
+
+.attachment-label:hover {
+    background: #e8e8e8;
+}
+
+.attachment-label i {
+    margin-right: 8px;
+    color: #666;
+}
+
+.attachment-info {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    margin-top: 2px;
+    line-height: 1.2;
+}
+
+.attachment-preview {
+    display: inline-block;
+    padding: 8px 12px;
+    background: #e8f4f8;
+    border-radius: 4px;
+    position: relative;
+}
+
+.attachment-preview-name {
+    color: #333;
+    margin-right: 10px;
+}
+
+.remove-attachment {
+    color: #ff6b6b;
+    margin-left: 10px;
+}
+
+.remove-attachment:hover {
+    color: #ff5252;
+}
+
+.attachment-upload-progress {
+    margin-top: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--primary-color, #3498db);
+    width: 0;
+    transition: width 0.3s;
+}
+
+/* Message bubble attachments */
+.message-attachment {
+    margin-top: 10px;
+}
+
+.attachment-link {
+    display: inline-block;
+    padding: 3px 12px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.attachment-link:hover {
+    background: #fff;
+    border-color: var(--primary-color, #3498db);
+    color: var(--primary-color, #3498db);
+    text-decoration: none;
+}
+
+.attachment-link i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.attachment-name {
+    font-weight: 500;
+}
+
+.attachment-size {
+    color: #999;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .attachment-label span {
+        display: none;
+    }
+
+    .attachment-label i {
+        margin-right: 0;
+    }
+}
+
+/* Load More Button Styles */
+.listeo-load-more-container {
+	text-align: center;
+	padding: 40px 0;
+	clear: both;
+}
+
+.listeo-load-more-container .fa-spinner {
+    margin-right: 0 !important;
+}
+
+.listeo-load-more-button {
+	display: inline-block;
+	background: var(--listeo-primary-color);
+	color: #fff;
+	padding: 7px 20px !important;
+	border-radius: 4px;
+	border: none;
+	font-size: 16px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.listeo-load-more-button:hover {
+	background: var(--listeo-primary-color);
+	color: #fff;
+}
+
+#listeo-listings-container .clearfix {display: none;}
+
+/* .listeo-load-more-button:disabled {
+	background: #ccc;
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.listeo-load-more-button:disabled:hover {
+	transform: none;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+} */
+
+.listeo-load-more-button .button-text {
+	display: inline-block;
+}
+
+.listeo-load-more-button .loading-icon {
+	margin-left: 8px;
+	color: #fff;
+}
+
+.listeo-load-more-button.loading {
+	opacity: 0.8;
+	cursor: wait;
+}
+
+.listeo-load-more-button.loading .loading-icon {
+	color: #fff;
+}
+
+/* Loading state for listings container during append */
+#listeo-listings-container.loading {
+	position: relative;
+}
+
+#listeo-listings-container.loading:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0);
+	z-index: 1;
+}
+
+/* Hide pagination when infinite scroll is active */
+.listeo-infinite-scroll-active .pagination-container {
+	display: none !important;
+}
+
+/* Password strength requirements notification */
+.password-field-wrapper {
+	position: relative;
+}
+
+.password-strength-requirements {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	margin-top: 8px;
+	padding: 12px 15px;
+	background: #f5f5f5;
+	border-radius: 4px;
+	font-size: 13px;
+	line-height: 1.6;
+	color: #666;
+	animation: fadeIn 0.3s ease;
+	z-index: 10;
+}
+
+.password-strength-requirements::before {
+	content: '';
+	position: absolute;
+	top: -8px;
+	left: 20px;
+	width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #f5f5f5;
+}
+
+.password-strength-requirements.visible {
+	display: block;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(-5px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.password-strength-requirements strong {
+	color: #444;
+	font-weight: 600;
+	transition: color 0.3s ease;
+}
+
+/* Hide old password strength meter */
+.pwstrength_viewport_progress.password-strength-visible {
+	display: none !important;
+}
+
+/* ========================================
+   Time Slots Carousel Layout
+======================================== */
+
+.time-slots-carousel-container {
+	position: relative;
+	width: 100%;
+	padding: 0;
+	/* background: #fff; */
+	border-radius: 4px;
+	margin-bottom: 18px;
+}
+
+/* Hide date picker when carousel mode is active */
+.slot-carousel-mode-hidden {
+	display: none !important;
+}
+
+
+/* Slot Carousel Navigation */
+.slot-carousel-navigation {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: space-between;
+	pointer-events: none;
+	z-index: 10;
+}
+
+.slot-carousel-nav-btn {
+	pointer-events: all;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: none;
+	background: #fff;
+	color: #666;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slot-carousel-nav-btn:hover:not(:disabled) {
+	background: var(--listeo-primary-color);
+	border-color: var(--listeo-primary-color);
+	color: #fff;
+}
+
+.slot-carousel-nav-btn i {
+		transition: 0.2s;
+}
+
+.slot-carousel-nav-btn:hover:not(:disabled) i {
+	color: #fff;
+}
+
+.slot-carousel-nav-btn:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.slot-carousel-nav-btn.prev-day {
+	margin-left: -20px;
+}
+
+.slot-carousel-nav-btn.next-day {
+	margin-right: -20px;
+}
+
+/* Carousel Viewport */
+.slot-carousel-viewport {
+	overflow: hidden;
+	width: 100%;
+	transition: height 0.4s ease;
+	padding: 5px 15px;
+box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 6px;
+}
+
+.slot-carousel-track {
+	display: flex;
+	transition: transform 0.4s ease;
+	gap: 15px;
+}
+
+/* Day Column - Default: 3 columns above 1360px */
+.slot-carousel-day-column {
+	flex: 0 0 calc(33.333% - 10px);
+	min-width: calc(33.333% - 10px);
+	max-width: calc(33.333% - 10px);
+	width: calc(33.333% - 10px);
+}
+
+.calendar-day {
+	border: none;
+	border-radius: 6px;
+	padding: 15px 0px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	/* background: #fff;
+	box-shadow: 0 1px 6px 0px rgba(0, 0, 0, 0.1); */
+}
+
+.calendar-day.day-placeholder {
+	opacity: 0.6;
+}
+
+.calendar-day.day-available {
+	background: #fff;
+}
+
+/* Day Header */
+.time-slots-carousel-container  .calendar-day-date {
+	text-align: center;
+	border-bottom: none;
+	margin-bottom: 10px;
+	padding: 0;
+	background: transparent;
+}
+
+.time-slots-carousel-container .calendar-day-date .day-name {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 700;
+	color: #333;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: 20px;
+	margin-bottom: -3px;
+}
+
+.time-slots-carousel-container  .calendar-day-date .day-date {
+	margin: 0;
+	font-size: 12px;
+	color: #888;
+	font-weight: 500;
+	line-height: 20px;
+}
+
+/* Slots List */
+.calendar-day-slots {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.calendar-day-slots-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.calendar-day-slots-list-item {
+	margin: 0;
+}
+
+/* Slot Button */
+.calendar-slot {
+	width: 100%;
+	padding: 10px 8px;
+	border: none;
+	border-radius: 5px;
+	background: #f9f9f9;
+	font-size: 14px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-align: center;
+	color: #666;
+	padding: 6px 0;
+	line-height: 16px;
+}
+
+.calendar-slot-available {
+	background: var(--listeo-primary-color-light);
+	border-color: var(--listeo-primary-color);
+	color: var(--listeo-primary-color);
+	/* padding: 5px; */
+	/* line-height: 16px; */
+}
+
+.calendar-slot-available:hover {
+	background: var(--listeo-primary-color);
+	color: #fff;
+}
+
+.calendar-slot-available.selected {
+	background: var(--listeo-primary-color);
+	color: #fff;
+	border-color: var(--listeo-primary-color);
+}
+
+.calendar-slot-booked {
+	background: #f5f5f5;
+	border-color: #ddd;
+	color: #999;
+	cursor: not-allowed;
+	opacity: 0.6;
+}
+
+.calendar-slot-placeholder {
+	background: transparent;
+	border-color: transparent;
+	color: #ccc;
+	cursor: default;
+}
+
+/* Show More Feature */
+.hidden-slot {
+	display: none;
+}
+
+.show-more-item {
+
+}
+
+.calendar-slot-show-more {
+	width: 100%;
+	padding: 10px;
+	background: transparent;
+	border: 1px dashed var(--listeo-primary-color);
+	border-radius: 4px;
+	color: var(--listeo-primary-color);
+	font-size: 13px;
+	font-weight: 500;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	text-align: center;
+	line-height: 16px;
+	margin: 0;
+}
+
+.calendar-slot-show-more:hover {
+	background: var(--listeo-primary-color-light);
+	border-style: solid;
+}
+
+.calendar-day.expanded .hidden-slot {
+	display: block;
+}
+
+.calendar-day.expanded .show-more-item {
+	display: none;
+}
+
+/* Carousel Loading State */
+.time-slots-carousel-container {
+	position: relative;
+}
+
+/* Initial state - before JS loads */
+.slot-carousel-viewport {
+	max-height: 150px;
+	overflow: hidden;
+	transition: max-height 0.4s ease, height 0.4s ease;
+}
+
+/* Carousel Loader (overlay) */
+.slot-carousel-loader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(
+	to bottom,
+	rgba(255, 255, 255, 0.4) 0%,
+	rgba(255, 255, 255, 1) 100%
+	);
+	z-index: 10;
+	opacity: 1;
+	border-radius: 6px;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+}
+
+.slot-carousel-loader-spinner {
+	width: 30px;
+	height: 30px;
+	border: 3px solid rgba(0, 0, 0, 0.1);
+	border-top-color: var(--listeo-primary-color);
+	border-radius: 50%;
+	animation: carousel-spinner-rotate 0.8s linear infinite;
+}
+
+@keyframes carousel-spinner-rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Loaded state - after JS initializes */
+.time-slots-carousel-container.slot-carousel-loaded .slot-carousel-viewport {
+	max-height: none;
+}
+
+.time-slots-carousel-container.slot-carousel-loaded .slot-carousel-loader {
+	opacity: 0;
+	pointer-events: none;
+}
+
+/* Booked Slot Styles */
+.calendar-slot-booked {
+	filter: grayscale(1);
+	opacity: 0.5;
+	text-decoration: line-through;
+	pointer-events: none;
+	cursor: not-allowed;
+	background: #f5f5f5 !important;
+	color: #999 !important;
+	border-color: #ddd !important;
+}
+
+/* ========================================
+   Form Validation Styles
+   ======================================== */
+
+/* Error styling for Select2 fields */
+.select2-container.msf-input-error .select2-selection {
+	border-color: #dc3545 !important;
+	border-width: 2px !important;
+	box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+.select2-container.msf-input-error .select2-selection__rendered {
+	color: #dc3545 !important;
+}
+
+/* Error styling for standard input fields */
+input.msf-input-error,
+select.msf-input-error,
+textarea.msf-input-error {
+	border-color: #dc3545 !important;
+	border-width: 2px !important;
+	box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Pulsing animation for invalid fields */
+@keyframes pulse-error {
+	0% {
+		box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+	}
+	50% {
+		box-shadow: 0 0 0 0.4rem rgba(220, 53, 69, 0.15);
+	}
+	100% {
+		box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+	}
+}
+
+.select2-container.msf-input-error .select2-selection {
+	animation: pulse-error 1s ease-in-out 2;
+}
+
+/* Error styling for wp-editor/TinyMCE fields */
+.wp-editor-wrap.msf-input-error {
+	border: 2px solid #dc3545 !important;
+	border-radius: 4px;
+	box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Responsive Breakpoints */
+
+/* 2 columns: 992px - 1360px */
+@media (max-width: 1360px) {
+	.slot-carousel-day-column {
+		flex: 0 0 calc(50% - 7.5px);
+		min-width: calc(50% - 7.5px);
+		max-width: calc(50% - 7.5px);
+		width: calc(50% - 7.5px);
+	}
+}
+
+/* -------------------------------------------------------------------
+ * Pricing & Bookable Services editor — tiny field labels
+ *
+ * Floats above each pricing input so the columns stay compact while
+ * still giving the user a one-word hint of what each field is. Used in
+ * the frontend submit-listing pricing editor (templates/form-fields/pricing.php
+ * + JS-cloned rows in frontend.js newMenuItem).
+ * ----------------------------------------------------------------- */
+.pricing-list-item td .fm-input-label {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #888;
+	margin: 0;
+	opacity: 0.4;
+	letter-spacing: 0.04em;
+	line-height: 1.4;
+	text-align: right;
+	float: right;
+}
+
+/* -------------------------------------------------------------------
+ * Pricing item — two-column rebuild
+ * -----------------------------------------------------------------
+ * Replaces the legacy single-row layout with a side-by-side grid:
+ * left column owns identity (image, title, description, bookable toggle),
+ * right column owns booking config (price, charge type, quantity, plus
+ * any plugin-injected fields like Booking Plus's duration/individual).
+ *
+ * Theme styles in `style.css` (~14991+) target the legacy layout —
+ * these rules sit at higher specificity to override the float-based
+ * positioning that broke the new grid.
+ * ----------------------------------------------------------------- */
+.pricing-list-item:not(.pricing-submenu) td {
+	position: relative;
+	padding: 30px 30px 24px 50px;
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	margin-bottom: 16px;
+}
+
+.pricing-list-item:not(.pricing-submenu) td .fm-move {
+	position: absolute;
+	top: 22px;
+	left: 16px;
+	width: auto;
+	height: auto;
+	background: transparent;
+	color: #c0c4ca;
+	cursor: grab;
+}
+
+.pricing-list-item .pricing-row-grid {
+	display: grid;
+	grid-template-columns: 50px 1fr 1fr 32px;
+	gap: 24px;
+	width: 100%;
+	align-items: start;
+}
+
+.pricing-list-item .pricing-row-image,
+.pricing-list-item .pricing-row-info,
+.pricing-list-item .pricing-row-right {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+	min-width: 0;
+}
+
+.pricing-list-item .pricing-row-right {
+	position: relative;
+}
+
+/* Numbered section cards — visually separate "Basic info" (col 2) from
+   "Booking settings" (col 3) with a soft inset background and a small
+   numbered badge on the title. */
+.pricing-list-item .pricing-row-section {
+	background: #f9fafb;
+	border-radius: 8px;
+	padding: 18px 20px;
+	gap: 16px;
+}
+.pricing-list-item .pricing-row-section-title {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 6px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #1f2937;
+}
+.pricing-list-item .pricing-row-section-num {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: #fde2e8;
+	color: #dc2626;
+	font-size: 12px;
+	font-weight: 700;
+	flex-shrink: 0;
+}
+
+/* Field description — small subtitle that explains what a checkbox /
+   toggle does. Sits directly under the field's label or checkbox. */
+.pricing-list-item .pricing-field-desc {
+	font-size: 12px;
+	color: #9ca3af;
+	margin: 4px 0 0 24px;
+	line-height: 1.4;
+}
+
+/* Max-quantity input: stays visible at all times for layout stability,
+   just inactive when "Allow quantity" is off. */
+.pricing-list-item .bookable_quantity_max[disabled] {
+	background: #f3f4f6;
+	color: #9ca3af;
+	cursor: not-allowed;
+}
+
+/* Column 4 — dedicated narrow column for the delete button so it never
+   overlaps inputs in the right column when content reflows. */
+.pricing-list-item .pricing-row-close {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+.pricing-list-item .pricing-row-close .fm-close {
+	position: static;
+	width: auto;
+	height: auto;
+	background: transparent;
+}
+
+/* Reset float-based theme rules so each input occupies the full column. */
+.pricing-list-item .pricing-row-grid .fm-input {
+	float: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.pricing-list-item .pricing-row-grid .fm-input input[type="text"],
+.pricing-list-item .pricing-row-grid .fm-input input[type="number"],
+.pricing-list-item .pricing-row-grid .fm-input textarea,
+.pricing-list-item .pricing-row-grid .fm-input select {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.pricing-list-item .pricing-row-grid .fm-input textarea {
+	min-height: 80px;
+	resize: vertical;
+}
+
+/* Image column — fills the dedicated column with a square thumbnail. */
+.pricing-list-item .pricing-row-image .pricing-cover-wrapper {
+	width: 100%;
+	height: auto;
+}
+
+/* Bookable toggle — switch + inline label inside the info column.
+   The `.switch_1` checkbox styles itself via `appearance: none` so we
+   don't need a `.slider.round` decoration alongside it; the label sits
+   to the right with a small gap. */
+.pricing-list-item .pricing-bookable {
+	margin-top: 4px;
+}
+.pricing-list-item .pricing-bookable .switcher-tip {
+	display: inline-flex;
+	align-items: normal;
+	gap: 10px;
+}
+.pricing-list-item .pricing-bookable .pricing-bookable-label {
+	
+	font-weight: 500;
+	color: #4b5563;
+	margin: 0;
+	cursor: pointer;
+}
+
+/* Price + Charge Type — share a row inside the right column to save
+   vertical space; collapses to stacked at narrow widths. */
+.pricing-list-item .pricing-row-pair {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+	gap: 14px;
+	align-items: end;
+}
+@media (max-width: 1280px) {
+	.pricing-list-item .pricing-row-pair {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Allow-quantity / Max-quantity pair — same `.pricing-row-pair` grid
+   the Price + Charge Type pair uses. Top-aligned so the Allow-quantity
+   checkbox sits roughly inline with the Max-quantity label on its
+   right; the input below the label keeps its natural position. */
+.pricing-list-item .pricing-quantity-pair {
+	align-items: start;
+}
+.pricing-list-item .pricing-quantity-pair .pricing-quantity-row {
+	margin: 0;
+	padding: 0;
+}
+.pricing-list-item .pricing-quantity-max-wrap .bookable_quantity_max {
+	width: 100%;
+}
+
+/* Quantity field — uses Listeo's existing `.checkboxes.in-row` pattern
+   (matches the Individual service checkbox visually). The Max-quantity
+   input below it is conditional — see `.pricing-quantity-max-wrap`
+   above (revealed by the `.pricing-quantity-enable` change handler). */
+.pricing-list-item .pricing-quantity .pricing-quantity-row {
+	margin: 0;
+}
+
+/* Delete (×) — lives in its own grid column (`.pricing-row-close`) at
+   the far right of the row so it never overlaps fields in the right
+   column when content reflows. */
+.pricing-list-item:not(.pricing-submenu) td .fm-close a.delete {
+	color: #dc2626;
+	font-size: 16px;
+	display: inline-block;
+	padding: 4px 8px;
+}
+.pricing-list-item:not(.pricing-submenu) td .fm-close a.delete:hover {
+	color: #b91c1c;
+}
+
+/* Responsive — narrow the image column at medium widths, then collapse
+   the whole grid at small widths. The close column stays narrow at all
+   sizes; on mobile it floats to the top-right while the other columns
+   stack vertically. */
+@media (max-width: 1024px) {
+	.pricing-list-item .pricing-row-grid {
+		grid-template-columns: 50px 1fr 1fr 32px;
+		gap: 18px;
+	}
+	.pricing-list-item .pricing-row-image .pricing-cover-wrapper {
+		height: 110px;
+	}
+}
+@media (max-width: 768px) {
+	.pricing-list-item .pricing-row-grid {
+		grid-template-columns: 1fr 32px;
+		gap: 18px;
+	}
+	.pricing-list-item .pricing-row-image,
+	.pricing-list-item .pricing-row-info,
+	.pricing-list-item .pricing-row-right {
+		grid-column: 1 / 2;
+	}
+	.pricing-list-item .pricing-row-close {
+		grid-column: 2 / 3;
+		grid-row: 1 / 2;
+	}
+	.pricing-list-item .pricing-row-image .pricing-cover-wrapper {
+		width: 140px;
+		height: 140px;
+	}
+}
+
+/* ============================================
+   Submit-listing — Mandatory Fees repeater
+   Scoped under .listeo-mandatory-fees-list so the rules don't bleed
+   onto the generic repeatable-list-item used by FAQ-style fields.
+   ============================================ */
+.listeo-mandatory-fees-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-row {
+	padding: 14px;
+	background: #fafafa;
+	border: 1px solid #e8e8e8;
+	border-radius: 6px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-main {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 160px 130px 170px auto;
+	gap: 8px;
+	align-items: center;
+}
+
+/* Simple-mode rows (no LBP, so no type/frequency selects) get a
+   tighter 3-column grid: title | price | remove. */
+.listeo-mandatory-fees-list .listeo-fee-row--simple .listeo-fee-main {
+	grid-template-columns: minmax(0, 1fr) 130px auto;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-input {
+	margin: 0;
+	width: 100%;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-input,
+.listeo-mandatory-fees-list .listeo-fee-input input,
+.listeo-mandatory-fees-list .listeo-fee-input select {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+	box-shadow: none;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-input input,
+.listeo-mandatory-fees-list .listeo-fee-input select,
+.listeo-mandatory-fees-list select.listeo-fee-input,
+.listeo-mandatory-fees-list input.listeo-fee-input {
+	padding: 9px 12px;
+	height: auto;
+	line-height: 1.3;
+	margin: 0;
+	color: #333;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-input-price {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding: 0;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-input-price input {
+	width: 100%;
+	padding-right: 28px;
+	border: none;
+	border-radius: 4px;
+	background: transparent;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-currency {
+	position: absolute;
+	right: 10px;
+	font-size: 12px;
+	color: #999;
+	pointer-events: none;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-input-description {
+	font-size: 13px;
+	padding: 7px 12px;
+	color: #555;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 12px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	color: #555;
+	font-size: 13px;
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-btn:hover {
+	background: #f5f5f5;
+	color: #333;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-remove {
+	color: #c33;
+	padding: 8px 11px;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-remove:hover {
+	background: #fee;
+	border-color: #fcc;
+	color: #a00;
+}
+
+.listeo-mandatory-fees-list .listeo-fee-add {
+	align-self: flex-start;
+	font-size: 13px;
+	padding: 7px 16px;
+}
+
+@media (max-width: 900px) {
+	.listeo-mandatory-fees-list .listeo-fee-main {
+		grid-template-columns: 1fr 1fr;
+	}
+	.listeo-mandatory-fees-list .listeo-fee-input-title {
+		grid-column: 1 / -1;
+	}
+	.listeo-mandatory-fees-list .listeo-fee-remove {
+		justify-content: center;
+	}
+}
+
+/* ============================================
+   Booking widget — itemized price breakdown
+   Airbnb-style two-line rows: bold title on top, dim sublabel below,
+   right-aligned amount. Thin separators between rows.
+   `text-align: left` overrides the parent `.booking-estimated-cost`
+   which the theme right-aligns for the "Total Cost" line.
+   ============================================ */
+.booking-price-breakdown {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 14px;
+	text-align: left;
+}
+
+.booking-price-breakdown .booking-breakdown-line {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	padding: 5px 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.booking-price-breakdown .booking-breakdown-line:last-child {
+	border-bottom: none;
+}
+
+.booking-price-breakdown .booking-breakdown-line-text {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 2px;
+	flex: 1 1 auto;
+	min-width: 0;
+	text-align: left;
+}
+
+.booking-price-breakdown .booking-breakdown-line-label,
+.booking-price-breakdown .booking-breakdown-line-sublabel {
+	display: block;
+	text-align: left;
+	width: 100%;
+	color: #666;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.booking-price-breakdown .booking-breakdown-line-label {
+	font-weight: 600;
+}
+
+.booking-price-breakdown .booking-breakdown-line-sublabel {
+	font-weight: 400;
+}
+
+.booking-price-breakdown .booking-breakdown-line-amount {
+	color: #666;
+	font-size: 12px;
+	font-weight: 600;
+	white-space: nowrap;
+	flex-shrink: 0;
+	text-align: right;
+}
+
+/* "Total Cost" line below the breakdown — slightly larger to anchor
+   the bottom of the price block and stand out from the breakdown. */
+.booking-estimated-cost .listeo-widget-total-cost,
+.booking-estimated-cost > span {
+	font-size: 16px;
+}
+
+.booking-price-breakdown .booking-breakdown-line--discount .booking-breakdown-line-amount,
+.booking-price-breakdown .booking-breakdown-line--coupon .booking-breakdown-line-amount {
+	color: #2e7d32;
+}
+
+.booking-price-breakdown .booking-breakdown-line--adjustment .booking-breakdown-line-label {
+	font-style: italic;
+}
+
+/* Mandatory fee rows in the confirmation summary use a different markup
+   (<li class="listeo-fee-row"><p>label</p><strong>amount</strong></li>) than
+   the rest of the summary, so they default to raw block styling. Re-style them
+   to match the price-breakdown rows above (flex row, label left / amount right). */
+#booking-confirmation-summary #booking-mandatory-fees {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#booking-confirmation-summary #booking-mandatory-fees .listeo-fee-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	width: 100%;
+	margin: 0;
+	padding: 5px 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+#booking-confirmation-summary #booking-mandatory-fees .listeo-fee-row:last-child {
+	border-bottom: none;
+}
+#booking-confirmation-summary #booking-mandatory-fees .listeo-fee-row p {
+	margin: 0;
+	flex: 1 1 auto;
+	min-width: 0;
+	text-align: left;
+	color: #666;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+/* Frequency hint drops onto its own line below the fee name (matches the
+   "× N nights" sublabel under the nightly-rate breakdown row). */
+#booking-confirmation-summary #booking-mandatory-fees .listeo-fee-row .listeo-fee-freq {
+	display: block;
+	margin-top: 2px;
+	font-size: 11px;
+	font-weight: 400;
+	color: #888;
+	line-height: 1.3;
+}
+#booking-confirmation-summary #booking-mandatory-fees .listeo-fee-row strong {
+	flex-shrink: 0;
+	float: none;
+	text-align: right;
+	white-space: nowrap;
+	color: #666;
+	font-size: 12px;
+	font-weight: 600;
+}
+/* Optional (checkbox) fees keep their toggle inline with the label */
+#booking-confirmation-summary #booking-mandatory-fees .listeo-fee-row .listeo-optional-fee-toggle {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+	cursor: pointer;
+}

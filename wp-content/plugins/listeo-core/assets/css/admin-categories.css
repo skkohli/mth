@@ -1,0 +1,299 @@
+/**
+ * Listeo Categories Admin Page Styles
+ * 
+ * Modern design for the categories management page
+ */
+
+.listeo-categories-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 100vh;
+}
+
+.listeo-categories-wrap h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.listeo-categories-wrap .subtitle {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 60px;
+    padding-top: 10px;
+    padding-left: 0;
+}
+
+/* Global Categories Section */
+.listeo-global-section {
+    margin-bottom: 60px;
+}
+
+.listeo-global-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+/* Section Description */
+.listeo-section-description {
+    background: #d8eaff;
+    color: #1e61af;
+    border-radius: 6px;
+    padding: 11px;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.listeo-section-description a {
+    color: #1e61af;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.listeo-section-description a:hover {
+    color: #1e61af;
+    text-decoration: underline;
+}
+
+.listeo-global-card {
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listeo-global-card-content h3 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+    margin-bottom: 4px;margin-top: 0;
+}
+
+.listeo-global-card-content p {
+    color: #6b7280;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Listing Types Categories Section */
+.listeo-listing-types-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+}
+
+.listeo-category-card .listeo-manage-btn {
+    margin-top: 20px;
+}
+
+.listeo-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.listeo-category-card {
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.listeo-global-card,
+.listeo-category-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+    background-color: #ffffff;
+    border: none;
+}
+
+.listeo-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.listeo-card-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.listeo-card-count {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: auto;
+    margin-top: 0;
+}
+
+/* Buttons */
+.listeo-manage-btn:focus,
+.listeo-manage-btn {
+    background: #222 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none !important;
+    display: inline-block;
+    line-height: 1 !important;
+    height: auto !important;
+    text-align: center;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.listeo-management-buttons a:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.listeo-manage-btn:hover {
+    background: #444 !important;
+    color: white !important;
+}
+
+/* Other Listing Management Section */
+.listeo-other-management {
+    margin-top: 60px;
+}
+
+.listeo-other-management h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+}
+
+.listeo-management-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.listeo-feature-btn {
+    background: #f59e0b !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    height: auto !important;
+}
+
+.listeo-feature-btn:hover {
+    background: #d97706 !important;
+    color: white !important;
+}
+
+.listeo-region-btn {
+    background: #10b981 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    height: auto !important;
+}
+
+.listeo-region-btn:hover {
+    background: #059669 !important;
+    color: white !important;
+}
+
+.listeo-types-btn {
+    background: #8b5cf6 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    text-decoration: none !important;
+    line-height: 1 !important;
+    height: auto !important;
+}
+
+.listeo-types-btn:hover {
+    background: #7c3aed !important;
+    color: white !important;
+}
+
+/* Dashicons in buttons */
+.listeo-feature-btn .dashicons,
+.listeo-region-btn .dashicons,
+.listeo-types-btn .dashicons {
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-top: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .listeo-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .listeo-management-buttons {
+        flex-direction: column;
+    }
+    
+    .listeo-global-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .listeo-manage-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .listeo-categories-wrap h1 {
+        font-size: 24px;
+    }
+    
+    .listeo-global-section h2,
+    .listeo-listing-types-section h2,
+    .listeo-other-management h2 {
+        font-size: 20px;
+    }
+    
+    .listeo-categories-wrap {
+        padding: 20px 15px;
+    }
+}

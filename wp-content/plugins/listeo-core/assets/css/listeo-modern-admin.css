@@ -1,0 +1,2279 @@
+﻿/* Listeo Core Modern Admin Interface */
+/* Based on modern design patterns inspired by Tailwind CSS and plugin-palette-plus */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+    /* Color System */
+    --lc-background: 0 0% 100%;
+    --lc-foreground: 222.2 84% 4.9%;
+    --lc-card: 0 0% 100%;
+    --lc-card-foreground: 222.2 84% 4.9%;
+    --lc-primary: 345 100% 50%;
+    --lc-primary-foreground: 0 0% 100%;
+    --lc-primary-glow: 345 100% 70%;
+    --lc-secondary: 240 4.8% 95.9%;
+    --lc-secondary-foreground: 222.2 84% 4.9%;
+    --lc-muted: 240 4.8% 95.9%; 
+    --lc-muted-foreground: 0 0% 46.7%;
+    --lc-accent: 240 4.8% 95.9%;
+    --lc-nav-color: 222.2 84% 4.9%;
+    --lc-accent-foreground: 222.2 84% 4.9%;
+    --lc-border: 207 6% 84%;
+    --lc-input: 220 13% 91%;
+    --lc-ring: 345 100% 50%;
+    
+    /* Gradients */
+    --lc-gradient-primary: linear-gradient(135deg, #ff003b 0%, #ff003b 100%);
+    --lc-gradient-subtle: linear-gradient(180deg, hsl(210 40% 98%), hsl(220 27% 97%));
+    --lc-gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 27% 98%));
+    
+    /* Shadows */
+    --lc-shadow-glow: 0 0 40px hsl(var(--lc-primary) / .08);
+    --lc-shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / .1);
+    --lc-shadow-card: 0 4px 6px -1px rgb(0 0 0 / .07);
+    --lc-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / .05);
+    
+    /* Transitions */
+    --lc-transition-smooth: all .15s ease;
+    
+    /* Spacing */
+    --lc-radius: 5px;
+    --lc-radius-sm: 5px;
+    --lc-radius-md: 5px;
+  }
+  
+  /* Reset and Base Styles */
+  .listeo-modern-admin * {
+    box-sizing: border-box;
+  }
+
+  .lc-theme-toggle { display: none; }
+  
+  .listeo-license-modern,
+  .listeo-modern-admin {
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    background: var(--lc-gradient-subtle);
+    min-height: 100vh;
+    color: hsl(var(--lc-foreground));
+    position: relative; /* Ensure stacking context */
+  }
+  
+  /* Layout Components */
+  .lc-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .lc-card-content:empty {display: none !important;}
+
+  .lc-admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+    position: relative;
+    /* padding: 20px; */
+    width: calc(100% - 20px);
+    border-radius: 5px;
+    overflow: visible; /* Changed from hidden to allow sticky positioning */
+    box-shadow: 0 0 15px #0000001a;
+    margin-top: 20px;
+  }
+  
+  /* Sidebar container for proper sticky positioning */
+  .lc-sidebar-container {
+    width: 280px;
+    flex-shrink: 0; /* Prevent container from shrinking */
+  }
+  
+  .lc-sidebar {
+    width: 100%;
+    background: #222222;
+    border-right: 1px solid #333333;
+    /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3); */
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0; /* Start with 0 to test */
+    height: 100vh; /* Full viewport height */
+    z-index: 100;
+    overflow-y: auto; /* Only sidebar content scrolls */
+        border-radius: 5px 0 0 5px;
+  }
+
+  /* Dark sidebar scrollbar */
+  .lc-sidebar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .lc-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .lc-sidebar::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 3px;
+  }
+  
+  .lc-sidebar::-webkit-scrollbar-thumb:hover {
+    background: #555555;
+  }
+  
+  .lc-main-content {
+    flex: 1;
+    /* margin-left: 280px; */
+    padding: 32px;
+    background: transparent;
+  }
+
+
+
+  .lc-main-content form {max-width: 1000px;margin: 0 auto;/* background: transparent; */}
+  
+  .lc-grid {
+    display: grid;
+    gap: 24px;
+  }
+  
+  .lc-grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .lc-grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .lc-grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  /* Card Components */
+  .lc-card {
+    background: transparent;
+    border: none;
+    border-radius: var(--lc-radius);
+    box-shadow: none;
+    transition: var(--lc-transition-smooth);
+    overflow: hidden;
+  }
+  
+  /* Card hover effects removed for performance */
+  
+  .lc-card-header {
+    padding: 0;
+    border-bottom: none;
+    background: transparent;
+    padding-top: 8px;
+    padding-bottom: 40px;
+    zoom: 1.1;
+  }
+  
+  .lc-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: hsl(var(--lc-foreground));
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .lc-card-description {
+    color: hsl(var(--lc-muted-foreground));
+    font-size: 14px;
+    margin: 8px 0 0 0;
+    line-height: 1.5;
+  }
+  
+  .lc-card-content {
+    /* padding: 24px; */
+    background-color: transparent;
+  }
+
+  /* Quick Navigation */
+  .lc-section-quicknav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    background: hsl(var(--lc-accent) / 0.3);
+    border: 1px solid hsl(var(--lc-border));
+    border-radius: 8px;
+  }
+
+  .lc-quicknav-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: hsl(var(--lc-muted-foreground));
+    margin-right: 4px;
+    white-space: nowrap;
+  }
+
+  .lc-quicknav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: hsl(var(--lc-foreground));
+    background: hsl(var(--lc-card));
+    border: 1px solid hsl(var(--lc-border));
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .lc-quicknav-link:hover {
+    color: hsl(var(--lc-primary));
+    border-color: hsl(var(--lc-primary) / 0.4);
+    background: hsl(var(--lc-primary) / 0.05);
+    text-decoration: none;
+  }
+
+  .lc-quicknav-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px hsl(var(--lc-primary) / 0.2);
+  }
+
+  .lc-quicknav-link i {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+
+  /* Notification Cards */
+  .lc-notification {
+    border-radius: var(--lc-radius);
+    margin-top: 1rem;
+    transition: var(--lc-transition-smooth);
+  }
+  
+  .lc-notification-warning {
+    border-left: 4px solid #f39c12;
+    background: #fff8e7;
+  }
+  
+  .lc-notification-info {
+    border-left: 4px solid #3498db;
+    background: #e8f4fd;
+  }
+  
+  .lc-notification-success {
+    border-left: 4px solid #27ae60;
+    background: #eafaf1;
+  }
+  
+  .lc-notification-error {
+    border-left: 4px solid #e74c3c;
+    background: #fdf2f2;
+  }
+  
+  .lc-notification-content {
+    padding: 1.5rem;
+  }
+  
+  .lc-notification-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.4;
+  }
+  
+  .lc-notification-title.warning {
+    color: #f39c12;
+  }
+  
+  .lc-notification-title.info {
+    color: #3498db;
+  }
+  
+  .lc-notification-title.success {
+    color: #27ae60;
+  }
+  
+  .lc-notification-title.error {
+    color: #e74c3c;
+  }
+  
+  .lc-notification-text {
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  .lc-notification-text.warning {
+    color: #856404;
+  }
+  
+  .lc-notification-text.info {
+    color: #31708f;
+  }
+  
+  .lc-notification-text.success {
+    color: #155724;
+  }
+  
+  .lc-notification-text.error {
+    color: #721c24;
+  }
+  
+  .lc-notification-list {
+    margin:0;
+    padding: 0;
+    line-height: 1.5;
+  }
+  
+  .lc-notification-list.warning {
+    color: #856404;
+  }
+  
+  .lc-notification-list.info {
+    color: #31708f;
+  }
+  
+  .lc-notification-list.success {
+    color: #155724;
+  }
+  
+  .lc-notification-list.error {
+    color: #721c24;
+  }
+  
+  .lc-notification-list li {
+    font-size: 14px;
+    margin-bottom: 0.25rem;
+  }
+  
+  .lc-notification code {
+    background: hsl(var(--lc-muted));
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+  }
+  
+  /* Sidebar Header */
+  .lc-sidebar-header {
+    padding: 26px;
+    /* border-bottom: 1px solid #333333; */
+    background: #2b2b2b;
+  }
+  
+  .lc-sidebar-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    padding: 5px 0;
+  }
+  
+  
+  .lc-sidebar-title i {
+    width: 32px;
+    height: 32px;
+    background: var(--lc-gradient-primary);
+    color: hsl(var(--lc-primary-foreground));
+    border-radius: var(--lc-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+
+  .lc-sidebar-title .lc-logo-svg {
+    width: auto;
+    height: 24px;
+    margin-right: 8px;
+    background: none;
+    max-width: 120px;
+    border-radius: 0;
+  }
+
+  .lc-sidebar-title .lc-logo-svg .cls-1,
+  .lc-sidebar-title .lc-logo-svg .cls-2 {
+    fill: #ffffff;
+  }
+  
+  .lc-sidebar-subtitle {
+    color: #999999;
+    font-size: 14px;
+    margin: 8px 0 0 0;
+    line-height: 1.4;
+  }
+  
+  /* Sidebar Navigation */
+  .lc-sidebar-nav {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .lc-nav-section {
+    margin-bottom: 24px;
+  }
+  
+  .lc-nav-section-title {
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888888;
+    margin: 0 0 8px 0;
+  }
+  
+ .lc-nav-item:focus,
+  .lc-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #cccccc;
+    transition: 0.2s;
+    position: relative;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 5px;
+    line-height: 20px;
+  }
+  
+  .lc-nav-item:hover {
+    color: hsl(var(--lc-primary));
+    background: rgba(255, 0, 59, 0.15);
+
+  }
+  
+  .lc-nav-item.active {
+    color: #ffffff;
+    background: hsl(var(--lc-primary));
+
+    font-weight: 600;
+  }
+
+  
+  .lc-nav-item i {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* FontAwesome icon support */
+  .lc-nav-item i.fa,
+  .lc-nav-item i.fas,
+  .lc-nav-item i.far,
+  .lc-nav-item i.fal,
+  .lc-nav-item i.fab {
+    font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands" !important;
+    font-weight: 900;
+    line-height: 1;
+  }
+  
+  .lc-nav-item i.far {
+    font-weight: 400;
+  }
+  
+  .lc-nav-item i.fab {
+    font-family: "Font Awesome 5 Brands" !important;
+    font-weight: 400;
+  }
+  
+  .lc-nav-item .lc-nav-badge {
+    margin-left: auto;
+    background: hsl(var(--lc-primary));
+    color: hsl(var(--lc-primary-foreground));
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+  
+  /* Legacy Tab Navigation (Hidden in sidebar mode) */
+  .lc-nav-tabs {
+    display: none;
+  }
+  
+  /* Hide WordPress default nav-tab-wrapper when modern admin is active */
+  .listeo-modern-admin .nav-tab-wrapper,
+  .listeo-modern-admin h2.nav-tab-wrapper {
+    display: none !important;
+  }
+  
+  /* Hide any remaining legacy navigation elements */
+  .listeo-modern-admin .nav-tab {
+    display: none !important;
+  }
+  
+  /* Form Components */
+  .lc-form-group {
+    margin-bottom: 24px;
+  }
+  
+  .lc-form-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: start;
+    padding: 24px 0;
+    border-bottom: 1px solid hsl(var(--lc-border) / 0.5);
+  }
+  
+  .lc-form-row:last-child {
+    border-bottom: none;
+  }
+  
+  .lc-form-row-toggle {
+    grid-template-columns: 1fr;
+    padding: 0;
+    border-bottom: none;
+  }
+  
+  .lc-form-row-toggle-group {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+  
+  .lc-form-label-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .lc-form-field-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .lc-form-label {
+    font-weight: 500;
+    color: hsl(var(--lc-foreground));
+    margin-bottom: revert-layer;
+    display: block;
+  }
+  
+    body .lc-form-description {
+    font-size: 14px;
+    color: hsl(var(--lc-muted-foreground));
+    /* margin-top: 4px; */
+    line-height: 1.4;
+  }
+  
+    body .lc-input {
+    width: 100%;
+    padding: 7px 16px !important;
+    border: 1px solid hsl(var(--lc-input));
+    border-radius: var(--lc-radius-sm);
+    background: hsl(var(--lc-card));
+    color: hsl(var(--lc-foreground));
+    font-size: 14px;
+    transition: var(--lc-transition-smooth);
+    background: hsl(var(--lc-card));
+    border: 1px solid hsl(var(--lc-border));
+    border-radius: var(--lc-radius);
+    padding: 8px;
+    box-shadow: var(--lc-shadow-sm);
+  }
+  
+  body .lc-input:focus,
+  body .lc-textarea:focus,
+  body .lc-select:focus {
+    outline: none;
+    border-color: hsl(var(--lc-ring));
+    box-shadow: none !important;
+  }
+  
+
+
+    body .lc-input::placeholder {
+    color: hsl(var(--lc-muted-foreground));
+  }
+  
+    body .lc-textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  body .lc-select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    padding-right: 40px;
+    appearance: none;
+    border: 1px solid hsl(var(--lc-border));
+    border-radius: var(--lc-radius);
+    padding: 8px;
+    box-shadow: var(--lc-shadow-sm);
+     width: 100% !important;
+    max-width: 100%;
+  }
+  
+  /* Modern Toggle Switch */
+  .lc-toggle {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+  }
+  
+  .lc-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .lc-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsl(0deg 0% 87.99%);
+    transition: var(--lc-transition-smooth);
+    border-radius: 24px;
+    border: none;
+  }
+  
+  .lc-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background: hsl(var(--lc-card));
+    transition: var(--lc-transition-smooth);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .lc-toggle-slider:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    color: hsl(var(--lc-muted-foreground));
+    opacity: 0;
+    transition: var(--lc-transition-smooth);
+  }
+  
+  .lc-toggle input:checked + .lc-toggle-slider {
+    background: var(--lc-gradient-primary);
+    border-color: hsl(var(--lc-primary));
+  }
+  
+  /* Focus state removed for toggles */
+  
+  .lc-toggle input:checked + .lc-toggle-slider:before {
+    transform: translateX(24px);
+    background: hsl(var(--lc-primary-foreground));
+  }
+  
+  .lc-toggle-slider:hover {
+    box-shadow: var(--lc-shadow-sm);
+  }
+  
+  /* Legacy checkbox styles (for multi-checkbox groups) */
+  .lc-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 2px solid hsl(var(--lc-input));
+    border-radius: 4px;
+    background: hsl(var(--lc-card));
+    cursor: pointer;
+  }
+  
+  .lc-checkbox:checked {
+    background: var(--lc-gradient-primary);
+    border-color: hsl(var(--lc-primary));
+  }
+
+  input[type="radio"]:checked::before {
+    background: trans
+  }
+  
+  /* Modern Radio Button Styling */
+  .lc-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid hsl(var(--lc-border));
+    border-radius: 50%;
+    background: hsl(var(--lc-card));
+    cursor: pointer;
+    appearance: none;
+    position: relative;
+    transition: var(--lc-transition-smooth);
+    box-shadow: var(--lc-shadow-sm);
+    top: 2px;
+    border-radius: 50px !important;
+  }
+  
+  .lc-radio:hover {
+    border-color: hsl(var(--lc-primary));
+    box-shadow: 0 0 0 2px hsl(var(--lc-primary) / 0.1);
+  }
+  
+  /* Focus state removed for radio buttons */
+  
+  body .lc-radio:checked {
+    background: hsl(var(--lc-primary));
+    border-color: hsl(var(--lc-primary));
+    box-shadow: 0 0 0 2px hsl(var(--lc-primary) / 0.2);
+  }
+  
+    body .lc-radio:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: hsl(var(--lc-primary-foreground));
+    border-radius: 50%;
+    animation: radioCheck 0.2s ease-in-out;
+  }
+  
+  @keyframes radioCheck {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Button Components */
+  body .lc-button-primary,
+  .lc-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--lc-radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: var(--lc-transition-smooth);
+  }
+
+    body .lc-button-primary { color: #fff; }
+  
+  .lc-button-primary {
+    background: var(--lc-gradient-primary);
+    color: hsl(var(--lc-primary-foreground));
+    box-shadow: var(--lc-shadow-sm);
+  }
+    .lc-button-primary:hover,
+  .lc-button-primary:hover {
+    opacity: 0.9;
+  }
+  
+  .lc-button-secondary {
+    background: hsl(var(--lc-secondary));
+    color: hsl(var(--lc-secondary-foreground));
+    border-color: hsl(var(--lc-border));
+  }
+  
+  .lc-button-secondary:hover {
+    background: hsl(var(--lc-accent));
+    color: hsl(var(--lc-accent-foreground));
+  }
+  
+  /* Utility Classes */
+  .lc-flex {
+    display: flex;
+  }
+  
+  .lc-items-center {
+    align-items: center;
+  }
+  
+  .lc-justify-between {
+    justify-content: space-between;
+  }
+  
+  .lc-gap-4 {
+    gap: 16px;
+  }
+  
+  .lc-mt-4 {
+    margin-top: 16px;
+  }
+  
+  .lc-mb-4 {
+  
+  }
+  
+  .lc-p-4 {
+    padding: 16px;
+  }
+  
+  .lc-text-sm {
+    font-size: 14px;
+  }
+  
+  .lc-text-lg {
+    font-size: 18px;
+  }
+  
+  .lc-font-medium {
+    font-weight: 500;
+  }
+  
+  .lc-font-semibold {
+    font-weight: 600;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .lc-sidebar {
+      width: 260px;
+      left: 160px;
+    }
+    
+    .lc-main-content {
+      margin-left: 260px;
+      padding: 24px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .lc-sidebar {
+      width: 100%;
+      left: 0;
+      top: 32px;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+    
+    .lc-sidebar.open {
+      transform: translateX(0);
+    }
+    
+    .lc-main-content {
+      margin-left: 0;
+      padding: 16px;
+    }
+    
+    .lc-admin-layout {
+      flex-direction: column;
+    }
+    
+    .lc-mobile-menu-toggle {
+      display: block;
+      position: fixed;
+      top: 32px;
+      left: 160px;
+      z-index: 1001;
+      background: hsl(var(--lc-primary));
+      color: hsl(var(--lc-primary-foreground));
+      border: none;
+      padding: 12px;
+      border-radius: var(--lc-radius-sm);
+      box-shadow: var(--lc-shadow-sm);
+      cursor: pointer;
+    }
+    
+    .lc-grid-cols-2,
+    .lc-grid-cols-3 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    
+    .lc-form-row {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    .lc-card-header,
+    .lc-card-content {
+      padding: 16px;
+    }
+    
+    .lc-sidebar-header {
+      padding: 24px;
+    }
+    
+    .lc-nav-item {
+      padding: 16px 24px;
+    }
+  }
+  
+  .lc-mobile-menu-toggle {
+    display: none;
+  }
+  
+  /* WordPress Admin Integration */
+  .wrap.listeo-modern-admin {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    /* position: relative; */
+    /* padding: 20px; */
+    position: relative;
+  }
+  
+  .wrap.listeo-modern-admin .wp-heading-inline {
+    display: none;
+  }
+  body .listeo_settings_title {
+    background: #f6f6f6;
+    border: none;
+    padding: 24px;
+    border-radius: 6px;
+    margin-top: -2px;
+    zoom: 1.15;
+    flex-direction: column;
+    display: flex;
+    gap: 0;
+}
+
+  /* Save Settings Footer */
+  .lc-save-footer {
+    position: sticky;
+    bottom: 0;
+    background: hsl(var(--lc-card));
+    border: 1px solid hsl(var(--lc-border));
+    padding: 24px;
+    margin-top: 32px;
+    border-radius: var(--lc-radius) var(--lc-radius) 0 0;
+    /* box-shadow: var(--lc-shadow-elegant); */
+    z-index: 10;
+    /* border-radius: 0; */
+    margin-top: -5px;
+    border-radius: 5px;
+  }
+  
+  /* Animation Classes - Minimal for performance */
+  
+  /* Special Field Types */
+  .lc-color-picker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .lc-color-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--lc-radius-sm);
+    border: 2px solid hsl(var(--lc-border));
+    cursor: pointer;
+  }
+  
+  .lc-image-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .lc-image-preview {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: var(--lc-radius);
+    border: 2px solid hsl(var(--lc-border));
+  }
+  
+  /* Toggle Item Layout */
+  .lc-toggle-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: 1px solid hsl(var(--lc-border) / 0.3);
+  }
+  
+  .lc-toggle-item:last-child {
+    border-bottom: none;
+  }
+  
+  .lc-toggle-group .lc-toggle-item { padding: 7px;}
+  .lc-toggle-content {
+    flex: 1;
+    margin-right: 16px;
+  }
+  
+  .lc-toggle-title {
+    font-weight: 500;
+    color: hsl(var(--lc-foreground));
+    margin: 0 0 4px 0;
+    font-size: 14px;
+  }
+  
+  .lc-toggle-description {
+    color: hsl(var(--lc-muted-foreground));
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  .lc-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .lc-toggle-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: hsl(var(--lc-card));
+    border: 1px solid hsl(var(--lc-border));
+    border-radius: var(--lc-radius);
+    padding: 8px;
+    box-shadow: var(--lc-shadow-sm);
+  }
+  
+  .lc-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: hsl(var(--lc-card));
+    border: 1px solid hsl(var(--lc-border));
+    border-radius: var(--lc-radius);
+    padding: 8px;
+    box-shadow: var(--lc-shadow-sm);
+  }
+  
+  .lc-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .lc-radio-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    border-radius: var(--lc-radius-sm);
+    transition: var(--lc-transition-smooth);
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  
+  .lc-radio-item:hover {
+    background: hsl(var(--lc-accent) / 0.5);
+    border-color: hsl(var(--lc-border));
+  }
+  
+  .lc-radio-item:has(.lc-radio:checked),
+  .lc-radio-item-active {
+    background: hsl(var(--lc-primary) / 0.05);
+    border-color: hsl(var(--lc-primary) / 0.3);
+  }
+  
+  .lc-radio-item .lc-form-label {
+    padding: 12px 0;
+    font-weight: 500;
+    color: hsl(var(--lc-foreground));
+    cursor: pointer;
+    flex: 1;
+  }
+  
+  /* Test API Button Enhancement */
+  .lc-api-test-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    margin-top: -10px !important;
+  }
+
+   .lc-api-test-container.lc-mt-4 {
+        margin-top: -10px !important;
+   }
+  
+  .lc-api-test-result {
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: var(--lc-radius-sm);
+    font-size: 14px;
+  }
+  
+  .lc-api-test-success {
+    background: hsl(120 100% 95%);
+    color: hsl(120 60% 30%);
+    border: 1px solid hsl(120 100% 85%);
+  }
+  
+  .lc-api-test-error {
+    background: hsl(0 100% 95%);
+    color: hsl(0 60% 40%);
+    border: 1px solid hsl(0 100% 85%);
+  }
+  
+  /* License Status Enhancement */
+  .lc-license-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--lc-radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .lc-license-active {
+    background: hsl(120 100% 95%);
+    color: hsl(120 60% 30%);
+    border: 1px solid hsl(120 100% 85%);
+  }
+  
+  
+  .lc-license-inactive {
+    background: hsl(0 100% 95%);
+    color: hsl(0 60% 40%);
+    border: 1px solid hsl(0 100% 85%);
+  }
+
+  /* Settings Blocks */
+  .lc-settings-block {
+    background: hsl(var(--lc-card));
+    border: 1px solid hsl(var(--lc-border));
+    border-radius: var(--lc-radius);
+    margin-bottom: 24px;
+    overflow: hidden;
+    box-shadow: var(--lc-shadow-card);
+    scroll-margin-top: 40px;
+  }
+
+  .lc-block-header {
+    padding: 20px 24px;
+    background: hsl(var(--lc-accent) / 0.3);
+    border-bottom: 1px solid hsl(var(--lc-border));
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .lc-block-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--lc-primary));
+    font-size: 16px;
+    background: hsl(var(--lc-primary) / 0.07);
+    border-radius: 6px;
+    top: -1px;
+    position: relative;
+  }
+
+  .lc-block-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: hsl(var(--lc-foreground));
+    margin: 0;
+  }
+
+  .lc-block-description {
+    font-size: 14px;
+    color: hsl(var(--lc-muted-foreground));
+    margin: 4px 0 0 0;
+    line-height: 1.4;
+  }
+
+  .lc-block-content {
+    padding: 30px;
+    padding-top: 4px;
+  }
+
+  .lc-block-content .lc-form-row {
+  }
+
+    .lc-block-content .lc-form-row:last-child .lc-toggle-item,
+  .lc-block-content .lc-form-row:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+  }
+  
+    .lc-block-content input[type="radio"]:checked::before {
+  background: transparent;
+}
+
+  
+  /* Notice Box Styling */
+  .noticebox {
+    background: linear-gradient(135deg, #e3f2fd 0%, #f8f9fa 100%);
+    border: 1px solid hsl(var(--lc-border));
+    border-left: 4px solid hsl(var(--lc-primary));
+    border-radius: var(--lc-radius);
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: hsl(var(--lc-foreground));
+    box-shadow: var(--lc-shadow-sm);
+  }
+  
+  .noticebox a {
+    color: hsl(var(--lc-primary));
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--lc-transition-smooth);
+  }
+  
+  .noticebox a:hover {
+    color: hsl(var(--lc-primary-glow));
+    text-decoration: underline;
+  }
+  
+  .lc-form-row mark {
+background: #fff8a8;
+    color: #5c5500;
+  }
+
+/* ============================================
+   CUSTOM LISTING TYPES EDITOR STYLES  
+   ============================================ */
+
+/* Listing Types Editor Specific Styling - Target form editor wrapper */
+.listeo-form-editor .listeo-editor-type-form .lc-settings-block {
+  margin-bottom: 24px;
+}
+
+.listeo-form-editor .listeo-editor-type-form .lc-form-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.listeo-form-editor .listeo-editor-type-form .feature-option {
+  transition: var(--lc-transition-smooth);
+}
+
+.listeo-form-editor .listeo-editor-type-form .feature-option.feature-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Disabled booking features section styling */
+.listeo-form-editor .listeo-editor-type-form .lc-form-row.disabled-section {
+  opacity: 0.6;
+  pointer-events: none;
+  transition: var(--lc-transition-smooth);
+}
+
+.listeo-form-editor .listeo-editor-type-form .disabled-features {
+  position: relative;
+}
+
+.listeo-form-editor .listeo-editor-type-form .disabled-features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: var(--lc-radius);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.listeo-form-editor .listeo-editor-type-form .disabled-features::after {
+  content: 'Booking features are disabled when "No Booking" is selected';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hsl(var(--lc-muted));
+  color: hsl(var(--lc-muted-foreground));
+  padding: 8px 16px;
+  border-radius: var(--lc-radius);
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 11;
+  white-space: nowrap;
+  box-shadow: var(--lc-shadow-sm);
+}
+
+.listeo-form-editor .listeo-editor-type-form .feature-option:hover {
+  background: hsl(var(--lc-accent) / 0.5) !important;
+  border-color: hsl(var(--lc-border)) !important;
+}
+
+/* Booking Feature Toggle Items */
+.listeo-form-editor .listeo-editor-type-form .listeo-feature-toggle-item {
+  background: hsl(var(--lc-card));
+  border: 1px solid hsl(var(--lc-border));
+  border-radius: var(--lc-radius);
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  transition: var(--lc-transition-smooth);
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-feature-toggle-item:hover {
+  border-color: hsl(var(--lc-primary) / 0.3);
+  background: hsl(var(--lc-accent) / 0.3);
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-feature-content {
+  flex: 1;
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-feature-title {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--lc-foreground));
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-feature-description {
+  margin: 0;
+  color: hsl(var(--lc-muted-foreground));
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Settings Toggle Items */
+.listeo-form-editor .listeo-editor-type-form .listeo-settings-toggle-item {
+  background: hsl(var(--lc-card));
+  border: 1px solid hsl(var(--lc-border));
+  border-radius: var(--lc-radius);
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  transition: var(--lc-transition-smooth);
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-settings-toggle-item:hover {
+  border-color: #e0e0e0;
+  background: hsl(var(--lc-accent) / 0.3);
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-settings-toggle-content {
+  flex: 1;
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-settings-toggle-title {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: hsl(var(--lc-foreground));
+}
+
+.listeo-form-editor .listeo-editor-type-form .core-feature-badge {
+  color: hsl(var(--lc-muted-foreground));
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* Required asterisk styling */
+.listeo-form-editor .listeo-editor-type-form .required-asterisk {
+  color: #d63638;
+}
+
+/* Textarea styling */
+.listeo-form-editor .listeo-editor-type-form .lc-textarea {
+  resize: vertical;
+}
+
+/* Media uploader styling */
+.listeo-form-editor .listeo-editor-type-form .listeo-media-uploader {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-media-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 2px dashed hsl(var(--lc-border));
+  border-radius: var(--lc-radius);
+  background: hsl(var(--lc-accent) / 0.3);
+  text-align: center;
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-media-preview:empty {
+  display: none;
+}
+
+.listeo-form-editor .listeo-editor-type-form .listeo-media-preview img {
+  max-width: 64px;
+  max-height: 64px;
+  border-radius: var(--lc-radius);
+  box-shadow: var(--lc-shadow-sm);
+}
+
+/* Media buttons group */
+.listeo-form-editor .listeo-editor-type-form .media-buttons-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Booking type description styling */
+.listeo-form-editor .listeo-editor-type-form .booking-type-description {
+  margin-top: 12px;
+  padding: 16px;
+  background: #1774c310;
+  border-left: none;
+  border-radius: var(--lc-radius);
+}
+
+.listeo-form-editor .listeo-editor-type-form .booking-type-description strong {
+  color: #1774c3;
+  font-weight: 600;
+}
+
+.listeo-form-editor .listeo-editor-type-form .booking-type-description p {
+  margin:0;
+  color:#1774c3;
+  font-size: 13px;
+}
+
+/* Form Actions Section - Outside of settings blocks */
+.listeo-form-editor .listeo-editor-type-form .listeo-form-actions {
+  margin-top: 24px;
+  padding: 20px;
+  background: hsl(var(--lc-card));
+  border: 1px solid hsl(var(--lc-border));
+  border-radius: var(--lc-radius);
+  box-shadow: var(--lc-shadow-card);
+}
+
+.listeo-form-editor .listeo-editor-type-form .action-buttons-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Hide WordPress footer and prevent layout issues in listing types editor */
+.listeo-editor-wrap #wpfooter,
+.listeo-form-editor #wpfooter,
+body.toplevel_page_listeo-listing-types #wpfooter,
+.listeo-editor-wrap .wp-admin #wpfooter {
+  display: none !important;
+  visibility: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Ensure proper container flow */
+.listeo-editor-wrap,
+.listeo-form-editor {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Prevent WordPress admin elements from breaking layout */
+.listeo-editor-wrap * {
+  box-sizing: border-box;
+}
+
+.listeo-form-editor {
+  clear: both;
+  width: 100%;
+}
+
+/* Responsive adjustments for listing types editor */
+@media (max-width: 782px) {
+  .listeo-form-editor .listeo-editor-type-form .lc-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .listeo-form-editor .listeo-editor-type-form .lc-toggle-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .listeo-form-editor .listeo-editor-type-form .lc-toggle-item .lc-toggle {
+    align-self: flex-end;
+  }
+}
+
+/* ============================================
+   MODERN LICENSE PAGE STYLES
+   ============================================ */
+
+/* License Page Container */
+body .listeo-license-modern {
+  background: transparent;
+  padding: 40px 0px;
+  margin: 0 0 0 -20px;
+  width: 100%;
+}
+
+.listeo-license-container {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.listeo-license-header {
+  margin-bottom: 30px;
+}
+
+.listeo-license-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.listeo-license-subtitle {
+  font-size: 16px;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.listeo-license-card {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 40px 32px;
+  text-align: left;
+  border: 1px solid #e9ecef;
+}
+
+.listeo-license-icon-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.listeo-license-icon {
+  width: 56px;
+  height: 56px;
+  background-color: #44a24e20;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.listeo-license-icon::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 9C12.9853 9 15 6.98528 15 4.5C15 2.01472 12.9853 0 10.5 0C8.01475 0 6.00003 2.01472 6.00003 4.5C6.00003 5.38054 6.25294 6.20201 6.69008 6.89574L0.585815 13L3.58292 15.9971L4.99714 14.5829L3.41424 13L5.00003 11.4142L6.58292 12.9971L7.99714 11.5829L6.41424 10L8.10429 8.30995C8.79801 8.74709 9.61949 9 10.5 9ZM10.5 7C11.8807 7 13 5.88071 13 4.5C13 3.11929 11.8807 2 10.5 2C9.11932 2 8.00003 3.11929 8.00003 4.5C8.00003 5.88071 9.11932 7 10.5 7Z" fill="%2344a24e"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.listeo-license-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.listeo-license-card-subtitle {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+/* License Info Box */
+.listeo-license-info-box {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.listeo-license-info-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #856404;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #856404;
+}
+
+.listeo-license-info-icon::before {
+  content: 'i';
+  font-style: normal;
+}
+
+.listeo-license-info-text {
+  font-size: 14px;
+  color: #856404;
+  line-height: 1.4;
+}
+
+.listeo-license-info-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Form Styles */
+.listeo-license-form-group {
+  margin-bottom: 24px;
+}
+
+.listeo-license-form-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.listeo-license-key-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #6c757d;
+  display: none;
+}
+
+.listeo-license-email-icon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #6c757d;
+  display: none;
+}
+
+body .listeo-license-form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #eaeaea;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #555;
+  background-color: white;
+  transition: border-color 0.15s ease-in-out;
+}
+
+body .listeo-license-form-input:focus {
+  outline: none;
+  border: 2px solid #d8d8d8;
+  box-shadow: none;
+}
+
+body .listeo-license-form-input::placeholder {
+  color: #adb5bd;
+}
+
+.listeo-license-help-text {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 6px;
+}
+
+/* Buttons */
+.listeo-license-activate-btn {
+  width: 100%;
+  background-color: #44a24e !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 6px;
+  padding: 14px 24px !important;
+  font-size: 16px !important;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  text-decoration: none;
+  height: auto !important;
+}
+
+.listeo-license-activate-btn:hover {
+  background-color: #388f41 !important;
+  color: white !important;
+}
+
+.listeo-license-activate-btn:active {
+  background-color: #388f41 !important;
+}
+
+.listeo-license-btn-icon {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.listeo-license-btn-icon::before {
+  content: '✓';
+  color: white;
+  font-weight: bold;
+}
+
+/* Help Link */
+.listeo-license-help-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #6c757d;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.listeo-license-help-link:hover {
+  color: #495057;
+  text-decoration: none;
+}
+
+.listeo-license-help-link-icon {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #6c757d;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #6c757d;
+}
+
+.listeo-license-help-link-icon::before {
+  content: '?';
+}
+
+.listeo-license-help-link:hover .listeo-license-help-link-icon {
+  border-color: #495057;
+}
+
+.listeo-license-help-link:hover .listeo-license-help-link-icon::before {
+  color: #495057;
+}
+
+/* License Status Page (Activated) */
+.listeo-license-status-list {
+  background-color: white;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 0;
+  margin-bottom: 32px;
+  list-style: none;
+  overflow: hidden;
+}
+
+.listeo-license-status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f3f4;
+  transition: background-color 0.15s ease;
+  margin: 0;
+}
+
+.listeo-license-status-item:last-child {
+  border-bottom: none;
+}
+
+.listeo-license-status-item:hover {
+  background-color: #f8f9fa;
+}
+
+.listeo-license-status-label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 14px;
+  min-width: 140px;
+}
+
+.listeo-license-status-value {
+  font-size: 14px;
+  color: #6b7280;
+  text-align: right;
+  flex: 1;
+}
+
+.listeo-license-status-value a {
+  /* color: #222; */
+  /* background: #e0e0e0; */
+  /* text-decoration: none; */
+  /* font-weight: 500; */
+  /* padding: 4px 8px; */
+  /* border-radius: 4px; */
+  /* transition: background-color 0.15s ease; */
+}
+
+.listeo-license-status-value a:hover {
+  background-color: #28282800;
+  text-decoration: none;
+}
+
+.listeo-license-valid {
+  color: #059669 !important;
+  font-weight: 600;
+  background-color: #06966920;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.listeo-license-invalid {
+  color: #dc2626 !important;
+  font-weight: 600;
+  background-color: #dc262620;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.listeo-license-renew-link {
+  color: #f91942 !important;
+  /* font-weight: 600; */
+  margin-left: 8px;
+  /* text-decoration: none; */
+  /* padding: 4px 8px; */
+  /* border-radius: 4px; */
+  /* transition: background-color 0.15s ease; */
+}
+
+.listeo-license-renew-link:hover {
+  background-color: #f9194210;
+  text-decoration: none;
+}
+
+/* Action Buttons for Activated State */
+.listeo-license-action-btn {
+  padding: 12px 24px !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border: none !important;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 12px;
+  height: auto !important;
+}
+
+.listeo-license-transfer-btn {
+  background-color: #0073aa20 !important;
+  color: #0073aa !important;
+}
+
+.listeo-license-transfer-btn:hover {
+  background-color: #0073aa30 !important;
+  color: #0073aa !important;
+}
+
+.listeo-license-revalidate-btn {
+  background-color: #16a34a20 !important;
+  color: #15803d !important;
+}
+
+.listeo-license-revalidate-btn:hover {
+  background-color: #16a34a30 !important;
+  color: #15803d !important;
+}
+
+.listeo-license-deactivate-btn {
+  background-color: #dc323220 !important;
+  color: #dc3232 !important;
+}
+
+.listeo-license-deactivate-btn:hover {
+  background-color: #dc323230 !important;
+  color: #dc3232 !important;
+}
+
+/* Error Messages */
+.listeo-license-notification {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 24px;
+  color: #721c24;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Success Messages */
+.listeo-license-success {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  color: #155724;
+}
+
+/* Hide WordPress default styling when using modern license page */
+.listeo-license-modern .wrap h2 {
+  display: none;
+}
+
+.listeo-license-modern .form-table {
+  display: none;
+}
+
+.listeo-license-modern #listeo-core-ui {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .listeo-license-modern {
+    padding: 20px 15px;
+  }
+  
+  .listeo-license-container {
+    max-width: 100%;
+  }
+  
+  .listeo-license-card {
+    padding: 24px 20px;
+  }
+  
+  .listeo-license-title {
+    font-size: 28px;
+  }
+}
+
+
+.listeo-form-editor .lc-block-content { padding: 30px;}
+.listeo-form-editor .lc-block-content .lc-form-row:first-of-type { padding-top: 0px;}
+
+.listeo-custom-listing-type-editor {max-width: 1000px; margin: 0 auto;}
+
+span.lc-option-note {
+  opacity: 0.5;
+}
+
+/* Taxonomy Slug Translations */
+.listeo-settings-subsection {
+  background: #f8f9fa;
+  border-radius: var(--lc-radius);
+  padding: 20px;
+  border: 1px solid hsl(var(--lc-border));
+}
+
+.listeo-settings-subsection h4 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Two-column layout for slug translations */
+.slug-translations-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.slug-translations-left {
+  padding-right: 20px;
+}
+
+.slug-translations-left h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+.slug-translations-left .lc-toggle-description {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.slug-translations-right {
+  background: #fff;
+  padding: 20px;
+  border-radius: var(--lc-radius-sm);
+  border: 1px solid hsl(var(--lc-border));
+}
+
+@media (max-width: 1024px) {
+  .slug-translations-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .slug-translations-left {
+    padding-right: 0;
+  }
+}
+
+.slug-translations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.slug-translation-field {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: var(--lc-radius-sm);
+  border: 1px solid hsl(var(--lc-border));
+}
+
+.slug-translation-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.slug-translation-field input.slug-translation-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.slug-translation-field input.slug-translation-input:focus {
+  border-color: hsl(var(--lc-primary));
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--lc-primary) / 0.1);
+}
+
+.slug-translation-field .description {
+  display: block;
+  font-size: 11px;
+  color: #666;
+  font-style: italic;
+}
+
+
+/* =============================================
+   Customizable Select (Chrome 135+)
+   Progressive enhancement - falls back gracefully
+   ============================================= */
+@supports (appearance: base-select) {
+    .listeo-modern-admin input {
+        border-radius: 6px ;
+    }
+    .listeo-modern-admin input:focus {
+            outline: none;
+            border-color: #ff0040;
+            box-shadow: none;
+    }
+    .listeo-modern-admin select {
+      appearance: base-select;
+      font-family: inherit;
+      font-size: 14px;
+      background: #fff;
+      border: 1px solid #cccccc;
+      border-radius: 6px;
+      padding: 4px 14px ! Important;
+      min-width: 180px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      height: 40px;
+      line-height: 30px;
+      min-height: 40px;
+    }
+
+    .listeo-modern-admin select:hover {
+        border-color: #ff0040;
+        color: #222;
+    }
+
+    .listeo-modern-admin select:focus {
+        outline: none;
+        border-color: #ff0040;
+        box-shadow: 0 0 0 3px rgba(255, 0, 64, 0.15);
+        border: 1px solid #818181;
+        box-shadow: none;
+        color: #222;
+    }
+
+    /* Hide default picker icon, use custom arrow */
+    .listeo-modern-admin select::picker-icon {
+        display: none;
+    }
+
+    /* Custom dropdown arrow */
+    .listeo-modern-admin select::after {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        margin-left: auto;
+        border: solid #666;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg) translateY(-2px);
+        transition: transform 0.2s ease;
+        margin-top: 12px;
+        margin-right: 5px;
+    }
+
+    .listeo-modern-admin select:open::after {
+        transform: rotate(-135deg) translateY(-2px);
+    }
+
+    /* The dropdown picker */
+    .listeo-modern-admin select::picker(select) {
+        appearance: base-select;
+        background: #ffffff;
+        border: none;
+        border-radius: 6px;
+        padding: 6px;
+        color: #333;
+        gap: 2px;
+        display: flex;
+        flex-direction: column;
+        margin-block: 6px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+        /* Display dropdown below */
+        position-try-fallbacks: none;
+        /* Entry/exit transitions */
+        transition:
+            opacity 0.2s ease,
+            transform 0.2s ease,
+            display 0.2s allow-discrete,
+            overlay 0.2s allow-discrete;
+    }
+
+    /* Closed state (off-stage) */
+    .listeo-modern-admin select:not(:open)::picker(select) {
+        opacity: 0;
+
+        pointer-events: none;
+        visibility: hidden;
+    }
+
+    /* Open state (on-stage) */
+    .listeo-modern-admin select:open::picker(select) {
+        opacity: 1;
+
+        visibility: visible;
+        pointer-events: all;
+    }
+
+    /* Option styling */
+    .listeo-modern-admin select option {
+        padding: 4px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.1s ease;
+        line-height: 20px;
+        gap: 0;
+    }
+
+    .listeo-modern-admin select option:hover {
+        background: #f6f6f6;
+    }
+
+    .listeo-modern-admin select option:focus {
+        outline: none;
+        background: #f6f6f6;
+    }
+
+    .listeo-modern-admin select option:checked {
+        background: #ff004021;
+        color: #ff0040;
+        font-weight: 500;
+    }
+
+    /* Checkmark on selected option */
+    .listeo-modern-admin select option::checkmark {
+         content: "\2713";
+        margin-right: 8px;
+        font-weight: 700;
+        display: none;
+    }
+}
+
+.listeo-drag-btn .dashicons {
+  color: #888 !Important;
+  }
+
+
+  .listeo-type-actions .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 32px;
+  }
+
+  .add_new_item.add-type:focus,
+  .add_new_item.add-type:hover,
+  .add_new_item.add-type {
+    background: #ff003b;
+    padding: 3px 10px !important;
+    outline: none;
+    box-shadow: none;
+  }

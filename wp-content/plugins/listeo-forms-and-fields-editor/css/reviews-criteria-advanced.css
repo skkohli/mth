@@ -1,0 +1,175 @@
+/* Listeo Reviews Criteria Advanced - Admin UI Styles */
+
+.listeo-reviews-criteria-advanced {
+	max-width: 1200px;
+}
+
+.listeo-criteria-selector-wrap {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.listeo-criteria-selector {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.listeo-criteria-selector label {
+	font-weight: 600;
+	margin: 0;
+}
+
+.listeo-criteria-selector select {
+	min-width: 250px;
+}
+
+#listeo-criteria-editor,
+#listeo-criteria-editor-tax {
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	padding: 20px;
+	margin: 20px 0;
+}
+
+.listeo-form-editor.main-options {
+	margin: 20px 0;
+}
+
+.listeo-form-editor.main-options table {
+	border: 1px solid #ddd;
+}
+
+.listeo-form-editor.main-options thead th {
+	background: #f0f0f1;
+	font-weight: 600;
+}
+
+.listeo-form-editor.main-options tbody tr:nth-child(even) {
+	background: #f9f9f9;
+}
+
+.listeo-form-editor.main-options input[type="text"],
+.listeo-form-editor.main-options textarea {
+	width: 100%;
+}
+
+.listeo-forms-editor-bottom {
+	display: flex;
+	gap: 10px;
+	margin-top: 20px;
+	padding-top: 15px;
+	border-top: 1px solid #ddd;
+}
+
+.listeo-forms-editor-bottom .button-primary {
+	font-weight: 600;
+}
+
+#listeo-loading,
+#listeo-loading-tax {
+	text-align: center;
+	padding: 40px 20px;
+	background: #fff;
+	border: 1px solid #ccd0d4;
+	border-radius: 4px;
+	margin: 20px 0;
+}
+
+#listeo-hierarchy-context {
+	margin: 0 0 20px 0;
+	padding: 12px;
+}
+
+#listeo-hierarchy-path {
+	font-style: italic;
+	color: #646970;
+}
+
+/* Modal Styles */
+.listeo-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 100000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.listeo-modal-content {
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+	max-width: 500px;
+	width: 90%;
+	max-height: 80vh;
+	overflow-y: auto;
+}
+
+.listeo-modal-content h3 {
+	margin: 0;
+	padding: 20px;
+	border-bottom: 1px solid #ddd;
+	font-size: 18px;
+}
+
+.listeo-modal-body {
+	padding: 20px;
+}
+
+.listeo-modal-body label {
+	display: block;
+	padding: 10px;
+	margin-bottom: 5px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+
+.listeo-modal-body label:hover {
+	background: #f0f0f1;
+}
+
+.listeo-modal-body label input[type="radio"] {
+	margin-right: 8px;
+}
+
+.listeo-modal-footer {
+	padding: 15px 20px;
+	border-top: 1px solid #ddd;
+	display: flex;
+	gap: 10px;
+	justify-content: flex-end;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+	.listeo-criteria-selector {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.listeo-criteria-selector select {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.listeo-forms-editor-bottom {
+		flex-direction: column;
+	}
+
+	.listeo-forms-editor-bottom .button {
+		width: 100%;
+		text-align: center;
+	}
+}

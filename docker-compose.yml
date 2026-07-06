@@ -1,0 +1,64 @@
+services:
+  wordpress:
+    image: wordpress:php8.2-apache
+    container_name: mytrustedhomes-wordpress
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8081:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: u813440994_J22Y4
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WP_HOME: http://localhost:8081
+      WP_SITEURL: http://localhost:8081
+      WP_CACHE: "false"
+      WP_DEBUG: "false"
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
+
+  db:
+    image: mariadb:11.8
+    container_name: mytrustedhomes-db
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: u813440994_J22Y4
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD: wordpress
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./dbdump:/dbdump:ro
+      - ./docker/db-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+
+  wpcli:
+    image: wordpress:cli-php8.2
+    profiles:
+      - tools
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: u813440994_J22Y4
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WP_HOME: http://localhost:8081
+      WP_SITEURL: http://localhost:8081
+      WP_CACHE: "false"
+      WP_DEBUG: "false"
+    volumes:
+      - ./:/var/www/html
+    working_dir: /var/www/html
+
+volumes:
+  db_data:
