@@ -697,10 +697,8 @@ final class MTH_SiteAdmin_Dashboard {
         }
 
         echo '<div class="mth-sa-stat">';
-        echo '<span class="dashicons ' . esc_attr($icon) . '"></span>';
-        echo '<strong>' . esc_html($value) . '</strong>';
         echo '<label>' . esc_html($label) . '</label>';
-        echo '<small>' . esc_html($note) . '</small>';
+        echo '<strong>' . esc_html($value) . '</strong>';
         echo '</div>';
     }
 
@@ -924,8 +922,11 @@ public static function hide_admin_sidebar_for_siteadmin() {
             }
 
             .mth-sa-stats {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                margin: 20px 0;
+                gap: 16px;
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+                margin: 20px 0 22px;
+                max-width: none;
+                width: 100%;
             }
 
             .mth-sa-grid {
@@ -941,8 +942,13 @@ public static function hide_admin_sidebar_for_siteadmin() {
             }
 
             .mth-sa-stat {
-                padding: 20px;
-                min-height: 120px;
+                align-items: flex-start;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: 52px;
+                padding: 10px 16px;
+                text-align: left;
             }
 
             .mth-sa-section {
@@ -965,36 +971,32 @@ public static function hide_admin_sidebar_for_siteadmin() {
                 color: #5b45dc;
             }
 
-            .mth-sa-stat .dashicons {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                color: #5b45dc;
-                background: #ece9ff;
-                border-radius: 8px;
-                font-size: 28px;
-                width: 42px;
-                height: 42px;
-                margin-bottom: 12px;
-            }
-
             .mth-sa-stat strong {
                 display: block;
-                font-size: 26px;
+                font-size: 30px;
                 line-height: 1.1;
-                margin-bottom: 6px;
+                margin-top: 8px;
+                margin-bottom: 0;
                 color: #20232b;
                 font-weight: 800;
+                text-align: center;
+                width: 100%;
             }
 
             .mth-sa-stat label {
                 display: block;
-                font-weight: 700;
-                margin-bottom: 4px;
-                color: #20232b;
+                color: #676b76;
+                font-size: 13px;
+                font-weight: 800;
+                line-height: 1.25;
+                margin-bottom: 0;
+                text-align: center;
+                text-transform: none;
+                width: 100%;
             }
 
             .mth-sa-stat small {
+                display: none;
                 color: #676b76;
             }
 
@@ -1071,6 +1073,13 @@ public static function hide_admin_sidebar_for_siteadmin() {
             .mth-sa-button.is-disabled {
                 opacity: .65;
                 cursor: not-allowed;
+            }
+
+            @media screen and (max-width: 1100px) {
+                .mth-sa-stats {
+                    gap: 12px;
+                    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                }
             }
 
             @media screen and (max-width: 782px) {
